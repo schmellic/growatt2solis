@@ -10,13 +10,22 @@
 // -----------------------------------------------------------------------------
 // 0. BOARD
 // -----------------------------------------------------------------------------
-//  BOARD_ESP32_CAN_X2 : Autosport Labs ESP32-CAN-X2 (ESP32-S3)
+//  BOARD_ESP32_CAN_X2  : Autosport Labs ESP32-CAN-X2 (ESP32-S3)
 //                       CAN1 = built-in TWAI, CAN2 = MCP2515 @ 16 MHz.
 //                       Matches this firmware's architecture exactly.
-//  BOARD_ESP32_DEVKIT : plain ESP32 DevKit + SN65HVD230 (TWAI)
+//  BOARD_ESP32_DEVKIT  : plain ESP32 DevKit + SN65HVD230 (TWAI)
 //                       + MCP2515 module (see README for the 3.3 V caveat).
+//  BOARD_LILYGO_T2CAN  : LilyGo T-2Can (ESP32-S3), non-FD (MCP2515) variant.
+//                       Same TWAI+MCP2515 architecture as ESP32-CAN-X2, just
+//                       different pins, and its MCP2515 RST line needs an
+//                       active-low pulse at boot (see main.cpp). Pins are
+//                       LilyGo's own, from github.com/Xinyuan-LilyGO/T-2Can.
+//                       Not yet run against real hardware here - verify
+//                       which physical port is CAN_TX/RX (7/6, TWAI) vs the
+//                       MCP2515 before wiring the battery/inverter buses.
 #define BOARD_ESP32_CAN_X2   1
 #define BOARD_ESP32_DEVKIT   2
+#define BOARD_LILYGO_T2CAN   3
 
 // Overridable from platformio.ini via `-D BOARD=...` (see the `*-devkit`
 // envs) so switching boards doesn't require editing this file.
@@ -66,6 +75,28 @@
     // The wrong value here means no communication at all.
     #define MCP_CRYSTAL         MCP_8MHZ
     #define STATUS_LED_PIN      2
+
+#elif BOARD == BOARD_LILYGO_T2CAN
+    // Pins per LilyGo's pin_config.h. "CAN B" (TWAI) -> BATTERY bus,
+    // "CAN A" (MCP2515) -> INVERTER bus - keeps this project's existing
+    // TWAI=battery / MCP2515=inverter convention.
+    #define TWAI_TX_PIN         GPIO_NUM_7
+    #define TWAI_RX_PIN         GPIO_NUM_6
+    #define MCP_CS_PIN          10
+    #define MCP_INT_PIN         8
+    #define MCP_SCK_PIN         12
+    #define MCP_MISO_PIN        13
+    #define MCP_MOSI_PIN        11
+    // MCP2515 RST is a broken-out GPIO here (unlike CAN-X2/DevKit, where it's
+    // tied on-board) and must be pulsed low then high before MCP.begin() -
+    // see mcpInit() in main.cpp. Undefined on boards that don't need it.
+    #define MCP_RST_PIN         9
+    // LilyGo's own example (github.com/Xinyuan-LilyGO/T-2Can, examples/can)
+    // doesn't set an oscillator frequency, implying its library's 8 MHz
+    // default. Not confirmed against the schematic - if the MCP2515 never
+    // comes up, try MCP_16MHZ.
+    #define MCP_CRYSTAL         MCP_8MHZ
+    #define STATUS_LED_PIN      -1      // unconfirmed; set if you find one
 #else
     #error "Set BOARD to a supported value"
 #endif

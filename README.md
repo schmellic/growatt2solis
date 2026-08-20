@@ -70,9 +70,9 @@ Short version:
 |---|---|---|
 | **Autosport Labs ESP32-CAN-X2** (~£45) | `BOARD_ESP32_CAN_X2` *(default)* | ESP32-S3. CAN1 = built-in TWAI, CAN2 = MCP2515 @ 16 MHz — exactly this firmware's architecture, nothing to port. Breakable 120 Ω jumpers. Not isolated. |
 | **ESP32 DevKit + SN65HVD230 + MCP2515** (~£20) | `BOARD_ESP32_DEVKIT` — use the `translator-devkit`/`sniffer-devkit` PlatformIO envs, no `config.h` edit needed | Budget. **The common blue MCP2515 module is 5 V and the ESP32 is not 5 V tolerant** — see `PARTS.md` before wiring it. |
-| LilyGo T-2CAN (~£27) | — | Two *isolated* channels, both MCP2515. Cheaper and isolated, but the battery side needs porting off TWAI. |
+| **LilyGo T-2Can** (non-FD, ~£27) | `BOARD_LILYGO_T2CAN` — use the `translator-t2can` env, no `config.h` edit needed | ESP32-S3, same TWAI+MCP2515 architecture as the CAN-X2 (just different pins). Possibly isolated — see the caveats in `PARTS.md` before treating it as such. Untested against real hardware here. |
 
-Pin assignments for both supported boards live in the `BOARD` block at the top of
+Pin assignments for all supported boards live in the `BOARD` block at the top of
 `config.h`.
 
 ### Termination
@@ -150,7 +150,9 @@ pio device monitor
 
 On the budget ESP32 DevKit board, use `-e translator-devkit` (or
 `-e sniffer-devkit`) instead — it targets the classic ESP32 and sets
-`BOARD_ESP32_DEVKIT` for you, no `config.h` edit required.
+`BOARD_ESP32_DEVKIT` for you, no `config.h` edit required. On a LilyGo T-2Can,
+use `-e translator-t2can` (the plain `sniffer` env already targets it for
+phase-1 sniffing — see `PARTS.md`).
 
 Arduino IDE: install **coryjfowler/MCP_CAN_lib**, copy `src/*.cpp` and `src/*.h`
 into a sketch folder, rename `main.cpp` to match the folder.
