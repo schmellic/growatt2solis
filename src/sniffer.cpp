@@ -1,0 +1,294 @@
+// =============================================================================
+//  sniffer.cpp  -  LISTEN-ONLY CAN sniffer for the Growatt battery bus
+//  -------------------------------------------------------------------------
+//  Purpose: tap the LIVE link between the GBLI 6532 and a Growatt SPH6000 and
+//  record exactly what both ends say, WITHOUT disturbing the working system.
+//
+//  The TWAI controller runs in TWAI_MODE_LISTEN_ONLY: it never sends an ACK
+//  bit, never sends an error frame, and never transmits. Electrically the node
+//  is a passive stub. This is the only safe way to instrument a bus that is
+//  currently keeping a real battery and inverter talking.
+//
+//  Build:  pio run -e sniffer -t upload && pio device monitor
+//
+//  Serial commands (type the letter + Enter):
+//    r  toggle raw frame logging
+//    s  print the statistics table now
+//    c  clear all statistics
+//    d  toggle Growatt decode lines
+// =============================================================================
+
+#include <Arduino.h>
+#include "driver/twai.h"
+#include "config.h"
+#include "translate.h"
+
+#define MAX_IDS         40
+#define STATS_INTERVAL  15000
+
+struct IdStat {
+    uint32_t id;
+    uint32_t count;
+    uint32_t firstMs;
+    uint32_t lastMs;
+    uint32_t minGap;
+    uint32_t maxGap;
+    uint8_t  dlc;
+    uint8_t  last[8];
+    uint8_t  changed;      // bitmask: which byte positions have ever changed
+    bool     used;
+};
+
+static IdStat stats[MAX_IDS];
+static uint32_t totalFrames = 0;
+static bool logRaw    = true;
+static bool logDecode = true;
+
+static BatteryState batt;
+
+// -----------------------------------------------------------------------------
+static IdStat *findOrAdd(uint32_t id) {
+    for (int i = 0; i < MAX_IDS; i++)
+        if (stats[i].used && stats[i].id == id) return &stats[i];
+    for (int i = 0; i < MAX_IDS; i++)
+        if (!stats[i].used) {
+            stats[i].used = true;
+            stats[i].id = id;
+            stats[i].minGap = 0xFFFFFFFF;
+            return &stats[i];
+        }
+    return nullptr;
+}
+
+static void record(uint32_t id, uint8_t dlc, const uint8_t *d, uint32_t now) {
+    IdStat *s = findOrAdd(id);
+    if (!s) return;
+    if (s->count == 0) {
+        s->firstMs = now;
+    } else {
+        uint32_t gap = now - s->lastMs;
+        if (gap < s->minGap) s->minGap = gap;
+        if (gap > s->maxGap) s->maxGap = gap;
+        for (uint8_t i = 0; i < dlc && i < 8; i++)
+            if (s->last[i] != d[i]) s->changed |= (uint8_t)(1u << i);
+    }
+    s->lastMs = now;
+    s->dlc = dlc;
+    memcpy(s->last, d, dlc > 8 ? 8 : dlc);
+    s->count++;
+    totalFrames++;
+}
+
+// -----------------------------------------------------------------------------
+static void printRaw(uint32_t now, uint32_t id, uint8_t dlc, const uint8_t *d) {
+    char line[110];
+    int n = snprintf(line, sizeof(line), "%8lu.%03lu  0x%03X  [%u]  ",
+                     (unsigned long)(now / 1000), (unsigned long)(now % 1000),
+                     (unsigned)id, (unsigned)dlc);
+    for (uint8_t i = 0; i < dlc && n < (int)sizeof(line) - 4; i++)
+        n += snprintf(line + n, sizeof(line) - n, "%02X ", d[i]);
+    Serial.println(line);
+}
+
+// Human-readable decode of the frames we actually care about.
+static void printDecode(uint32_t id, uint8_t dlc, const uint8_t *d) {
+    char l[160];
+    switch (id) {
+    case 0x311:
+        if (dlc < 8) return;
+        snprintf(l, sizeof(l),
+            "        0x311  CVL=%.1fV  CCL=%.1fA  DCL=%.1fA  status=0x%04X "
+            "(chg_en=%d dis_en=%d mode=%u)",
+            be16u(&d[0]) / 10.0f, be16u(&d[2]) / 10.0f, be16u(&d[4]) / 10.0f,
+            be16u(&d[6]),
+            (d[7] & 0x40) ? 1 : 0, (d[7] & 0x20) ? 1 : 0, (unsigned)(d[7] & 0x03));
+        Serial.println(l);
+        break;
+
+    case 0x312: {
+        if (dlc < 8) return;
+        snprintf(l, sizeof(l),
+            "        0x312  prot=%02X %02X  warn=%02X %02X  packs=%u  mfr=%c%c  cells=%u",
+            d[0], d[1], d[2], d[3], (unsigned)d[4],
+            isprint(d[5]) ? d[5] : '?', isprint(d[6]) ? d[6] : '?', (unsigned)d[7]);
+        Serial.println(l);
+        break;
+    }
+
+    case 0x313: {
+        if (dlc < 8) return;
+        int16_t raw = be16s(&d[0]);
+        snprintf(l, sizeof(l),
+            "        0x313  Vraw=%d  -> %.2fV if 0.01V  /  %.1fV if 0.1V  |  "
+            "I=%+.1fA  T=%.1fC  SOC=%u%%  SOH=%u",
+            raw, raw / 100.0f, raw / 10.0f,
+            be16s(&d[2]) / 10.0f, be16s(&d[4]) / 10.0f,
+            (unsigned)d[6], (unsigned)(d[7] & 0x7F));
+        Serial.println(l);
+        break;
+    }
+
+    case 0x314:
+        if (dlc < 8) return;
+        snprintf(l, sizeof(l),
+            "        0x314  RM=%.2fAh  FCC=%.2fAh  dV=%umV  cycles=%u",
+            be16u(&d[0]) / 100.0f, be16u(&d[2]) / 100.0f,
+            (unsigned)be16u(&d[4]), (unsigned)be16u(&d[6]));
+        Serial.println(l);
+        break;
+
+    case 0x319:
+        if (dlc < 1) return;
+        snprintf(l, sizeof(l),
+            "        0x319  chem=%u  forceI=%d forceII=%d  dis_en=%d chg_en=%d  (byte0=0x%02X)",
+            (unsigned)(d[0] & 0x03),
+            (d[0] & 0x08) ? 1 : 0, (d[0] & 0x04) ? 1 : 0,
+            (d[0] & 0x20) ? 1 : 0, (d[0] & 0x40) ? 1 : 0, d[0]);
+        Serial.println(l);
+        break;
+
+    case 0x320:
+        if (dlc < 4) return;
+        snprintf(l, sizeof(l), "        0x320  mfr=%c%c  hw=%u  sw=%u",
+            isprint(d[0]) ? d[0] : '?', isprint(d[1]) ? d[1] : '?',
+            (unsigned)d[2], (unsigned)d[3]);
+        Serial.println(l);
+        break;
+
+    case 0x301:
+        Serial.println(F("        0x301  <-- KEEPALIVE FROM THE GROWATT INVERTER."));
+        Serial.println(F("               This payload is undocumented. Write it down."));
+        break;
+
+    default: break;
+    }
+}
+
+// -----------------------------------------------------------------------------
+static void printStats() {
+    Serial.println();
+    Serial.println(F("======================================================================"));
+    Serial.printf ("  %lu frames, %lu s elapsed\n",
+                   (unsigned long)totalFrames, (unsigned long)(millis() / 1000));
+    Serial.println(F("  ID     count   period(ms)  DLC  last payload             changing"));
+    Serial.println(F("  ----------------------------------------------------------------------"));
+
+    for (int i = 0; i < MAX_IDS; i++) {
+        if (!stats[i].used) continue;
+        IdStat &s = stats[i];
+        uint32_t mean = (s.count > 1) ? (s.lastMs - s.firstMs) / (s.count - 1) : 0;
+
+        char payload[26] = {0};
+        int n = 0;
+        for (uint8_t b = 0; b < s.dlc && b < 8; b++)
+            n += snprintf(payload + n, sizeof(payload) - n, "%02X ", s.last[b]);
+
+        char chg[10] = {0};
+        for (uint8_t b = 0; b < s.dlc && b < 8; b++)
+            chg[b] = (s.changed & (1u << b)) ? '*' : '.';
+
+        Serial.printf("  0x%03X  %6lu  %5lu (%lu-%lu)  %u   %-24s %s\n",
+                      (unsigned)s.id, (unsigned long)s.count, (unsigned long)mean,
+                      (unsigned long)(s.minGap == 0xFFFFFFFF ? 0 : s.minGap),
+                      (unsigned long)s.maxGap,
+                      (unsigned)s.dlc, payload, chg);
+    }
+
+    // What did we learn about the voltage scaling?
+    if (batt.have_313) {
+        Serial.println(F("  ----------------------------------------------------------------------"));
+        Serial.printf("  Auto-scaled pack voltage: %.2f V  (SOC %u%%)\n",
+                      batt.pack_v_cV / 100.0f, (unsigned)batt.soc_pct);
+        Serial.println(F("  Cross-check this against the Growatt app before trusting it."));
+    }
+
+    bool sawKeepalive = false;
+    for (int i = 0; i < MAX_IDS; i++)
+        if (stats[i].used && stats[i].id == 0x301) sawKeepalive = true;
+    if (!sawKeepalive)
+        Serial.println(F("  NOTE: no 0x301 seen - are you tapping the inverter side too?"));
+
+    Serial.println(F("======================================================================"));
+    Serial.println();
+}
+
+// -----------------------------------------------------------------------------
+static void handleSerial() {
+    while (Serial.available()) {
+        int c = Serial.read();
+        switch (c) {
+        case 'r': logRaw = !logRaw;
+                  Serial.printf("\n[raw logging %s]\n", logRaw ? "ON" : "OFF"); break;
+        case 'd': logDecode = !logDecode;
+                  Serial.printf("\n[decode %s]\n", logDecode ? "ON" : "OFF"); break;
+        case 's': printStats(); break;
+        case 'c': memset(stats, 0, sizeof(stats)); totalFrames = 0;
+                  Serial.println(F("\n[stats cleared]")); break;
+        default: break;
+        }
+    }
+}
+
+// =============================================================================
+void setup() {
+    Serial.begin(115200);
+    delay(400);
+    Serial.println();
+    Serial.println(F("=== Growatt battery-bus sniffer  (LISTEN-ONLY) ==="));
+    Serial.println(F("Safe to tap a live battery <-> Growatt inverter link:"));
+    Serial.println(F("this node never ACKs, never transmits, never sends error frames."));
+    Serial.println(F("Commands: r=raw  d=decode  s=stats  c=clear"));
+    Serial.println();
+
+    twai_general_config_t g =
+        TWAI_GENERAL_CONFIG_DEFAULT(TWAI_TX_PIN, TWAI_RX_PIN, TWAI_MODE_LISTEN_ONLY);
+    g.rx_queue_len = 64;
+    twai_timing_config_t t = TWAI_TIMING_CONFIG_500KBITS();
+    twai_filter_config_t f = TWAI_FILTER_CONFIG_ACCEPT_ALL();
+
+    if (twai_driver_install(&g, &t, &f) != ESP_OK || twai_start() != ESP_OK) {
+        Serial.println(F("FATAL: TWAI init failed."));
+        for (;;) delay(1000);
+    }
+    Serial.println(F("Listening at 500 kbit/s. Waiting for frames..."));
+    Serial.println(F("(silence for >30 s => check CAN_H/CAN_L, the WAKE pins, or the tap)"));
+    Serial.println();
+}
+
+void loop() {
+    static uint32_t lastStats = 0;
+    static uint32_t lastFrameMs = 0;
+    static bool warned = false;
+
+    handleSerial();
+
+    twai_message_t msg;
+    while (twai_receive(&msg, pdMS_TO_TICKS(10)) == ESP_OK) {
+        uint32_t now = millis();
+        lastFrameMs = now;
+        warned = false;
+
+        record(msg.identifier, msg.data_length_code, msg.data, now);
+        if (logRaw)    printRaw(now, msg.identifier, msg.data_length_code, msg.data);
+        if (logDecode) printDecode(msg.identifier, msg.data_length_code, msg.data);
+
+        decodeGrowatt(batt, msg.identifier, msg.data_length_code, msg.data, now);
+    }
+
+    uint32_t now = millis();
+    if (!warned && totalFrames == 0 && now > 30000) {
+        warned = true;
+        Serial.println(F("\n!! 30 s with no frames. Check: CAN_H on pin 4 / CAN_L on pin 5"));
+        Serial.println(F("   of the battery PCS port, the WAKE pair (pins 7/8), and that"));
+        Serial.println(F("   you have NOT added a 120 ohm resistor on this stub.\n"));
+    }
+    if (totalFrames > 0 && lastFrameMs && (now - lastFrameMs) > 10000) {
+        Serial.println(F("[bus has gone quiet]"));
+        lastFrameMs = 0;
+    }
+
+    if (now - lastStats >= STATS_INTERVAL) {
+        lastStats = now;
+        printStats();
+    }
+}

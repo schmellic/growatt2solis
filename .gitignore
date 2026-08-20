@@ -1,0 +1,26 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+.clang_complete
+.gcc-flags.json
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Host test build artefacts
+test/test_translate
+test/*.o
+*.dSYM/
+
+# Captures from the sniffer - keep these OUT of git by default; if you want to
+# commit a capture, add it explicitly with `git add -f captures/whatever.log`
+*.log
+captures/
+
+# OS
+.DS_Store
+Thumbs.db
