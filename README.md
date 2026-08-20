@@ -5,6 +5,17 @@ S6-EH1P8K-L-PLUS hybrid inverter, decoding Growatt's low-voltage BMS CAN
 protocol and re-emitting it as the Pylontech LV CAN protocol the Solis
 understands.
 
+> **Status: not yet validated against real hardware.** Four things are inferred
+> rather than confirmed — whether the GBLI 6532 emits the `0x311`-series protocol
+> at all, the `0x313` voltage scaling, the real `0x301` keepalive payload, and
+> what the PCS WAKE pins do. They're listed in [`CLAUDE.md`](CLAUDE.md) and
+> [`SNIFFING.md`](SNIFFING.md) is the procedure for answering them. If you have a
+> GBLI 6532 on a Growatt inverter, a capture in [`captures/`](captures/) would be
+> the first published one anywhere I could find.
+>
+> **No licence yet** — all rights reserved for now. Ask before reusing; I'll
+> settle on something permissive once it's proven working.
+
 > **Safety.** This sits in the control path of a 48 V, ~100 A battery. A bug here
 > can mean the inverter charges past the BMS's limits. The battery's own
 > protection MOSFETs remain the last line of defence, but do not treat them as

@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # The one that actually matters. translate.h is pure logic with no hardware
+  # dependencies, so the protocol translation is fully testable on the host.
+  # A regression here means the gateway asks the inverter for the wrong current.
+  tests:
+    name: Protocol translation tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build tests
+        working-directory: test
+        run: g++ -std=c++17 -Wall -Wextra -Werror -I../src -o test_translate test_translate.cpp
+
+      - name: Run tests
+        working-directory: test
+        run: ./test_translate
+
+  # Catches syntax errors and API drift in the hardware-facing code, which the
+  # host tests can't reach.
+  firmware:
+    name: Firmware compiles (${{ matrix.env }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        env: [translator, sniffer]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cache PlatformIO
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio/.cache
+            ~/.platformio/packages
+            ~/.platformio/platforms
+          key: pio-${{ runner.os }}-${{ hashFiles('platformio.ini') }}
+          restore-keys: pio-${{ runner.os }}-
+
+      - name: Install PlatformIO
+        run: pip install --upgrade platformio
+
+      - name: Build
+        run: pio run -e ${{ matrix.env }}

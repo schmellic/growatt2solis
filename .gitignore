@@ -16,10 +16,10 @@ test/test_translate
 test/*.o
 *.dSYM/
 
-# Captures from the sniffer - keep these OUT of git by default; if you want to
-# commit a capture, add it explicitly with `git add -f captures/whatever.log`
+# Stray logs anywhere in the tree...
 *.log
-captures/
+# ...except deliberate sniffer captures, which are the point of the repo.
+!captures/*.log
 
 # OS
 .DS_Store
