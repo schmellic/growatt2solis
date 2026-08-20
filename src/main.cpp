@@ -92,6 +92,18 @@ static void sendGrowattKeepalive() {
 //  Inverter bus  (MCP2515)
 // =============================================================================
 static bool mcpInit() {
+#ifdef MCP_RST_PIN
+    // Some boards (e.g. LilyGo T-2Can) break out MCP2515 RST as a GPIO
+    // instead of tying it on-board; it needs an active-low pulse to bring
+    // the chip out of reset before SPI will get a response.
+    pinMode(MCP_RST_PIN, OUTPUT);
+    digitalWrite(MCP_RST_PIN, HIGH);
+    delay(100);
+    digitalWrite(MCP_RST_PIN, LOW);
+    delay(100);
+    digitalWrite(MCP_RST_PIN, HIGH);
+    delay(100);
+#endif
     SPI.begin(MCP_SCK_PIN, MCP_MISO_PIN, MCP_MOSI_PIN, MCP_CS_PIN);
     if (MCP.begin(MCP_ANY, CAN_500KBPS, MCP_CRYSTAL) != CAN_OK) return false;
     MCP.setMode(MCP_NORMAL);

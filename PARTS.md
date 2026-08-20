@@ -133,13 +133,28 @@ extra £25 on the CAN-X2 and skip all of that.
 
 | Option | ~£ | Notes |
 |---|---|---|
-| [LilyGo T-2CAN](https://www.cnx-software.com/2025/10/20/lilygo-t-2can-upgrades-ttgo-t-can485-with-esp32-s3-dual-isolated-can-bus/) | ~£27 | ESP32-S3, **two isolated** CAN channels, both MCP2515 over SPI. Cheaper *and* isolated — but both channels are MCP2515, so the battery side needs porting off TWAI. Straightforward (the library is already a dependency), just not zero-effort. |
+| [LilyGo T-2Can](https://github.com/Xinyuan-LilyGO/T-2Can) (non-FD, `T-2Can_V1.0`) | ~£27 | ESP32-S3. **Supported** — `BOARD_LILYGO_T2CAN` / `translator-t2can` env. Corrects an earlier note here: per LilyGo's own pin config and example firmware, it's actually **one TWAI channel + one MCP2515** (same architecture as the CAN-X2, different pins), not two MCP2515s — so no TWAI porting was needed, just pin numbers and a reset-pin pulse the CAN-X2 doesn't need. Its TWAI pins happen to match the CAN-X2's, so the existing `sniffer` env works for phase-1 sniffing on it too. Untested against real hardware here — see caveats below. |
 | Stark CMR / BECom | £70+ | DIN-rail, isolated, purpose-built for battery↔inverter gateways. Overkill unless you're going the Battery-Emulator route. |
 
 Galvanic isolation is worth having when one bus reaches a 48 V battery and the
 other reaches a grid-tied inverter. It isn't strictly necessary, and plenty of
 people run unisolated gateways for years — but it's the difference between a
 ground fault costing you an ESP32 and costing you an inverter.
+
+**T-2Can caveats, not yet confirmed against a real board:**
+- **Isolation.** LilyGo markets "signal isolation design (SGND/DGND)" and third-party
+  coverage calls it "dual isolated," but neither states the mechanism (optocouplers /
+  isolated DC-DC per channel vs just split ground planes). Check the schematic
+  (`T-2Can_V1.0.pdf` in their repo) before relying on it for true galvanic isolation.
+- **Which physical port is which.** The board has two connectors; firmware-side,
+  "CAN B" (GPIO 6/7, TWAI) is wired here to the **battery**, "CAN A" (MCP2515) to
+  the **inverter** — matching this project's existing convention. Confirm against
+  the board's silkscreen/schematic which physical connector is which before wiring.
+- **MCP2515 oscillator.** Set to `MCP_8MHZ` in `config.h` on the strength of LilyGo's
+  own example not overriding a library default — not confirmed against the
+  schematic. If the MCP2515 never comes up, try `MCP_16MHZ`.
+- Also note: it's the **non-FD** `T-2Can_V1.0` this project targets. The `T-2Can-Fd`
+  variant uses an MCP2518 and a different library — not supported here.
 
 ---
 
