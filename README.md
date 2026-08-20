@@ -69,7 +69,7 @@ Short version:
 | Board | `BOARD` in `config.h` | Notes |
 |---|---|---|
 | **Autosport Labs ESP32-CAN-X2** (~£45) | `BOARD_ESP32_CAN_X2` *(default)* | ESP32-S3. CAN1 = built-in TWAI, CAN2 = MCP2515 @ 16 MHz — exactly this firmware's architecture, nothing to port. Breakable 120 Ω jumpers. Not isolated. |
-| **ESP32 DevKit + SN65HVD230 + MCP2515** (~£20) | `BOARD_ESP32_DEVKIT` | Budget. **The common blue MCP2515 module is 5 V and the ESP32 is not 5 V tolerant** — see `PARTS.md` before wiring it. |
+| **ESP32 DevKit + SN65HVD230 + MCP2515** (~£20) | `BOARD_ESP32_DEVKIT` — use the `translator-devkit`/`sniffer-devkit` PlatformIO envs, no `config.h` edit needed | Budget. **The common blue MCP2515 module is 5 V and the ESP32 is not 5 V tolerant** — see `PARTS.md` before wiring it. |
 | LilyGo T-2CAN (~£27) | — | Two *isolated* channels, both MCP2515. Cheaper and isolated, but the battery side needs porting off TWAI. |
 
 Pin assignments for both supported boards live in the `BOARD` block at the top of
@@ -144,9 +144,13 @@ End-to-end you should measure ~60 Ω. Same on the battery side.
 PlatformIO:
 
 ```bash
-pio run -t upload
+pio run -t upload           # ESP32-CAN-X2 (default)
 pio device monitor
 ```
+
+On the budget ESP32 DevKit board, use `-e translator-devkit` (or
+`-e sniffer-devkit`) instead — it targets the classic ESP32 and sets
+`BOARD_ESP32_DEVKIT` for you, no `config.h` edit required.
 
 Arduino IDE: install **coryjfowler/MCP_CAN_lib**, copy `src/*.cpp` and `src/*.h`
 into a sketch folder, rename `main.cpp` to match the folder.
@@ -174,7 +178,7 @@ Full procedure in **[`SNIFFING.md`](SNIFFING.md)**. It uses a separate
 listen-only firmware build that cannot disturb the working system:
 
 ```bash
-pio run -e sniffer -t upload && pio device monitor
+pio run -e sniffer-devkit -t upload && pio device monitor
 ```
 
 If the Growatt is already gone, the same build works against the battery alone —

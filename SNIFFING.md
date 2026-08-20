@@ -74,9 +74,12 @@ read ~40 Ω, you've left a terminator on your module.
 ## Running it
 
 ```bash
-pio run -e sniffer -t upload
+pio run -e sniffer-devkit -t upload   # plain ESP32 DevKit + SN65HVD230 (phase 1 hardware)
 pio device monitor
 ```
+
+(`sniffer` without `-devkit` targets the ESP32-S3 CAN-X2 board instead — use
+`-devkit` for the phase 1 sniffer parts in `PARTS.md`.)
 
 Commands (type the letter, then Enter):
 

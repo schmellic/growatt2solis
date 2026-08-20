@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        env: [translator, sniffer]
+        env: [translator, sniffer, translator-devkit, sniffer-devkit]
     steps:
       - uses: actions/checkout@v4
 

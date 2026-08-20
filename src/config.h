@@ -18,7 +18,11 @@
 #define BOARD_ESP32_CAN_X2   1
 #define BOARD_ESP32_DEVKIT   2
 
+// Overridable from platformio.ini via `-D BOARD=...` (see the `*-devkit`
+// envs) so switching boards doesn't require editing this file.
+#ifndef BOARD
 #define BOARD                BOARD_ESP32_CAN_X2
+#endif
 
 // -----------------------------------------------------------------------------
 // 1. MODE
