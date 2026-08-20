@@ -100,7 +100,9 @@ Measure both with the DC breaker open before you power anything.
 
 ### Budget alternative: ESP32 DevKit + SN65HVD230 + MCP2515 — ~£20
 
-Reuses your phase 1 parts. Set `BOARD = BOARD_ESP32_DEVKIT` in `config.h`.
+Reuses your phase 1 parts. Build with the `-devkit` PlatformIO envs
+(`pio run -e translator-devkit -t upload`) — no need to edit `config.h`, they
+pass `BOARD = BOARD_ESP32_DEVKIT` at compile time.
 
 | Part | Qty | ~£ |
 |---|---|---|
