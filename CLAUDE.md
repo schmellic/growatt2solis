@@ -41,8 +41,8 @@ README.md         wiring, commissioning, protocol reference
 ## Build and test
 
 ```bash
-pio run -e sniffer    -t upload     # listen-only sniffer
-pio run -e translator -t upload     # the gateway itself
+pio run -e sniffer    -t upload     # listen-only sniffer (ESP32-CAN-X2)
+pio run -e translator -t upload     # the gateway itself (ESP32-CAN-X2, default)
 pio device monitor
 
 cd test && g++ -std=c++17 -I../src -o test_translate test_translate.cpp && ./test_translate
@@ -53,8 +53,14 @@ encoding, the endianness flip, flag remapping, clamping and the stale-link
 derate path, and they already caught one real bug (0x311 status bits are in the
 low byte of the big-endian pair, i.e. byte 7, not byte 6).
 
-Hardware target defaults to `BOARD_ESP32_CAN_X2` in `config.h`. `BOARD_ESP32_DEVKIT`
-is the other supported option.
+Three `BOARD` options in `config.h`: `BOARD_ESP32_CAN_X2` (default, Autosport
+Labs ESP32-CAN-X2), `BOARD_ESP32_DEVKIT` (budget, plain ESP32 + SN65HVD230 +
+MCP2515), `BOARD_LILYGO_T2CAN` (LilyGo T-2Can, non-FD). The latter two have
+their own PlatformIO envs (`translator-devkit`/`sniffer-devkit`,
+`translator-t2can`) that pass `-D BOARD=...` at compile time — no `config.h`
+edit needed, just pick the matching `-e`. T-2Can's TWAI pins match the CAN-X2's,
+so plain `sniffer` covers it too; DevKit needs `sniffer-devkit`. CI builds all
+of these on every push.
 
 ## Frame mapping
 
