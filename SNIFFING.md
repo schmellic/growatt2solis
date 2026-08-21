@@ -173,6 +173,38 @@ it.
 
 ---
 
+## Bonus: capture a cold boot
+
+A steady-state capture can't answer two of the open questions: the `0x301`/
+`0x311` handshake sequence (open question 3 in `CLAUDE.md`), and whether
+WAKE+ toggles at a particular point in that sequence (open question 4). Only
+a capture that starts *before* power-on can show that.
+
+- **Start logging before power-on, not after.** Flash and start
+  `pio device monitor | tee ...` while the GBLI/inverter link is still cold,
+  so `t=0` in the log is genuinely before anything happens. Seeing the
+  sniffer's own "30 s with no frames" warning while you get things powered
+  up is expected, not a fault.
+- **The valuable part is the first ~30 seconds**, not a long run. That's
+  where you'd see whether WAKE+ appears before or after the first `0x301`,
+  whether `0x311`'s status word/enable bits start at 0 and flip after some
+  exchange or come up already set, and whether `0x301`'s payload differs in
+  its first few frames versus later (a boot-only counter or command). A
+  longer tail afterwards is free insurance for periodicity and catching
+  anything infrequent (e.g. `0x320`'s mfr/hw/sw info might only ever send
+  once) — worth leaving running for several minutes, but that part isn't
+  where the interesting data is.
+- **Name this capture distinctly** from a steady-state one, e.g.
+  `2026-08-21-gbli6532-sph6000-coldboot.log` — see the naming convention in
+  `captures/README.md`.
+- **One caution, not a blocker:** if the SPH6000 currently powers anything in
+  the house, a deliberate restart briefly interrupts that (whether it fails
+  over to grid bypass depends on the setup) — plan around it rather than
+  trigger it by surprise.
+- If you can, note the wall-clock time of the actual power-on moment
+  alongside the log — makes it much easier to find "frame 1 of the real
+  sequence" versus noise later.
+
 ## Bonus: measure the WAKE pins
 
 While you have a working link in front of you, put a meter on PCS pins 7 and 8
