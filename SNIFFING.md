@@ -128,7 +128,19 @@ will obviously be right. Then set `GROWATT_0x313_VOLT_SCALE` in `config.h` to
 SPH6000 sends something other than `11 22 33 44 55 66 77 88`, copy the actual
 bytes into `sendGrowattKeepalive()` in `src/main.cpp`. Watch it for a minute —
 if any byte changes over time (a counter? a checksum? a command?), that matters,
-and it's worth capturing a longer log.
+and it's worth capturing a longer log. A forum user trying the same GBLI6532
+pairing with a non-Growatt inverter found that replaying a single static
+`0x301` payload (`0B 16 21 2C 37 42 4D 58`, ~10 Hz) was **not** enough on its
+own to get the BMS to report charge/discharge-enable — so don't stop at one
+captured frame; capture several continuous seconds and watch for it changing.
+
+**2b. Which byte of `0x311` actually carries charge/discharge-enable.** This
+project's `translate.h` currently reads them from byte 7 (the low byte of the
+big-endian pair) — found via this project's own host tests, correcting an
+earlier assumption of byte 6. That same forum thread independently claims
+byte 6 (bits 4/5/6 = wake/discharge/charge). Check both bytes in your capture
+against what the pack is actually doing (charging vs idle vs discharging) to
+settle this for real, rather than trusting either secondhand source.
 
 **3. Anything unexpected.** Frames at IDs this firmware doesn't handle, unusual
 periods, or `0x312` reporting a pack count other than 1. Save the whole serial
@@ -169,3 +181,15 @@ While you have a working link in front of you, put a meter on PCS pins 7 and 8
 Whatever the SPH6000 is doing there, your gateway will probably need to do the
 same, and this is the only easy chance to find out. Note whether it's a voltage,
 a short, or open circuit.
+
+This one matters more than it might look. A forum user pairing a GBLI6532
+with a non-Growatt inverter reports that driving WAKE+ (pin 8) to +5 V
+relative to WAKE− (pin 7/GND), through a series resistor, is enough to wake a
+real pack and close its relays — their own experimental value (100 Ω), not a
+confirmed spec figure. If that's right, **this project's gateway will need to
+actively supply that voltage once the GBLI is no longer connected to a real
+Growatt inverter** — nothing in `config.h`/`main.cpp` does that today. Get an
+exact reading (voltage, and whether it's constant or pulsed) on the real
+SPH6000 link if you can; it would settle both this project's Phase 2 hardware
+list and directly answer the open question on that forum thread (still
+unanswered as of 2026-08-21) — worth posting back if you get a clean reading.

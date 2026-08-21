@@ -83,16 +83,40 @@ as settled:
 
 1. **Does the GBLI 6532 actually emit the `0x311`-series protocol?** Inferred
    from Growatt's LV BMS spec plus a capture of the sibling ARK pack. No
-   published GBLI-specific capture was found.
+   published GBLI-specific capture was found — but a forum user pairing a
+   GBLI6532 with a non-Growatt (GoodWe) inverter independently reports seeing
+   `0x311`–`0x318` on a real pack, which corroborates this without yet being
+   our own capture. See "GBLI wake/handshake" in Protocol references.
 2. **`0x313` bytes 0–1 scaling: 0.01 V or 0.1 V?** Growatt's spec says 0.01 V;
    `growattArkCAN` observed 0.1 V. Currently auto-detected by magnitude
    (`VS_AUTO`), which is unambiguous for a 48 V pack. Pin it once known.
 3. **The real `0x301` payload** from a genuine Growatt inverter. Undocumented.
-   Currently sends the example bytes from the spec.
-4. **The WAKE pins** (PCS 7/8). Electrically undocumented. The GBLI may not wake
-   and transmit without whatever the Growatt inverter does here.
+   Currently sends the example bytes from the spec. That same forum thread
+   reports one example log payload (`0B 16 21 2C 37 42 4D 58`, ~10 Hz) but
+   found that replaying it statically was not sufficient on its own to make
+   the GBLI report charge/discharge-enable — implying `0x301` may need to
+   change over time (counter/checksum/sequence) or arrive alongside other
+   frames. Worth capturing several seconds continuously, not just one frame.
+4. **The WAKE pins** (PCS 7/8). Per that same thread: WAKE+ (pin 8) at +5 V
+   relative to WAKE− (pin 7/GND), via a series resistor, is enough to wake a
+   real GBLI6532 and close its relays — an independently-sourced data point,
+   not yet our own measurement, and the poster's own resistor value (100 Ω)
+   was their own choice, not a confirmed spec. This raises a real gap: **once
+   the GBLI is on this project's gateway instead of a real Growatt inverter,
+   nothing currently supplies that WAKE+ voltage.** Neither `config.h` nor
+   `main.cpp` drives it. Confirm with a real measurement on the live SPH6000
+   link before assuming the above value is correct, then this likely becomes
+   a new Phase 2 hardware requirement (a driven WAKE+ line), not just a
+   sniffing curiosity.
+5. **Which byte in `0x311` actually carries the charge/discharge-enable
+   bits.** This project's own host tests already caught this once — the
+   comment at `translate.h:100` says the bits are in the **low byte of the
+   big-endian pair (byte 7)**, contradicting an earlier assumption of byte 6.
+   That same forum thread describes byte 6 (bits 4/5/6 = wake/discharge/
+   charge) — the opposite of what this project settled on. Check both bytes
+   against a real capture rather than trusting either secondhand claim.
 
-`SNIFFING.md` is the procedure for answering all four from the existing
+`SNIFFING.md` is the procedure for answering all of these from the existing
 GBLI ↔ SPH6000 link.
 
 ## Safety posture
@@ -135,3 +159,8 @@ bits from the BMS's protection flags instead.
 - Solis S6-EH1P8K-L-PLUS manual — https://139708663.fs1.hubspotusercontent-eu1.net/hubfs/139708663/Fiches%20techniques/Solis/Solis_Manual_S6-EH1P8K-L-PLUS_EUR_V1,2(20251030).pdf
 - martc55/Jbd2Solis — Pylon emulator verified against a Solis LV hybrid
 - edibg/growattArkCAN — independent capture of Growatt `0x311`/`0x313`
+- [DIY Solar Forum: GBLI6532 wake/handshake with non-Growatt inverter](https://diysolarforum.com/threads/gbli6532-wake-handshake-with-non%E2%80%91growatt-inverter-can-0x301-0x311-behaviour.115292/) —
+  someone hitting this exact problem (GBLI6532 → GoodWe). Unanswered as of
+  2026-08-21. Their own WAKE-pin/byte6 findings are folded into "Open
+  questions" above with appropriate caveats — they're independently useful
+  but not a substitute for our own capture.

@@ -69,6 +69,15 @@ on working while you watch.
 
 Now you need **two** independent CAN channels.
 
+**Possible new requirement, not yet confirmed:** a forum user pairing a
+GBLI6532 with a non-Growatt inverter reports needing to actively drive the
+PCS WAKE+ pin (pin 8, +5 V relative to WAKE−/pin 7) to wake the pack and
+close its relays at all — see `SNIFFING.md`'s WAKE-pin section and the link
+in `CLAUDE.md`'s Protocol references. If tomorrow's sniffing session confirms
+this on the real SPH6000 link, Phase 2 will likely need a small addition (a
+5 V source and a resistor to that pin) beyond what's listed below. Nothing
+added to the list yet since the exact figures aren't confirmed.
+
 ### Recommended: Autosport Labs ESP32-CAN-X2 — ~$55 / ~£45
 
 | Part | Qty | Notes |
