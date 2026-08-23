@@ -118,7 +118,7 @@ the fact that this was inferred/secondhand before) doesn't get lost.
    PCS-WAKE+/WAKE−, pins 7/8) - so WAKE is a real designed feature, not just
    a forum workaround. But two clean, deliberately-isolated captures
    (2026-08-23, `captures/2026-08-23-gbli6532-sph6000-battery-only.log` and
-   `captures/2026-08-23-gbli6532-wake-test.log`) showed the actual sequence
+   `captures/2026-08-23-gbli6532-sph6000-wake-test.log`) showed the actual sequence
    that matters for this project: with the battery powered via the POWER
    button and a real Growatt inverter already sending `0x301` (exactly what
    this project's `sendGrowattKeepalive()` already does, unmodified), the

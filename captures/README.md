@@ -44,6 +44,9 @@ a log with no reference readings can't resolve a scaling question.
 | Capture | Pack V (app/meter) | SOC (app) | Current (app) | Notes |
 |---|---|---|---|---|
 | _example_ | 52.5 V | 62 % | +20 A charging | |
+| `2026-08-23-gbli6532-sph6000-coldboot.log` | not cross-checked | not cross-checked | not cross-checked | Real cold boot into a full idle → discharge (to −9.8 A) → charge (to +7.9 A) cycle, via manually toggling solar off/on. Resolved most of `CLAUDE.md`'s open questions 1, 2, 3, 5, 6. CAN-reported: 53.20–53.40 V, SOC 99%. |
+| `2026-08-23-gbli6532-sph6000-battery-only.log` | not cross-checked | not cross-checked | not cross-checked | Battery powered (via its POWER button) with the inverter left off. Shows the battery transmits `0x311` etc. on its own but stays in a disabled `mode=0` state (`CCL=DCL=0.0A`) with no inverter present. CAN-reported: ~53.1 V, SOC 99-100%. |
+| `2026-08-23-gbli6532-sph6000-wake-test.log` | not cross-checked | not cross-checked | not cross-checked | Inverter powered first (alone for a while, `0x301` only), then battery POWER button pressed with the exact moment noted live. Shows `mode=0 → mode=1` (fully enabled) within 2-4 seconds of the battery's first frame. Resolved `CLAUDE.md` open question 4 (WAKE not needed). |
 
 ## Open questions these should answer
 
