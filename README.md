@@ -5,13 +5,16 @@ S6-EH1P8K-L-PLUS hybrid inverter, decoding Growatt's low-voltage BMS CAN
 protocol and re-emitting it as the Pylontech LV CAN protocol the Solis
 understands.
 
-> **Status: not yet validated against real hardware.** Four things are inferred
-> rather than confirmed — whether the GBLI 6532 emits the `0x311`-series protocol
-> at all, the `0x313` voltage scaling, the real `0x301` keepalive payload, and
-> what the PCS WAKE pins do. They're listed in [`CLAUDE.md`](CLAUDE.md) and
-> [`SNIFFING.md`](SNIFFING.md) is the procedure for answering them. If you have a
-> GBLI 6532 on a Growatt inverter, a capture in [`captures/`](captures/) would be
-> the first published one anywhere I could find.
+> **Status: protocol assumptions confirmed against real captures; the
+> translator itself not yet run live.** The four things that used to be
+> inferred rather than confirmed — whether the GBLI 6532 emits the
+> `0x311`-series protocol at all, the `0x313` voltage scaling, the real
+> `0x301` keepalive payload, and what the PCS WAKE pins do — are now settled
+> from real captures against a genuine GBLI6532 + Growatt SPH6000 pairing,
+> see [`captures/`](captures/) and the "Open questions" section of
+> [`CLAUDE.md`](CLAUDE.md) for the evidence. What's still unproven: the
+> gateway's active (non-`SNIFF_ONLY`) translator mode has not yet been run
+> against real hardware — only passive sniffing so far.
 >
 > **No licence yet** — all rights reserved for now. Ask before reusing; I'll
 > settle on something permissive once it's proven working.

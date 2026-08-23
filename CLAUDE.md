@@ -101,23 +101,36 @@ the fact that this was inferred/secondhand before) doesn't get lost.
    inverter sending it evidently works fine, so whatever that poster was
    missing likely isn't the `0x301` payload itself. Still not captured: the
    very first cold power-on moment (see item 4).
-4. **Narrowed down, still not fully confirmed — the WAKE pins (PCS 7/8).**
-   The GBLI6532's own quick installation guide (see Protocol references)
-   settles the mechanism question, even without pinning down the electrical
-   details: **§5.1 "Power on Battery" lists two documented methods side by
-   side — pressing the physical POWER button on the unit, or "PCS voltage
-   signal activates battery."** The latter is almost certainly what
-   PCS-WAKE+/WAKE− (pins 7/8) are for. So this isn't just a forum workaround
-   - it's a real, designed feature, and this project's gateway will likely
-   need to drive it eventually for the battery to wake without someone
-   pressing the button by hand. Still open: the exact voltage/timing (a
-   sustained level vs a pulse), since a multimeter check on the real
-   SPH6000 link read ~0 V in steady state (consistent with either a
-   power-on-only pulse, or WAKE simply not being used by this particular
-   inverter pairing - the manual doesn't say it's mandatory, only that it's
-   *a* way to activate the battery). **The GBLI6532 also has a documented
-   power button** (§5.2): hold it 2 seconds to turn the pack on or off - the
-   correct way to power-cycle it, safer than disconnecting DC terminals
+4. **Practically resolved — this project's gateway does not need to drive
+   WAKE.** The GBLI6532's own quick installation guide (see Protocol
+   references) documents two power-on methods side by side - the physical
+   POWER button, or "PCS voltage signal activates battery" (almost certainly
+   PCS-WAKE+/WAKE−, pins 7/8) - so WAKE is a real designed feature, not just
+   a forum workaround. But two clean, deliberately-isolated captures
+   (2026-08-23, `captures/2026-08-23-gbli6532-sph6000-battery-only.log` and
+   `captures/2026-08-23-gbli6532-wake-test.log`) showed the actual sequence
+   that matters for this project: with the battery powered via the POWER
+   button and a real Growatt inverter already sending `0x301` (exactly what
+   this project's `sendGrowattKeepalive()` already does, unmodified), the
+   battery's `0x311` enable bits went from `mode=0` (disabled, `CCL=DCL=0.0A`)
+   to `mode=1` (`chg_en=1 dis_en=1`) **within 2-4 seconds of its first
+   frame on the bus** - no minutes-long self-test, no extra handshake beyond
+   what's already implemented. (An earlier theory here, that a multi-minute
+   inverter self-test was what caused the enable flip, turned out to be
+   wrong - that transition was actually a manual POWER-button press that
+   hadn't been mentioned in the moment. Correcting it here so the reasoning
+   trail is honest, not just the conclusion.) The GBLI6532's own display
+   cycling through Standby -> Checking -> Normal over a longer, separately-
+   timed period appears to be the inverter's own broader readiness check,
+   not something gating the battery's CAN-level enable state.
+   **Remaining gap, not blocking:** the exact WAKE electrical
+   characteristics (sustained level vs. pulse, voltage) are still
+   unconfirmed - a multimeter check in steady state read ~0 V - but since
+   the POWER button plus this project's existing `0x301` behavior already
+   gets to fully enabled in seconds, driving WAKE doesn't look necessary for
+   Phase 2 hardware. **The GBLI6532 also has a documented power button**
+   (§5.2 of the same guide): hold it 2 seconds to turn the pack on or off -
+   the correct way to power-cycle it, safer than disconnecting DC terminals
    directly. It also self-powers-off automatically 25 minutes after losing
    its CAN link to whatever's on its PCS port, independent of anything this
    project's firmware does.
