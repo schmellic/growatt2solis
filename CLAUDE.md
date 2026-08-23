@@ -33,6 +33,8 @@ src/translate.h   pure protocol logic, no hardware deps, host-compilable
 src/main.cpp      translator firmware (TWAI battery bus + MCP2515 inverter bus)
 src/sniffer.cpp   listen-only sniffer, separate build env
 test/             host-side test suite for translate.h
+captures/         real CAN captures from a genuine GBLI6532 + SPH6000 pairing
+enclosure/        parametric OpenSCAD enclosure for the Phase 2 translator board
 PARTS.md          hardware shopping list, two phases
 SNIFFING.md       procedure for tapping the live Growatt link
 README.md         wiring, commissioning, protocol reference
