@@ -134,12 +134,12 @@
 // 5. PROTOCOL QUIRKS
 // -----------------------------------------------------------------------------
 // Growatt's spec says 0x313 bytes 0-1 are 0.01 V; growattArkCAN observed 0.1 V.
-// AUTO picks by magnitude, which is unambiguous for a 48 V pack
-// (0.01 V -> ~4000-6000, 0.1 V -> ~400-600). Pin it once you have sniffed.
+// Confirmed 0.01 V against a real GBLI6532 capture (53.20-53.40 V through an
+// idle -> discharge -> charge cycle - sane; the 0.1 V reading would be ~530 V).
 #define VS_AUTO   0
 #define VS_0V01   1
 #define VS_0V1    2
-#define GROWATT_0x313_VOLT_SCALE   VS_AUTO
+#define GROWATT_0x313_VOLT_SCALE   VS_0V01
 
 // Manufacturer string sent in 0x35E. Use "PYLON   " with the PYLON_LV profile.
 #define PYLON_MANUFACTURER      "PYLON   "
@@ -147,6 +147,8 @@
 // Packs reported in 0x359 byte 4 (overridden by 0x312 byte 4 if plausible).
 #define PYLON_PACK_COUNT        1
 
-// If the GBLI never sends 0x319, fall back to the enable bits in 0x311's
-// status word. Leave true.
-#define ENABLE_0x311_FALLBACK   true
+// 0x311 is the authoritative source for charge/discharge-enable state (see
+// translate.h) - a real capture showed 0x319's own enable bits don't track
+// live state. This flag only controls whether 0x319's enable bits are used
+// as a temporary fallback before the first 0x311 has arrived. Leave true.
+#define ENABLE_0x319_FALLBACK   true

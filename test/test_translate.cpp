@@ -98,13 +98,17 @@ int main() {
     }
 
     // -------------------------------------------------------------------------
-    printf("\n[3] 0x313 voltage AUTO-scaling when the pack uses 0.1 V units\n");
+    printf("\n[3] 0x313 voltage - VS_0V01 is a straight pass-through\n");
     {
+        // GROWATT_0x313_VOLT_SCALE is now pinned to VS_0V01, confirmed
+        // against a real GBLI6532 capture (53.20-53.40 V through an
+        // idle -> discharge -> charge cycle). The VS_AUTO/VS_0V1 branches in
+        // normaliseVoltage() are compile-time alternatives for a different
+        // pack and aren't exercised by this build.
         BatteryState b;
-        // 51.2 V encoded as 512 = 0x0200 (the 0.1 V variant)
-        uint8_t d313[8] = {0x02,0x00, 0x00,0x00, 0x00,0xC8, 0x50, 0x64};
+        uint8_t d313[8] = {0x14,0xC8, 0x00,0x00, 0x00,0xC8, 0x50, 0x64};   // 5320 = 53.20V
         decodeGrowatt(b, 0x313, 8, d313, 1000);
-        expect("512 (0.1V) -> 5120 (0.01V)", b.pack_v_cV == 5120);
+        expect("5320 (0.01V) passes through unchanged", b.pack_v_cV == 5320);
     }
 
     // -------------------------------------------------------------------------
@@ -126,16 +130,15 @@ int main() {
     }
 
     // -------------------------------------------------------------------------
-    printf("\n[5] Charge disabled by BMS -> CCL must also be zeroed\n");
+    printf("\n[5] Charge disabled by BMS (per 0x311) -> CCL must also be zeroed\n");
     {
         BatteryState b;
-        uint8_t d311[8] = {0x02,0x38, 0x02,0x58, 0x03,0x84, 0x00,0x62};
+        // 0x311 status byte (d[7]) = 0x20: bit5 (discharge) set, bit6 (charge)
+        // clear. 0x311 is authoritative for enable state - see test [9].
+        uint8_t d311[8] = {0x02,0x38, 0x02,0x58, 0x03,0x84, 0x00,0x20};
         decodeGrowatt(b, 0x311, 8, d311, 1000);
         uint8_t d313[8] = {0x16,0x0C, 0x00,0x00, 0x00,0xC8, 0x64, 0x64};
         decodeGrowatt(b, 0x313, 8, d313, 1000);
-        // 0x319: discharge enable only (bit5), charge disabled
-        uint8_t d319[8] = {0x20,0,0,0,0,0,0,0};
-        decodeGrowatt(b, 0x319, 8, d319, 1000);
         PylonBurst p = buildPylon(b, false);
         expectBytes("0x351 CCL forced to 0", byId(p, 0x351), {0x38,0x02, 0x00,0x00, 0x84,0x03, 0x00,0x00});
         expectBytes("0x35C discharge only",  byId(p, 0x35C), {0x40, 0x00});
@@ -181,6 +184,41 @@ int main() {
         PylonBurst p = buildPylon(b, false);
         expectBytes("0x351 safe defaults", byId(p, 0x351), {0xE0,0x01, 0x00,0x00, 0x00,0x00, 0x00,0x00});
         expectBytes("0x35C nothing enabled", byId(p, 0x35C), {0x00, 0x00});
+    }
+
+    // -------------------------------------------------------------------------
+    printf("\n[9] 0x319's stale enable bits must not override 0x311's live ones\n");
+    printf("    (regression for a real capture: 0x319 read constant 0xC0 -\n");
+    printf("    discharge-disabled - through an actual ~10 A discharge, while\n");
+    printf("    0x311 correctly tracked it)\n");
+    {
+        BatteryState b;
+
+        // 0x319 arrives first, before any 0x311: charge enabled, discharge
+        // NOT enabled (byte0 = 0x40). Pre-0x311, this is a legitimate
+        // fallback, so it should be believed for now.
+        uint8_t d319[8] = {0x40,0,0,0,0,0,0,0};
+        decodeGrowatt(b, 0x319, 8, d319, 1000);
+        expect("pre-0x311 fallback: dis_en false", !b.discharge_en);
+        expect("pre-0x311 fallback: chg_en true",  b.charge_en);
+
+        // 0x311 arrives: both enabled (d[7] = 0x62, as in the real capture
+        // during an active discharge). This must now win outright.
+        uint8_t d311[8] = {0x02,0x38, 0x02,0x58, 0x03,0x84, 0x00,0x62};
+        decodeGrowatt(b, 0x311, 8, d311, 1000);
+        expect("0x311 sets dis_en true",  b.discharge_en);
+        expect("0x311 sets chg_en true",  b.charge_en);
+
+        // The next 0x319 (same stale byte0 = 0x40, exactly as observed for
+        // the whole real capture) must NOT be allowed to clobber it back.
+        decodeGrowatt(b, 0x319, 8, d319, 1000);
+        expect("stale 0x319 does not override dis_en", b.discharge_en);
+        expect("stale 0x319 does not override chg_en",  b.charge_en);
+
+        uint8_t d313[8] = {0x14,0xFA, 0xFC,0x18, 0x00,0xEA, 0x63, 0x63};   // I = -100.0 A
+        decodeGrowatt(b, 0x313, 8, d313, 1000);
+        PylonBurst p = buildPylon(b, false);
+        expect("DCL not zeroed by stale 0x319", byId(p, 0x351).data[4] != 0 || byId(p, 0x351).data[5] != 0);
     }
 
     printf("\n=== %s (%d failure%s) ===\n\n",

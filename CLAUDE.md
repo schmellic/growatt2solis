@@ -76,45 +76,70 @@ of these on every push.
 
 Solis inverter menu must be set to battery profile **`PYLON_LV`**.
 
-## Open questions — resolve these from a real capture
+## Open questions
 
-These are the things that are inferred rather than confirmed. Do not treat them
-as settled:
+Resolved ones are kept here rather than deleted, so the evidence trail (and
+the fact that this was inferred/secondhand before) doesn't get lost.
 
-1. **Does the GBLI 6532 actually emit the `0x311`-series protocol?** Inferred
-   from Growatt's LV BMS spec plus a capture of the sibling ARK pack. No
-   published GBLI-specific capture was found — but a forum user pairing a
-   GBLI6532 with a non-Growatt (GoodWe) inverter independently reports seeing
-   `0x311`–`0x318` on a real pack, which corroborates this without yet being
-   our own capture. See "GBLI wake/handshake" in Protocol references.
-2. **`0x313` bytes 0–1 scaling: 0.01 V or 0.1 V?** Growatt's spec says 0.01 V;
-   `growattArkCAN` observed 0.1 V. Currently auto-detected by magnitude
-   (`VS_AUTO`), which is unambiguous for a 48 V pack. Pin it once known.
-3. **The real `0x301` payload** from a genuine Growatt inverter. Undocumented.
-   Currently sends the example bytes from the spec. That same forum thread
-   reports one example log payload (`0B 16 21 2C 37 42 4D 58`, ~10 Hz) but
-   found that replaying it statically was not sufficient on its own to make
-   the GBLI report charge/discharge-enable — implying `0x301` may need to
-   change over time (counter/checksum/sequence) or arrive alongside other
-   frames. Worth capturing several seconds continuously, not just one frame.
-4. **The WAKE pins** (PCS 7/8). Per that same thread: WAKE+ (pin 8) at +5 V
-   relative to WAKE− (pin 7/GND), via a series resistor, is enough to wake a
-   real GBLI6532 and close its relays — an independently-sourced data point,
-   not yet our own measurement, and the poster's own resistor value (100 Ω)
-   was their own choice, not a confirmed spec. This raises a real gap: **once
-   the GBLI is on this project's gateway instead of a real Growatt inverter,
-   nothing currently supplies that WAKE+ voltage.** Neither `config.h` nor
-   `main.cpp` drives it. Confirm with a real measurement on the live SPH6000
-   link before assuming the above value is correct, then this likely becomes
-   a new Phase 2 hardware requirement (a driven WAKE+ line), not just a
-   sniffing curiosity.
-5. **Which byte in `0x311` actually carries the charge/discharge-enable
-   bits.** This project's own host tests already caught this once — the
-   comment at `translate.h:100` says the bits are in the **low byte of the
-   big-endian pair (byte 7)**, contradicting an earlier assumption of byte 6.
-   That same forum thread describes byte 6 (bits 4/5/6 = wake/discharge/
-   charge) — the opposite of what this project settled on. Check both bytes
-   against a real capture rather than trusting either secondhand claim.
+1. **RESOLVED — the GBLI 6532 does emit the `0x311`-series protocol.**
+   Confirmed directly against a real capture (2026-08-23,
+   `captures/2026-08-23-gbli6532-sph6000-coldboot.log`): `0x311`–`0x320` all
+   present, plus five IDs not currently decoded by this project at all —
+   `0x322`, `0x323`, `0x324`, `0x329`, `0x330`. Worth a look at some point,
+   not urgent.
+2. **RESOLVED — `0x313` bytes 0–1 are 0.01 V.** Confirmed against the same
+   capture: raw values read 53.20–53.40 V through an idle → discharge →
+   charge cycle, which is sane for this pack; the 0.1 V interpretation would
+   be ~530 V. `config.h` is now pinned to `VS_0V01` (was `VS_AUTO`).
+3. **Mostly resolved — the real `0x301` payload.** Confirmed static
+   (`0B 16 21 2C 37 42 4D 58`) across the entire real capture above — no
+   counter, no checksum, no change through boot, idle, discharge, or charge.
+   Matches what's already hardcoded in `sendGrowattKeepalive()`. A forum
+   thread (see Protocol references) reported that replaying this same
+   payload statically wasn't enough to get charge/discharge-enable from a
+   GBLI6532 paired with a *non-Growatt* inverter — but a real Growatt
+   inverter sending it evidently works fine, so whatever that poster was
+   missing likely isn't the `0x301` payload itself. Still not captured: the
+   very first cold power-on moment (see item 4).
+4. **Still open — the WAKE pins (PCS 7/8), and whether they matter at all.**
+   The GBLI6532 has no DC breaker; the real capture's "power-on" was done by
+   physically disconnecting/reconnecting the pack's +ve terminal, with the
+   CAN link (PCS↔SPH6000, sniffer tap included) **never disconnected** and
+   the inverter switched on at the same moment as +ve was reconnected — so
+   the capture can't distinguish "DC power alone wakes the pack" from "the
+   inverter's own power-up (and whatever it does on WAKE) is what's needed."
+   A multimeter check on PCS pins 7/8 *after* the system had settled into
+   steady state read ~0 V — consistent with WAKE being unused in steady
+   state, or with it only being a brief pulse at power-on that a static
+   reading would miss either way. **To actually resolve this:** apply DC
+   power to the pack with the inverter left off/unpowered and watch whether
+   it starts transmitting `0x311` etc. on its own. If it does, this project's
+   gateway likely doesn't need to drive WAKE at all — a meaningfully simpler
+   outcome than the Phase 2 hardware requirement flagged here previously. A
+   forum thread (see Protocol references) separately reports getting a real
+   GBLI6532 to wake and close its relays by driving WAKE+ (pin 8) to +5 V
+   relative to WAKE− (pin 7/GND) via a series resistor — but that was their
+   own external circuit on a pack with no real Growatt inverter attached at
+   all, not a measurement of what a genuine Growatt inverter does, so it
+   doesn't settle this either way.
+5. **RESOLVED — `0x311` byte 7 (not byte 6) carries charge/discharge-enable,
+   confirmed against real operating state.** `translate.h`'s existing byte-7
+   read was cross-checked against the pack's actual state (idle/charging/
+   discharging) in the real capture and tracked it correctly throughout; byte
+   6 stayed constant. The secondhand claim of byte 6 (from the same forum
+   thread) doesn't hold up against real data.
+6. **RESOLVED (new finding, not one of the original four) — `0x319`'s own
+   enable bits don't track live state.** The real capture showed `0x319`
+   byte 0 reading a constant `0xC0` (discharge-enable bit clear) through an
+   *actual* ~10 A discharge, while `0x311`'s enable bits and status/mode
+   field tracked it correctly. `translate.h` trusted `0x319` over `0x311`
+   whenever both were present, which would have meant **the gateway never
+   telling the Solis discharge was allowed, even during a real discharge.**
+   Fixed: `0x311` is now the authoritative source for both enable bits;
+   `0x319` is used only as a fallback before the first `0x311` arrives
+   (`ENABLE_0x319_FALLBACK` in `config.h`, renamed from
+   `ENABLE_0x311_FALLBACK` since its meaning flipped). Covered by test [9] in
+   `test/test_translate.cpp`.
 
 `SNIFFING.md` is the procedure for answering all of these from the existing
 GBLI ↔ SPH6000 link.

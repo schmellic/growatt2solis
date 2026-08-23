@@ -96,14 +96,14 @@ static inline void decodeGrowatt(BatteryState &b, uint32_t id, uint8_t len,
         b.status_word = be16u(&d[6]);
         b.have_311    = true;
         b.last_rx_ms  = now_ms;
-#if ENABLE_0x311_FALLBACK
-        // Status bits 0-7 live in the LOW byte of the big-endian pair (d[7]).
-        // bit 5 = discharge enable, bit 6 = charge enable.
-        if (!b.have_319) {
-            b.discharge_en = (b.status_word & 0x0020) != 0;
-            b.charge_en    = (b.status_word & 0x0040) != 0;
-        }
-#endif
+        // Status bits live in the LOW byte of the big-endian pair (d[7]):
+        // bit 5 = discharge enable, bit 6 = charge enable. This is the
+        // authoritative source for enable state - a real capture spanning
+        // idle -> discharge -> charge showed these bits track live BMS
+        // state correctly, while 0x319's enable bits (below) stayed
+        // constant throughout, including during an actual ~10 A discharge.
+        b.discharge_en = (b.status_word & 0x0020) != 0;
+        b.charge_en    = (b.status_word & 0x0040) != 0;
         break;
 
     case GW_FLAGS:                                     // 0x312
@@ -139,8 +139,17 @@ static inline void decodeGrowatt(BatteryState &b, uint32_t id, uint8_t len,
         if (len < 1) break;
         b.force_chg_2  = (d[0] & 0x04) != 0;           // bit 2
         b.force_chg_1  = (d[0] & 0x08) != 0;           // bit 3
-        b.discharge_en = (d[0] & 0x20) != 0;           // bit 5
-        b.charge_en    = (d[0] & 0x40) != 0;           // bit 6
+#if ENABLE_0x319_FALLBACK
+        // Only used before the first 0x311 arrives; 0x311 is authoritative
+        // for enable state once seen (see GW_LIMITS above). A real capture
+        // showed this frame's own enable bits (byte0 bits 5/6) don't track
+        // live discharge/charge activity - they read constant throughout an
+        // idle -> discharge -> charge cycle where 0x311's did.
+        if (!b.have_311) {
+            b.discharge_en = (d[0] & 0x20) != 0;       // bit 5
+            b.charge_en    = (d[0] & 0x40) != 0;       // bit 6
+        }
+#endif
         b.have_319     = true;
         break;
 
