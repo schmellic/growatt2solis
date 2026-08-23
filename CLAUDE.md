@@ -84,9 +84,19 @@ the fact that this was inferred/secondhand before) doesn't get lost.
 1. **RESOLVED — the GBLI 6532 does emit the `0x311`-series protocol.**
    Confirmed directly against a real capture (2026-08-23,
    `captures/2026-08-23-gbli6532-sph6000-coldboot.log`): `0x311`–`0x320` all
-   present, plus five IDs not currently decoded by this project at all —
-   `0x322`, `0x323`, `0x324`, `0x329`, `0x330`. Worth a look at some point,
-   not urgent.
+   present, plus five IDs not in Growatt's published spec - `0x322`, `0x323`,
+   `0x324`, `0x329`, `0x330`. None of these are needed for the Pylon output
+   mapping, so `translate.h` doesn't touch them, but `sniffer.cpp` now
+   decodes three with best-effort, clearly-labelled ("GUESS:") guesses from
+   the real capture data: `0x324` looks like a paged ASCII serial/model
+   string (page 0 → `"GPJ021"`, page 1 → `"9522062"`, page 2 →
+   `"BB7"`/`"C07"` - the last chunk differs between the two parallel packs);
+   `0x329`'s byte 0 cycles 1/2 exactly matching the 2-pack system, so it's
+   likely per-pack telemetry, units unconfirmed; `0x330` is by far the
+   highest-frequency ID seen (10k+ frames in one capture) and reads like
+   individual cell-voltage pairs in mV, similar to `0x315`-`0x318`. `0x322`
+   and `0x323` never varied at all across any capture, so there's nothing to
+   decode yet beyond raw bytes.
 2. **RESOLVED — `0x313` bytes 0–1 are 0.01 V.** Confirmed against the same
    capture: raw values read 53.20–53.40 V through an idle → discharge →
    charge cycle, which is sane for this pack; the 0.1 V interpretation would

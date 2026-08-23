@@ -160,6 +160,52 @@ static void printDecode(uint32_t id, uint8_t dlc, const uint8_t *d) {
         Serial.println(F("               This payload is undocumented. Write it down."));
         break;
 
+    // ---- Not in Growatt's published spec. Seen on a real GBLI6532 but not
+    // yet confirmed - decoded here as best-effort guesses, clearly labelled,
+    // so more captures can confirm or correct them. Not used anywhere in
+    // translate.h or the Pylon output.
+    case 0x324: {
+        // Looks like a paged ASCII string (serial/model number): byte0
+        // cycles 0,1,2 across frames, the rest renders as printable ASCII
+        // ("GPJ021", "9522062", "BB7"/"C07" seen on a real 2-pack GBLI6532,
+        // the last chunk differing between the two packs).
+        if (dlc < 1) return;
+        char ascii[8] = {0};
+        for (uint8_t i = 1; i < dlc && i < 8; i++)
+            ascii[i - 1] = isprint(d[i]) ? (char)d[i] : '.';
+        snprintf(l, sizeof(l),
+            "        0x324  page=%u  ascii=\"%s\"  (GUESS: paged serial/model string)",
+            (unsigned)d[0], ascii);
+        Serial.println(l);
+        break;
+    }
+
+    case 0x329: {
+        // byte0 cycles 1/2, matching this pack's 2-unit parallel group
+        // exactly - looks like per-pack telemetry, but the units/meaning of
+        // the two 16-bit values aren't confirmed.
+        if (dlc < 8) return;
+        snprintf(l, sizeof(l),
+            "        0x329  pack=%u  valA=%u  valB=%u  (GUESS: per-pack values, units unknown)",
+            (unsigned)d[0], (unsigned)be16u(&d[2]), (unsigned)be16u(&d[6]));
+        Serial.println(l);
+        break;
+    }
+
+    case 0x330: {
+        // By far the highest-frequency ID seen (10k+ frames in one
+        // capture). Last 4 bytes read as two close-together 16-bit values
+        // in the ~3300-3400 range - looks like individual cell-voltage
+        // pairs in mV, similar to 0x315-0x318, cycling through cells.
+        // byte1/byte3 look like index counters.
+        if (dlc < 8) return;
+        snprintf(l, sizeof(l),
+            "        0x330  idx=%u,%u  cellA=%umV  cellB=%umV  (GUESS: cell voltage pair)",
+            (unsigned)d[1], (unsigned)d[3], (unsigned)be16u(&d[4]), (unsigned)be16u(&d[6]));
+        Serial.println(l);
+        break;
+    }
+
     default: break;
     }
 }
