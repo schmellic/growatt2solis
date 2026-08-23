@@ -36,8 +36,9 @@ rules:
   build, not `SNIFF_ONLY` in the translator build — the latter still has an
   active controller that ACKs.
 - **No third terminator.** Remove the 120 Ω resistor from your SN65HVD230 module
-  (see `PARTS.md`). Adding it to an already-terminated bus can break the working
-  link between your battery and inverter.
+  (see `PARTS.md`). Still the recommended practice even though a real capture
+  session ran fine with it left in (40 Ω instead of ~60 Ω) - see the
+  real-world update in `PARTS.md` for why that's not a reason to skip it.
 
 ---
 

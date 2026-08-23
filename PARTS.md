@@ -30,8 +30,21 @@ sends — which is undocumented everywhere I could find.
 
 Almost every SN65HVD230 breakout has a 120 Ω termination resistor fitted (usually
 `R2`, sometimes a jumper). Your battery↔SPH6000 bus is **already correctly
-terminated at both ends**. Adding a third resistor drops the bus to 40 Ω and can
-break the link between your battery and inverter.
+terminated at both ends**. Adding a third resistor drops the bus to 40 Ω, which
+is out of spec and the recommendation below is still to remove it.
+
+**Real-world update (2026-08-23):** a genuine GBLI6532↔SPH6000 link was
+sniffed for an extended session - cold boot, idle, a full charge→discharge→
+charge cycle, multiple wake tests - with a real SN65HVD230 module confirmed
+(multimeter-verified) to still have its 120 Ω resistor fitted, i.e. running
+at the out-of-spec 40 Ω the whole time. No communication issues observed on
+either the sniffer's reception or the live battery↔inverter link itself. So
+this is evidently more tolerant in practice than the strict spec suggests,
+at least on a short, low-noise stub - but that's one data point on one
+installation, not a green light to skip it. Two reasons to still remove it:
+it's simply correct practice with no downside, and Phase 2's `translator`
+firmware **actively transmits** on this bus rather than just listening,
+which is a different electrical loading situation than passive sniffing.
 
 Desolder it, or cut the jumper, before you plug into anything live. Check with a
 multimeter across CAN_H/CAN_L on the module alone — you want open circuit, not
