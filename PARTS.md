@@ -171,12 +171,27 @@ ground fault costing you an ESP32 and costing you an inverter.
   1 Mbps. Not just split ground planes as originally worried - both the
   battery-side and inverter-side buses are genuinely isolated from the
   ESP32/USB side.
+- **CAN connections are screw terminals, not onboard RJ45 jacks.** Wire your
+  own RJ45 jacks (or the panel-mount couplers in `enclosure/`) directly to
+  the screw terminals - no internal patch cable or onboard-jack pinout to
+  worry about matching. Keep pin 4 = CAN_H, pin 5 = CAN_L on your own jacks
+  to stay consistent with the GBLI PCS port and Solis COM port wiring
+  elsewhere in this project (see `README.md`'s wiring tables).
+- **Mornsun TD501MCAN pinout — CONFIRMED from the datasheet** (`TDx01MCAN(HG)`
+  series, DIP7): pin 1 RXD (→ ESP32/MCP2515 receive), pin 2 TXD (← ESP32/
+  MCP2515 transmit), pin 3 GND, pin 4 VCC (5 V), pin 5 CANG (isolated-side
+  ground - **not** the same as logic GND), pin 6 CANL, pin 7 CANH. Useful for
+  tracing which module belongs to which channel: whichever module has pins
+  1/2 landing on GPIO 6/7 is the TWAI (battery) channel. Note the bus side is
+  3 conductors (CANH, CANL, and the isolated CANG), not just the CANH/CANL
+  pair - worth checking your RJ45/coupler wiring accounts for that third
+  connection rather than assuming a 2-wire pair.
 
 **T-2Can caveats, still not confirmed against a real board:**
-- **Which physical port is which.** The board has two connectors; firmware-side,
-  "CAN B" (GPIO 6/7, TWAI) is wired here to the **battery**, "CAN A" (MCP2515) to
-  the **inverter** — matching this project's existing convention. Confirm against
-  the board's silkscreen/schematic which physical connector is which before wiring.
+- **Which screw terminal block is which.** Firmware-side, "CAN B" (GPIO 6/7,
+  TWAI) is wired here to the **battery**, "CAN A" (MCP2515) to the
+  **inverter** — matching this project's existing convention. Confirm against
+  the board's silkscreen which terminal block is which before wiring.
 - **MCP2515 oscillator.** Set to `MCP_8MHZ` in `config.h` on the strength of LilyGo's
   own example not overriding a library default — not confirmed against the
   schematic. If the MCP2515 never comes up, try `MCP_16MHZ`.

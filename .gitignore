@@ -16,9 +16,6 @@ test/test_translate
 test/*.o
 *.dSYM/
 
-# Enclosure exports - regenerate from enclosure/t2can_enclosure.scad
-enclosure/*.stl
-
 # Stray logs anywhere in the tree...
 *.log
 # ...except deliberate sniffer captures, which are the point of the repo.
