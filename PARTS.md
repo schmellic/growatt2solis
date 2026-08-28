@@ -155,7 +155,7 @@ extra £25 on the CAN-X2 and skip all of that.
 
 | Option | ~£ | Notes |
 |---|---|---|
-| [LilyGo T-2Can](https://github.com/Xinyuan-LilyGO/T-2Can) (non-FD, `T-2Can_V1.0`) | ~£27 | ESP32-S3. **Supported** — `BOARD_LILYGO_T2CAN` / `translator-t2can` env. Corrects an earlier note here: per LilyGo's own pin config and example firmware, it's actually **one TWAI channel + one MCP2515** (same architecture as the CAN-X2, different pins), not two MCP2515s — so no TWAI porting was needed, just pin numbers and a reset-pin pulse the CAN-X2 doesn't need. Its TWAI pins happen to match the CAN-X2's, so the existing `sniffer` env works for phase-1 sniffing on it too. Untested against real hardware here — see caveats below. |
+| [LilyGo T-2Can](https://github.com/Xinyuan-LilyGO/T-2Can) (non-FD, `T-2Can_V1.0`) | ~£27 | ESP32-S3. **Supported** — `BOARD_LILYGO_T2CAN` / `translator-t2can` env. Corrects an earlier note here: per LilyGo's own pin config and example firmware, it's actually **one TWAI channel + one MCP2515** (same architecture as the CAN-X2, different pins), not two MCP2515s — so no TWAI porting was needed, just pin numbers and a reset-pin pulse the CAN-X2 doesn't need. Its TWAI pins happen to match the CAN-X2's, so the existing `sniffer` env works for phase-1 sniffing on it too. Isolation confirmed against a real board (see below); a few wiring details still need confirming. |
 | Stark CMR / BECom | £70+ | DIN-rail, isolated, purpose-built for battery↔inverter gateways. Overkill unless you're going the Battery-Emulator route. |
 
 Galvanic isolation is worth having when one bus reaches a 48 V battery and the
@@ -163,11 +163,16 @@ other reaches a grid-tied inverter. It isn't strictly necessary, and plenty of
 people run unisolated gateways for years — but it's the difference between a
 ground fault costing you an ESP32 and costing you an inverter.
 
-**T-2Can caveats, not yet confirmed against a real board:**
-- **Isolation.** LilyGo markets "signal isolation design (SGND/DGND)" and third-party
-  coverage calls it "dual isolated," but neither states the mechanism (optocouplers /
-  isolated DC-DC per channel vs just split ground planes). Check the schematic
-  (`T-2Can_V1.0.pdf` in their repo) before relying on it for true galvanic isolation.
+**T-2Can, confirmed against a real board (2026-08-24):**
+- **Isolation — CONFIRMED true galvanic isolation, one per channel.** Each CAN
+  channel has its own Mornsun TD501MCAN module - an isolated CAN transceiver
+  that integrates both power isolation (DC-DC) and signal isolation in one
+  package, rated 2500 VDC isolation withstand voltage, 5 V supply, up to
+  1 Mbps. Not just split ground planes as originally worried - both the
+  battery-side and inverter-side buses are genuinely isolated from the
+  ESP32/USB side.
+
+**T-2Can caveats, still not confirmed against a real board:**
 - **Which physical port is which.** The board has two connectors; firmware-side,
   "CAN B" (GPIO 6/7, TWAI) is wired here to the **battery**, "CAN A" (MCP2515) to
   the **inverter** — matching this project's existing convention. Confirm against
