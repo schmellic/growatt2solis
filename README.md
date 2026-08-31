@@ -6,15 +6,17 @@ protocol and re-emitting it as the Pylontech LV CAN protocol the Solis
 understands.
 
 > **Status: protocol assumptions confirmed against real captures; the
-> translator itself not yet run live.** The four things that used to be
-> inferred rather than confirmed — whether the GBLI 6532 emits the
-> `0x311`-series protocol at all, the `0x313` voltage scaling, the real
-> `0x301` keepalive payload, and what the PCS WAKE pins do — are now settled
-> from real captures against a genuine GBLI6532 + Growatt SPH6000 pairing,
-> see [`captures/`](captures/) and the "Open questions" section of
-> [`CLAUDE.md`](CLAUDE.md) for the evidence. What's still unproven: the
-> gateway's active (non-`SNIFF_ONLY`) translator mode has not yet been run
-> against real hardware — only passive sniffing so far.
+> translator firmware itself now confirmed running on real Phase 2 hardware
+> (battery bus only so far).** The four things that used to be inferred
+> rather than confirmed — whether the GBLI 6532 emits the `0x311`-series
+> protocol at all, the `0x313` voltage scaling, the real `0x301` keepalive
+> payload, and what the PCS WAKE pins do — are settled from real captures
+> against a genuine GBLI6532 + Growatt SPH6000 pairing, see
+> [`captures/`](captures/) and the "Open questions" section of
+> [`CLAUDE.md`](CLAUDE.md) for the evidence. The `translator-t2can` build has
+> now run against the real battery too (`SNIFF_ONLY` still on, inverter bus
+> not yet connected) with clean results. What's still unproven: the fully
+> live path — `SNIFF_ONLY` off, talking to a real Solis.
 >
 > **No licence yet** — all rights reserved for now. Ask before reusing; I'll
 > settle on something permissive once it's proven working.
