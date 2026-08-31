@@ -178,25 +178,41 @@ ground fault costing you an ESP32 and costing you an inverter.
   to stay consistent with the GBLI PCS port and Solis COM port wiring
   elsewhere in this project (see `README.md`'s wiring tables).
 - **Mornsun TD501MCAN pinout — CONFIRMED from the datasheet** (`TDx01MCAN(HG)`
-  series, DIP7): pin 1 RXD (→ ESP32/MCP2515 receive), pin 2 TXD (← ESP32/
-  MCP2515 transmit), pin 3 GND, pin 4 VCC (5 V), pin 5 CANG (isolated-side
-  ground - **not** the same as logic GND), pin 6 CANL, pin 7 CANH. Useful for
-  tracing which module belongs to which channel: whichever module has pins
-  1/2 landing on GPIO 6/7 is the TWAI (battery) channel. Note the bus side is
+  series, DIP7): pin 1 RXD (output to MCU side), pin 2 TXD (input from MCU
+  side), pin 3 GND, pin 4 VCC (5 V), pin 5 CANG (isolated-side ground -
+  **not** the same as logic GND), pin 6 CANL, pin 7 CANH. The bus side is
   3 conductors (CANH, CANL, and the isolated CANG), not just the CANH/CANL
   pair - worth checking your RJ45/coupler wiring accounts for that third
   connection rather than assuming a 2-wire pair.
+- **There's an MS4553S 3.3V↔5V level shifter between the ESP32 and each
+  TD501MCAN** (one per channel, UY1 for CAN-B, UY2 for CAN-A) - not a direct
+  wire. Confirmed by tracing the real schematic: ESP32 GPIO 6/7 land on the
+  shifter's low-voltage (A) side, the TD501MCAN's RXD/TXD land on its
+  high-voltage (B) side. This is why net labels look inconsistent either
+  side of it (`TXB_CAN` at the ESP32 vs `CANB_TXD` at the transceiver) -
+  they're genuinely different nets bridged by the shifter, not a documentation
+  error.
+- **GPIO 6/7 direction — CONFIRMED correct, not swapped.** Traced the full
+  chain through the level shifter: GPIO 6 → `TXB_CAN` → shifter → `CANB_TXD`
+  → TD501MCAN pin 1 (RXD) - so GPIO 6 is correctly the ESP32's TWAI **receive**
+  pin. GPIO 7 → `RXB_CAN` → shifter → `CANB_RXD` → TD501MCAN pin 2 (TXD) - so
+  GPIO 7 is correctly the ESP32's TWAI **transmit** pin. Matches what
+  `config.h` already had (`TWAI_TX_PIN = GPIO_NUM_7`, `TWAI_RX_PIN =
+  GPIO_NUM_6`) - the confusing net-name mismatch above made this look like a
+  possible swap, but it wasn't one.
+- **Which screw terminal block is which — CONFIRMED.** The MCP2515's
+  `TXCAN`/`RXCAN` pins sit on nets `TXA_CAN`/`RXA_CAN` in the schematic, so
+  the MCP2515 drives **CAN-A**; the ESP32's direct TWAI connection is
+  **CAN-B**. This project wires CAN-B to the **battery** and CAN-A to the
+  **inverter** - matching the existing convention - but which physical screw
+  terminal block is labelled A vs B on the silkscreen still needs a look.
+- **MCP2515 oscillator — CONFIRMED 16 MHz** from the schematic (crystal X1,
+  marked "16MHZ±10ppm"), not the 8 MHz this project assumed before. `config.h`
+  is now pinned to `MCP_16MHZ`.
 
 **T-2Can caveats, still not confirmed against a real board:**
-- **Which screw terminal block is which.** Firmware-side, "CAN B" (GPIO 6/7,
-  TWAI) is wired here to the **battery**, "CAN A" (MCP2515) to the
-  **inverter** — matching this project's existing convention. Confirm against
-  the board's silkscreen which terminal block is which before wiring.
-- **MCP2515 oscillator.** Set to `MCP_8MHZ` in `config.h` on the strength of LilyGo's
-  own example not overriding a library default — not confirmed against the
-  schematic. If the MCP2515 never comes up, try `MCP_16MHZ`.
-- Also note: it's the **non-FD** `T-2Can_V1.0` this project targets. The `T-2Can-Fd`
-  variant uses an MCP2518 and a different library — not supported here.
+- Confirm it's the **non-FD** `T-2Can_V1.0` this project targets, not
+  `T-2Can-Fd` (MCP2518, different library, not supported here).
 
 ---
 

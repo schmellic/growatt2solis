@@ -20,9 +20,11 @@
 //                       different pins, and its MCP2515 RST line needs an
 //                       active-low pulse at boot (see main.cpp). Pins are
 //                       LilyGo's own, from github.com/Xinyuan-LilyGO/T-2Can.
-//                       Not yet run against real hardware here - verify
-//                       which physical port is CAN_TX/RX (7/6, TWAI) vs the
-//                       MCP2515 before wiring the battery/inverter buses.
+//                       CONFIRMED against the real schematic (2026-08-31):
+//                       GPIO 7/6 (TWAI) is CAN-B, the MCP2515 drives CAN-A,
+//                       and both signals pass through an MS4553S 3.3V<->5V
+//                       level shifter per channel before reaching each
+//                       channel's isolated Mornsun TD501MCAN transceiver.
 #define BOARD_ESP32_CAN_X2   1
 #define BOARD_ESP32_DEVKIT   2
 #define BOARD_LILYGO_T2CAN   3
@@ -91,11 +93,8 @@
     // tied on-board) and must be pulsed low then high before MCP.begin() -
     // see mcpInit() in main.cpp. Undefined on boards that don't need it.
     #define MCP_RST_PIN         9
-    // LilyGo's own example (github.com/Xinyuan-LilyGO/T-2Can, examples/can)
-    // doesn't set an oscillator frequency, implying its library's 8 MHz
-    // default. Not confirmed against the schematic - if the MCP2515 never
-    // comes up, try MCP_16MHZ.
-    #define MCP_CRYSTAL         MCP_8MHZ
+    // CONFIRMED against the real schematic (X1, 2026-08-31): 16 MHz.
+    #define MCP_CRYSTAL         MCP_16MHZ
     #define STATUS_LED_PIN      -1      // unconfirmed; set if you find one
 #else
     #error "Set BOARD to a supported value"
