@@ -179,11 +179,13 @@ ground fault costing you an ESP32 and costing you an inverter.
   elsewhere in this project (see `README.md`'s wiring tables).
 - **Mornsun TD501MCAN pinout — CONFIRMED from the datasheet** (`TDx01MCAN(HG)`
   series, DIP7): pin 1 RXD (output to MCU side), pin 2 TXD (input from MCU
-  side), pin 3 GND, pin 4 VCC (5 V), pin 5 CANG (isolated-side ground -
-  **not** the same as logic GND), pin 6 CANL, pin 7 CANH. The bus side is
-  3 conductors (CANH, CANL, and the isolated CANG), not just the CANH/CANL
-  pair - worth checking your RJ45/coupler wiring accounts for that third
-  connection rather than assuming a 2-wire pair.
+  side), pin 3 GND, pin 4 VCC (5 V), pin 5 CANG (isolated-side ground), pin 6
+  CANL, pin 7 CANH. **Correcting an earlier note here:** CANG does *not* need
+  wiring to the remote device - the datasheet's own typical application
+  circuit (Fig 1) shows it as NC. It only appears in the optional
+  surge-protection circuit (Fig 3), tied to *local* earth through a filter
+  resistor/cap, not to the remote device's ground. Standard 2-wire CANH/CANL
+  is correct for both buses.
 - **There's an MS4553S 3.3V↔5V level shifter between the ESP32 and each
   TD501MCAN** (one per channel, UY1 for CAN-B, UY2 for CAN-A) - not a direct
   wire. Confirmed by tracing the real schematic: ESP32 GPIO 6/7 land on the
