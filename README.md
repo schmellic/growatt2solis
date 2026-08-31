@@ -211,15 +211,47 @@ SOC should match the Growatt app. Current should be positive while charging.
 
 ### Step 4 — configure the Solis
 
-Advanced Settings → Storage Energy Set → Battery Model: **`PYLON_LV`**.
+Confirmed against the real Solis manual (2026-08-31). Two menu paths get you
+there:
+
+- First-time quick setup: `Inverter Time → Meter Setting → Grid Code →
+  Storage mode → Battery Model`
+- Later, via the detailed menu: Home page → `SYSTEM SETTING` → `Storage Mode`
+  (mode/reserve settings) and → `Battery Setting` (the current/SOC limits
+  below)
+
+Battery Model: **`PYLON_LV`**.
 
 (`Lithium Battery LV` is the documented fallback and also works, but `PYLON_LV`
 is the profile a Solis has been verified against with this protocol.)
 
-Then set the battery menu limits conservatively — max charge/discharge current,
-over-discharge SOC, max charge SOC. The Solis appears to partly ignore the CAN
-charge-voltage limit and use its own float setting, so **do not rely on `0x351`
-CVL as your only over-charge protection**.
+On the `Battery Setting` screen:
+
+| Setting | Manual's range/default | Recommended starting value |
+|---|---|---|
+| Max charge current | settable | **~20–30 A**, not the pack's theoretical max |
+| Max discharge current | settable | **~20–30 A**, same reasoning |
+| Over discharge | 5–40%, default 20% | manual default is fine |
+| Recovery | over-discharge +1–20% | manual default is fine |
+| Force charge | must be < Over discharge < Recovery | leave at default |
+| Max charge SOC | default 100% | **95%**, not 100% |
+
+**Why start well below the pack's real capability:** this is the first time
+the whole chain - BMS → gateway → Solis → actual power flow - runs live. Low
+current keeps any real mistake small and slow to develop while you watch the
+first cycle. Raise it in steps once you've seen a clean cycle, rather than
+jumping straight to the pack's rating. This project's gateway already clamps
+everything to a 105 A ceiling regardless of what's set here (`CCL_MAX_dA`/
+`DCL_MAX_dA` in `config.h`) - that's a conservative safety clamp, not a
+confirmed rating for this specific pack, so don't treat 105 A as "the real
+number" when deciding how high to eventually go. Check the GBLI6532's own
+nameplate/datasheet for its true continuous rating before pushing past the
+low starting point.
+
+**Why 95% not 100% for Max charge SOC:** the Solis appears to partly ignore
+the CAN charge-voltage limit and use its own float setting, so **do not rely
+on `0x351` CVL as your only over-charge protection** - capping SOC at 95%
+gives a real margin independent of anything CAN-based.
 
 ### Step 5 — go live
 
