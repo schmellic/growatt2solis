@@ -207,12 +207,17 @@ ground fault costing you an ESP32 and costing you an inverter.
   **inverter** - matching the existing convention - but which physical screw
   terminal block is labelled A vs B on the silkscreen still needs a look.
 - **MCP2515 oscillator — CONFIRMED 16 MHz** from the schematic (crystal X1,
-  marked "16MHZ±10ppm"), not the 8 MHz this project assumed before. `config.h`
+  marked "16MHZ±10ppm") and independently from the physical crystal's own
+  marking ("YC16.0") - not the 8 MHz this project assumed before. `config.h`
   is now pinned to `MCP_16MHZ`.
+- **Confirmed non-FD `T-2Can_V1.0`** - the MCP2515 chip is physically visible
+  on the board, matching what this project targets (the `T-2Can-Fd` variant
+  uses an MCP2518 and a different library instead - not supported here).
 
-**T-2Can caveats, still not confirmed against a real board:**
-- Confirm it's the **non-FD** `T-2Can_V1.0` this project targets, not
-  `T-2Can-Fd` (MCP2518, different library, not supported here).
+No caveats left unconfirmed against the real board as of 2026-08-31 - the
+one remaining physical-wiring detail (which silkscreen-labelled terminal
+block is CAN-A vs CAN-B) is a five-minute check when you're actually wiring
+it up, not a design question.
 
 ---
 
