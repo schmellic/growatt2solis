@@ -240,13 +240,13 @@ On the `Battery Setting` screen:
 the whole chain - BMS → gateway → Solis → actual power flow - runs live. Low
 current keeps any real mistake small and slow to develop while you watch the
 first cycle. Raise it in steps once you've seen a clean cycle, rather than
-jumping straight to the pack's rating. This project's gateway already clamps
-everything to a 105 A ceiling regardless of what's set here (`CCL_MAX_dA`/
-`DCL_MAX_dA` in `config.h`) - that's a conservative safety clamp, not a
-confirmed rating for this specific pack, so don't treat 105 A as "the real
-number" when deciding how high to eventually go. Check the GBLI6532's own
-nameplate/datasheet for its true continuous rating before pushing past the
-low starting point.
+jumping straight to the pack's rating. This project's gateway clamps
+everything to a per-pack ceiling of 104.2 A - confirmed against the real
+GBLI6532 datasheet (5 kW / 104.2 A max) - multiplied by the live pack count
+from `0x312` (`CCL_MAX_PER_PACK_dA`/`DCL_MAX_PER_PACK_dA` in `config.h`), so
+a 2-pack system's real ceiling is 208.4 A. That's a real confirmed rating,
+not a soft guess, but it's still well above where you'd want to start a
+first live test.
 
 **Why 95% not 100% for Max charge SOC:** the Solis appears to partly ignore
 the CAN charge-voltage limit and use its own float setting, so **do not rely
