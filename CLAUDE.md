@@ -164,9 +164,29 @@ the fact that this was inferred/secondhand before) doesn't get lost.
    (`ENABLE_0x319_FALLBACK` in `config.h`, renamed from
    `ENABLE_0x311_FALLBACK` since its meaning flipped). Covered by test [9] in
    `test/test_translate.cpp`.
+7. **New finding, practically resolved — the battery protectively disables
+   itself if it loses CAN comms, independent of this gateway's own
+   derate/silence logic.** During the first live run against a real Solis
+   (2026-08-31, `captures/2026-08-31-gbli6532-t2can-solis-live-charging.log`),
+   the T-2Can was physically disconnected mid-discharge to move it to a
+   laptop - dropping both CAN links at once. The battery responded by
+   setting `chg_en=0 dis_en=0` and opening its own relays (ALM light lit)
+   within its normal ~1 s telemetry cadence, well before this gateway's own
+   5 s/30 s derate/silence timers would even trigger - this is the battery's
+   *own* BMS protecting itself, not something this project's firmware
+   caused or controls. It recovered cleanly within ~4.5 minutes of
+   reconnection (`CCL`/`DCL` starting at the same 25.6 A seen in every other
+   re-enable capture before ramping to the full 208.4 A ceiling), with no
+   repeat and no lasting effect. **Still open:** `prot=`/`warn=` (the
+   `0x312` bytes this project decodes) stayed `0000` throughout the entire
+   event - whatever internally triggers this isn't visible in the bytes
+   currently parsed. Doesn't block anything (the behavior itself is exactly
+   the "fail toward disconnection" this project wants), but worth knowing:
+   don't expect to see this coming via `0x312`'s protection/warning flags,
+   and avoid disconnecting the gateway mid-operation unless deliberate.
 
-`SNIFFING.md` is the procedure for answering all of these from the existing
-GBLI ↔ SPH6000 link.
+`SNIFFING.md` is the procedure for answering the original four questions
+from the existing GBLI ↔ SPH6000 link.
 
 ## Safety posture
 
@@ -185,6 +205,17 @@ lands.
 Also relevant: the Solis appears to partly ignore the CAN charge-voltage limit
 and use its own float setting. `0x351` CVL is not the only over-charge
 protection, and shouldn't be treated as such.
+
+**Confirmed real-world (2026-08-31, first live run):** the GBLI6532 itself
+also fails toward disconnection independently of anything this gateway does.
+Physically disconnecting the T-2Can mid-discharge (both CAN links dropped at
+once) caused the battery to disable charge/discharge and open its own
+relays within its normal ~1 s telemetry cadence - not waiting for any
+documented timeout. It recovered cleanly within minutes of reconnection with
+no lasting effect. See open question 7 below and the capture referenced
+there. This is reassuring defense-in-depth: even if this gateway's own
+derate/silence logic somehow failed, the battery's own BMS independently
+protects itself the same way.
 
 ## Future direction
 

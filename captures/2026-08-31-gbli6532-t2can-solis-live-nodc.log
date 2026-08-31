@@ -1,0 +1,145 @@
+--- Terminal on /dev/ttyACM0 | 115200 8-N-1
+--- Available filters and text transformations: debug, default, direct, esp32_exception_decoder, hexlify, log2file, nocontrol, printable, send_on_enter, time
+--- More details at https://bit.ly/pio-monitor-filters
+--- Quit: Ctrl+C | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+[110s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=no
+[112s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=no
+[114s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=no
+[116s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=no
+[118s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=no
+[120s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=no
+[122s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=no
+[124s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=no
+[126s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=yes
+[128s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=yes
+[130s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=yes
+[132s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=yes
+[134s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=yes
+[136s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=yes
+[138s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=yes
+[140s] SILENT WAIT V=0.00V I=+0.0A T=0.0C SOC=0% SOH=100% | CVL=0.0V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=1 | inv0x305=yes
+[142s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[144s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[146s] OK V=53.20V I=+0.3A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[148s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[150s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[152s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[154s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[156s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[158s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[160s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[162s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[164s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[166s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[168s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[170s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[172s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[174s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[176s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[178s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[180s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[182s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[184s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[186s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[188s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[190s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[192s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[194s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[196s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[198s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[200s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[202s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[204s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[206s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[208s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[210s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[212s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[214s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[216s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[218s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[220s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[222s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[224s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[226s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[228s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[230s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[232s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[234s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[236s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[238s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[240s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[242s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[244s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[246s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[248s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[250s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[252s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[254s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[256s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[258s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[260s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[262s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[264s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[266s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[268s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[270s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[272s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[274s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[276s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[278s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[280s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[282s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[284s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[286s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[288s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[290s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[292s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[294s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[296s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[298s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[300s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[302s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[304s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[306s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[308s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[310s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[312s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[314s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[316s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[318s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[320s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[322s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[324s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[326s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[328s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[330s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[332s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[334s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[336s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[338s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[340s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[342s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[344s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[346s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[348s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[350s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[352s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[354s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[356s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[358s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[360s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[362s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[364s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[366s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[368s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[370s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[372s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[374s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[376s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[378s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[380s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[382s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[384s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[386s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[388s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
+[390s] OK V=53.20V I=+0.0A T=21.8C SOC=87% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=yes
