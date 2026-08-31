@@ -42,7 +42,7 @@
 // battery bus and dump every frame to serial. Set to false once verified.
 // (For tapping a LIVE battery<->Growatt link, flash the separate `sniffer`
 // environment instead - it runs the CAN controller in listen-only mode.)
-#define SNIFF_ONLY              false
+#define SNIFF_ONLY              true
 
 #define VERBOSE_DECODE          true    // one-line decoded battery summary
 #define VERBOSE_TX              false   // dump every outgoing Pylon frame
