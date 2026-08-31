@@ -42,10 +42,14 @@
 // battery bus and dump every frame to serial. Set to false once verified.
 // (For tapping a LIVE battery<->Growatt link, flash the separate `sniffer`
 // environment instead - it runs the CAN controller in listen-only mode.)
-#define SNIFF_ONLY              true
+#define SNIFF_ONLY              false
 
 #define VERBOSE_DECODE          true    // one-line decoded battery summary
 #define VERBOSE_TX              false   // dump every outgoing Pylon frame
+#define VERBOSE_STATS           true    // periodic per-ID frame rate table (diagnostic,
+                                         // same format as sniffer.cpp - added to compare
+                                         // real battery-side traffic rates against a real
+                                         // Growatt inverter, see CLAUDE.md open question 8
 
 // -----------------------------------------------------------------------------
 // 2. HARDWARE PINS

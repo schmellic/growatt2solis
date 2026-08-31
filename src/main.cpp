@@ -28,6 +28,76 @@ static BatteryState batt;
 static uint32_t lastInverterAliveMs = 0;
 static bool     invSeen = false;
 
+#if VERBOSE_STATS
+// -----------------------------------------------------------------------------
+//  Per-ID frame rate table, identical format to sniffer.cpp's, added to
+//  directly compare real battery-side traffic rates while this gateway is
+//  driving the bus against the same table captured while a real Growatt
+//  inverter drives it - see CLAUDE.md open question 8. Pure observation,
+//  no effect on translation/safety behavior.
+// -----------------------------------------------------------------------------
+#define STATS_MAX_IDS       40
+#define STATS_INTERVAL_MS   15000
+
+struct IdStat {
+    uint32_t id;
+    uint32_t count;
+    uint32_t firstMs;
+    uint32_t lastMs;
+    uint32_t minGap;
+    uint32_t maxGap;
+    bool     used;
+};
+static IdStat statsTable[STATS_MAX_IDS];
+static uint32_t statsTotalFrames = 0;
+
+static void statsRecord(uint32_t id, uint32_t now) {
+    IdStat *s = nullptr;
+    for (int i = 0; i < STATS_MAX_IDS; i++)
+        if (statsTable[i].used && statsTable[i].id == id) { s = &statsTable[i]; break; }
+    if (!s) {
+        for (int i = 0; i < STATS_MAX_IDS; i++)
+            if (!statsTable[i].used) {
+                s = &statsTable[i];
+                s->used = true;
+                s->id = id;
+                s->minGap = 0xFFFFFFFF;
+                break;
+            }
+    }
+    if (!s) return;
+    if (s->count == 0) {
+        s->firstMs = now;
+    } else {
+        uint32_t gap = now - s->lastMs;
+        if (gap < s->minGap) s->minGap = gap;
+        if (gap > s->maxGap) s->maxGap = gap;
+    }
+    s->lastMs = now;
+    s->count++;
+    statsTotalFrames++;
+}
+
+static void statsPrint() {
+    Serial.println();
+    Serial.println(F("---- battery-bus rate stats (VERBOSE_STATS) ----------------------------"));
+    Serial.printf ("  %lu frames, %lu s elapsed\n",
+                   (unsigned long)statsTotalFrames, (unsigned long)(millis() / 1000));
+    Serial.println(F("  ID     count   period(ms)  (min-max gap)"));
+    for (int i = 0; i < STATS_MAX_IDS; i++) {
+        if (!statsTable[i].used) continue;
+        IdStat &s = statsTable[i];
+        uint32_t mean = (s.count > 1) ? (s.lastMs - s.firstMs) / (s.count - 1) : 0;
+        Serial.printf("  0x%03X  %6lu  %5lu (%lu-%lu)\n",
+                      (unsigned)s.id, (unsigned long)s.count, (unsigned long)mean,
+                      (unsigned long)(s.minGap == 0xFFFFFFFF ? 0 : s.minGap),
+                      (unsigned long)s.maxGap);
+    }
+    Serial.println(F("--------------------------------------------------------------------------"));
+    Serial.println();
+}
+#endif
+
 MCP_CAN MCP(MCP_CS_PIN);
 
 // -----------------------------------------------------------------------------
@@ -69,6 +139,9 @@ static void pollBatteryBus() {
         if (msg.extd || msg.rtr) continue;      // Growatt LV is 11-bit data only
 #if SNIFF_ONLY
         dumpFrame("BAT RX", msg.identifier, msg.data_length_code, msg.data);
+#endif
+#if VERBOSE_STATS
+        statsRecord(msg.identifier, millis());
 #endif
         decodeGrowatt(batt, msg.identifier, msg.data_length_code, msg.data, millis());
     }
@@ -190,6 +263,9 @@ void setup() {
 
 void loop() {
     static uint32_t lastPylonTx = 0, lastKeepalive = 0, lastPrint = 0;
+#if VERBOSE_STATS
+    static uint32_t lastStats = 0;
+#endif
 
     pollBatteryBus();
     pollInverterBus();
@@ -219,6 +295,13 @@ void loop() {
     if (now - lastPrint >= 2000) {
         lastPrint = now;
         printSummary(derate, silent);
+    }
+#endif
+
+#if VERBOSE_STATS
+    if (now - lastStats >= STATS_INTERVAL_MS) {
+        lastStats = now;
+        statsPrint();
     }
 #endif
 }

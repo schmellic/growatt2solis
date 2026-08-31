@@ -184,6 +184,88 @@ the fact that this was inferred/secondhand before) doesn't get lost.
    the "fail toward disconnection" this project wants), but worth knowing:
    don't expect to see this coming via `0x312`'s protection/warning flags,
    and avoid disconnecting the gateway mid-operation unless deliberate.
+8. **OPEN — the GBLI6532 latches `chg_en=0 dis_en=0` exactly 594 s (9m54s)
+   after every enable, independent of CAN traffic content, and does not
+   self-recover.** First seen 2026-08-31 during ordinary live operation (no
+   comms interruption at all - distinct from item 7 above). Reproduced four
+   times total the same day; the clearest evidence is in
+   (`captures/2026-08-31-gbli6532-t2can-laptop-power-10min.log`, raw serial
+   capture via `cat` rather than `pio device monitor`, which needs a real
+   TTY and can't run unattended/backgrounded), which spans two full cycles:
+   `chg_en` went 0→1 at t=58s and 0→1 again (after a manual POWER-button
+   cycle) at t=1090s, and **both times it dropped back to 0 exactly 594
+   seconds later** (t=652s and t=1684s) - not "about 10 minutes," the exact
+   same interval to the second, twice independently. That precision rules
+   out a coincidence or a soft threshold - it's a real countdown timer
+   internal to the BMS, keyed off the enable transition itself, not off
+   power-on or anything on the bus. Throughout both cycles the gateway
+   itself never missed a beat (`inv0x305=yes` held, no reboot, keepalive at
+   its normal 1 Hz) and `prot=`/`warn=` stayed `0000` - same blind spot as
+   item 7, no visibility into *why* via the bytes this project decodes.
+   Two theories were floated and **both failed to survive checking against
+   evidence already in hand**, worth keeping here so they aren't tried
+   again: (a) a sustained WAKE+/WAKE− signal being required long-term -
+   ruled out because a real multimeter check against the genuine SPH6000
+   pairing read ~0 V steady-state on those pins, so a real Growatt inverter
+   evidently doesn't hold them at any voltage either; (b) the BMS
+   distrusting a *literally* byte-identical `0x301` replayed forever - an
+   untested guess, dropped in favor of getting real data instead of trying
+   more firmware changes blind. Cross-checked against the official spec
+   (freshly re-fetched and read in full, not from memory): no documented
+   watchdog/heartbeat requirement beyond the 1 Hz `0x301` this project
+   already sends unchanged, so nothing there points to a missing step
+   either.
+
+   **Confirmed: this is specific to this gateway's replay, not inherent to
+   the battery.** Reconnected the real SPH6000 directly to the battery
+   (`captures/2026-08-31-gbli6532-sph6000-t2can-sniffer-594s-test.log`,
+   passive tap via a new `sniffer-t2can` PlatformIO env - the plain
+   `sniffer` env lacks the `ARDUINO_USB_CDC_ON_BOOT` flag the T-2Can needs
+   for serial output, which would have silently produced an empty log
+   again). The real inverter ran **14m51s with zero disables**, `chg_en=1
+   dis_en=1` the entire time including through real discharge at -56.6A -
+   well past three separate 594 s failures on the same battery. A real
+   Growatt inverter simply doesn't hit this wall.
+
+   Two more candidate explanations were checked directly against data
+   already in hand, rather than guessed at, and **both ruled out**:
+   - **Payload content:** the real `0x301` is byte-for-byte
+     `0B 16 21 2C 37 42 4D 58` - identical to what this gateway already
+     sends - for the entire 14m51s. Not a "distrusts a static replay" issue.
+   - **Frame-rate/load correlation:** the real capture initially looked
+     dramatically busier (a raw cumulative average suggested `0x311` at
+     ~76 Hz vs. this gateway's ~1 Hz), but that number was skewed by a
+     large burst in the capture's first ~20s. Re-measured from a clean
+     steady-state window far from the burst, and separately checked
+     whether rate tracks load (it doesn't - frame rate stayed flat across
+     both an idle stretch and a sustained -57 A discharge in the same
+     capture) - so neither "poll rate" nor "load" explain the gap the way
+     first suspected. Left here so this isn't re-investigated from scratch.
+
+   Reproduced the exact 594 s interval a **third** time in the cleanest
+   possible topology - battery and gateway only, no Solis, no SPH6000 at
+   all
+   (`captures/2026-08-31-gbli6532-t2can-batteryonly-594s-clean.log`,
+   enable t=68s -> disable t=664s = 596 s, within the 2 s print-resolution
+   margin of the other two) - which also rules out the Solis or any
+   shared-bus artifact having anything to do with it. Added `VERBOSE_STATS`
+   to `config.h`/`main.cpp` (2026-08-31): a per-ID frame-rate table,
+   identical format to `sniffer.cpp`'s, built into the translator firmware
+   itself so it can be compared directly against a sniffer capture without
+   needing a second device on the bus.
+
+   **Not yet found: the actual trigger.** Root cause remains unknown -
+   `prot=`/`warn=` never light up, the spec doesn't document a mechanism,
+   and the two most obvious differences between this gateway and a real
+   inverter (payload content, aggregate frame rate under load) have both
+   been checked and don't explain it. Worth trying next, still untested:
+   matching the real inverter's `0x301` timing more closely (not a fixed
+   1000 ms metronome - the real one has visible jitter, 0-3936 ms gaps) in
+   case irregular timing itself matters rather than raw frequency.
+   **Not blocking Phase 2 electrically** (still "fail toward disconnection,"
+   not toward uncontrolled current), but it is a real operational problem:
+   as it stands, unattended operation has a hard ~594 s ceiling before
+   requiring a manual POWER-button cycle.
 
 `SNIFFING.md` is the procedure for answering the original four questions
 from the existing GBLI ↔ SPH6000 link.
@@ -216,6 +298,13 @@ no lasting effect. See open question 7 below and the capture referenced
 there. This is reassuring defense-in-depth: even if this gateway's own
 derate/silence logic somehow failed, the battery's own BMS independently
 protects itself the same way.
+
+**Known operational limitation, not yet root-caused (2026-08-31):** the
+GBLI6532 also latches disabled roughly 10-11 minutes after power-on even
+with a perfectly healthy, uninterrupted CAN link - see open question 8.
+Unlike the comms-loss case above, this doesn't self-recover; it needs a
+manual POWER-button cycle. Still fails toward disconnection, so not unsafe,
+but plan around it until it's understood.
 
 ## Future direction
 

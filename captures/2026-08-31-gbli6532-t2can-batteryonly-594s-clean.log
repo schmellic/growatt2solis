@@ -1,0 +1,2234 @@
+[6s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[8s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[10s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[12s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[14s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  235 frames, 15 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330      16    901 (0-2881)
+  0x312      16    909 (0-2761)
+  0x313      16    908 (0-2771)
+  0x314      16    908 (0-2781)
+  0x315      16    907 (0-2791)
+  0x316      16    906 (0-2801)
+  0x317      16    906 (0-2811)
+  0x318      16    906 (0-2821)
+  0x319      16    906 (0-2831)
+  0x320      16    906 (0-2840)
+  0x322      16    903 (0-2847)
+  0x311      16    910 (0-2747)
+  0x323      14   1041 (0-2861)
+  0x324      14   1041 (0-2861)
+  0x329      15    966 (0-2870)
+--------------------------------------------------------------------------
+
+[16s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[18s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[20s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[22s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[24s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[26s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[28s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  460 frames, 30 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330      31    950 (0-2881)
+  0x312      31    954 (0-2761)
+  0x313      31    953 (0-2771)
+  0x314      31    953 (0-2781)
+  0x315      31    953 (0-2791)
+  0x316      31    953 (0-2801)
+  0x317      31    953 (0-2811)
+  0x318      31    953 (0-2821)
+  0x319      31    953 (0-2831)
+  0x320      31    951 (0-2840)
+  0x322      31    951 (0-2847)
+  0x311      31    954 (0-2747)
+  0x323      29   1018 (0-2861)
+  0x324      29   1018 (0-2861)
+  0x329      30    983 (0-2870)
+--------------------------------------------------------------------------
+
+[30s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[32s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[34s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[36s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[38s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[40s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[42s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[44s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  685 frames, 45 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330      46    966 (0-2881)
+  0x312      46    969 (0-2761)
+  0x313      46    969 (0-2771)
+  0x314      46    968 (0-2781)
+  0x315      46    968 (0-2791)
+  0x316      46    968 (0-2801)
+  0x317      46    968 (0-2811)
+  0x318      46    967 (0-2821)
+  0x319      46    967 (0-2831)
+  0x320      46    967 (0-2840)
+  0x322      46    967 (0-2847)
+  0x311      46    969 (0-2747)
+  0x323      44   1011 (0-2861)
+  0x324      44   1011 (0-2861)
+  0x329      45    988 (0-2870)
+--------------------------------------------------------------------------
+
+[46s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+[48s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+[50s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+[52s] DERATE OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+[54s] DERATE OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+[56s] DERATE OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+[58s] DERATE OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  715 frames, 60 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330      48    967 (0-2881)
+  0x312      48    970 (0-2761)
+  0x313      48    970 (0-2771)
+  0x314      48    970 (0-2781)
+  0x315      48    970 (0-2791)
+  0x316      48    970 (0-2801)
+  0x317      48    970 (0-2811)
+  0x318      48    969 (0-2821)
+  0x319      48    969 (0-2831)
+  0x320      48    968 (0-2840)
+  0x322      48    968 (0-2847)
+  0x311      48    970 (0-2747)
+  0x323      46   1011 (0-2861)
+  0x324      46   1011 (0-2861)
+  0x329      47    989 (0-2870)
+--------------------------------------------------------------------------
+
+[60s] DERATE OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+[62s] DERATE OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0002 | packs=2 | inv0x305=no
+[64s] OK V=53.10V I=+0.0A T=22.5C SOC=71% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[66s] OK V=53.10V I=+0.0A T=22.5C SOC=71% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[68s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[70s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[72s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[74s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  895 frames, 75 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330      60   1246 (0-17055)
+  0x312      60   1248 (0-17055)
+  0x313      60   1248 (0-17054)
+  0x314      60   1248 (0-17049)
+  0x315      60   1247 (0-17039)
+  0x316      60   1247 (0-17029)
+  0x317      60   1247 (0-17019)
+  0x318      60   1247 (0-17055)
+  0x319      60   1247 (0-17056)
+  0x320      60   1247 (0-17065)
+  0x322      60   1247 (0-17072)
+  0x311      60   1248 (0-17055)
+  0x323      58   1291 (0-17086)
+  0x324      58   1291 (0-17086)
+  0x329      59   1268 (0-17095)
+--------------------------------------------------------------------------
+
+[76s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[78s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[80s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[82s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[84s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[86s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[88s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  1120 frames, 90 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330      75   1196 (0-17055)
+  0x312      75   1197 (0-17055)
+  0x313      75   1197 (0-17054)
+  0x314      75   1197 (0-17049)
+  0x315      75   1197 (0-17039)
+  0x316      75   1197 (0-17029)
+  0x317      75   1197 (0-17019)
+  0x318      75   1197 (0-17055)
+  0x319      75   1197 (0-17056)
+  0x320      75   1197 (0-17065)
+  0x322      75   1197 (0-17072)
+  0x311      75   1198 (0-17055)
+  0x323      73   1229 (0-17086)
+  0x324      73   1229 (0-17086)
+  0x329      74   1212 (0-17095)
+--------------------------------------------------------------------------
+
+[90s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[92s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[94s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[96s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[98s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[100s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[102s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[104s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  1345 frames, 105 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330      90   1163 (0-17055)
+  0x312      90   1164 (0-17055)
+  0x313      90   1164 (0-17054)
+  0x314      90   1164 (0-17049)
+  0x315      90   1164 (0-17039)
+  0x316      90   1164 (0-17029)
+  0x317      90   1164 (0-17019)
+  0x318      90   1164 (0-17055)
+  0x319      90   1164 (0-17056)
+  0x320      90   1163 (0-17065)
+  0x322      90   1163 (0-17072)
+  0x311      90   1164 (0-17055)
+  0x323      88   1190 (0-17086)
+  0x324      88   1190 (0-17086)
+  0x329      89   1176 (0-17095)
+--------------------------------------------------------------------------
+
+[106s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[108s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[110s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[112s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[114s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[116s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[118s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  1570 frames, 120 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     105   1139 (0-17055)
+  0x312     105   1140 (0-17055)
+  0x313     105   1140 (0-17054)
+  0x314     105   1140 (0-17049)
+  0x315     105   1140 (0-17039)
+  0x316     105   1140 (0-17029)
+  0x317     105   1140 (0-17019)
+  0x318     105   1140 (0-17055)
+  0x319     105   1139 (0-17056)
+  0x320     105   1139 (0-17065)
+  0x322     105   1139 (0-17072)
+  0x311     105   1140 (0-17055)
+  0x323     103   1161 (0-17086)
+  0x324     103   1161 (0-17086)
+  0x329     104   1150 (0-17095)
+--------------------------------------------------------------------------
+
+[120s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[122s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[124s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[126s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[128s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[130s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[132s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[134s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  1795 frames, 135 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     120   1121 (0-17055)
+  0x312     120   1122 (0-17055)
+  0x313     120   1122 (0-17054)
+  0x314     120   1122 (0-17049)
+  0x315     120   1122 (0-17039)
+  0x316     120   1122 (0-17029)
+  0x317     120   1122 (0-17019)
+  0x318     120   1122 (0-17055)
+  0x319     120   1122 (0-17056)
+  0x320     120   1122 (0-17065)
+  0x322     120   1122 (0-17072)
+  0x311     120   1122 (0-17055)
+  0x323     118   1141 (0-17086)
+  0x324     118   1141 (0-17086)
+  0x329     119   1131 (0-17095)
+--------------------------------------------------------------------------
+
+[136s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[138s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[140s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[142s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[144s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[146s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[148s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  2020 frames, 150 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     135   1108 (0-17055)
+  0x312     135   1108 (0-17055)
+  0x313     135   1108 (0-17054)
+  0x314     135   1108 (0-17049)
+  0x315     135   1108 (0-17039)
+  0x316     135   1108 (0-17029)
+  0x317     135   1108 (0-17019)
+  0x318     135   1108 (0-17055)
+  0x319     135   1108 (0-17056)
+  0x320     135   1108 (0-17065)
+  0x322     135   1108 (0-17072)
+  0x311     135   1109 (0-17055)
+  0x323     133   1124 (0-17086)
+  0x324     133   1124 (0-17086)
+  0x329     134   1116 (0-17095)
+--------------------------------------------------------------------------
+
+[150s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[152s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[154s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[156s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[158s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[160s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[162s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[164s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  2245 frames, 165 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     150   1097 (0-17055)
+  0x312     150   1097 (0-17055)
+  0x313     150   1097 (0-17054)
+  0x314     150   1097 (0-17049)
+  0x315     150   1097 (0-17039)
+  0x316     150   1097 (0-17029)
+  0x317     150   1097 (0-17019)
+  0x318     150   1097 (0-17055)
+  0x319     150   1097 (0-17056)
+  0x320     150   1097 (0-17065)
+  0x322     150   1097 (0-17072)
+  0x311     150   1097 (0-17055)
+  0x323     148   1112 (0-17086)
+  0x324     148   1112 (0-17086)
+  0x329     149   1104 (0-17095)
+--------------------------------------------------------------------------
+
+[166s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[168s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[170s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[172s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[174s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[176s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[178s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  2470 frames, 180 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     165   1088 (0-17055)
+  0x312     165   1089 (0-17055)
+  0x313     165   1089 (0-17054)
+  0x314     165   1088 (0-17049)
+  0x315     165   1088 (0-17039)
+  0x316     165   1088 (0-17029)
+  0x317     165   1088 (0-17019)
+  0x318     165   1088 (0-17055)
+  0x319     165   1088 (0-17056)
+  0x320     165   1088 (0-17065)
+  0x322     165   1088 (0-17072)
+  0x311     165   1089 (0-17055)
+  0x323     163   1101 (0-17086)
+  0x324     163   1101 (0-17086)
+  0x329     164   1094 (0-17095)
+--------------------------------------------------------------------------
+
+[180s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[182s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[184s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[186s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[188s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[190s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[192s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[194s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  2695 frames, 195 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     180   1080 (0-17055)
+  0x312     180   1081 (0-17055)
+  0x313     180   1081 (0-17054)
+  0x314     180   1081 (0-17049)
+  0x315     180   1081 (0-17039)
+  0x316     180   1081 (0-17029)
+  0x317     180   1081 (0-17019)
+  0x318     180   1081 (0-17055)
+  0x319     180   1080 (0-17056)
+  0x320     180   1080 (0-17065)
+  0x322     180   1080 (0-17072)
+  0x311     180   1081 (0-17055)
+  0x323     178   1092 (0-17086)
+  0x324     178   1093 (0-17086)
+  0x329     179   1086 (0-17095)
+--------------------------------------------------------------------------
+
+[196s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[198s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[200s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[202s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[204s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[206s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[208s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  2920 frames, 210 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     195   1074 (0-17055)
+  0x312     195   1074 (0-17055)
+  0x313     195   1074 (0-17054)
+  0x314     195   1074 (0-17049)
+  0x315     195   1074 (0-17039)
+  0x316     195   1074 (0-17029)
+  0x317     195   1074 (0-17019)
+  0x318     195   1074 (0-17055)
+  0x319     195   1074 (0-17056)
+  0x320     195   1074 (0-17065)
+  0x322     195   1074 (0-17072)
+  0x311     195   1075 (0-17055)
+  0x323     193   1085 (0-17086)
+  0x324     193   1085 (0-17086)
+  0x329     194   1079 (0-17095)
+--------------------------------------------------------------------------
+
+[210s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[212s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[214s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[216s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[218s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[220s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[222s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[224s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  3145 frames, 225 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     210   1068 (0-17055)
+  0x312     210   1069 (0-17055)
+  0x313     210   1069 (0-17054)
+  0x314     210   1069 (0-17049)
+  0x315     210   1069 (0-17039)
+  0x316     210   1069 (0-17029)
+  0x317     210   1069 (0-17019)
+  0x318     210   1069 (0-17055)
+  0x319     210   1069 (0-17056)
+  0x320     210   1069 (0-17065)
+  0x322     210   1069 (0-17072)
+  0x311     210   1069 (0-17055)
+  0x323     208   1079 (0-17086)
+  0x324     208   1079 (0-17086)
+  0x329     209   1074 (0-17095)
+--------------------------------------------------------------------------
+
+[226s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[228s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[230s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[232s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[234s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[236s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[238s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  3370 frames, 240 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     225   1064 (0-17055)
+  0x312     225   1064 (0-17055)
+  0x313     225   1064 (0-17054)
+  0x314     225   1064 (0-17049)
+  0x315     225   1064 (0-17039)
+  0x316     225   1064 (0-17029)
+  0x317     225   1064 (0-17019)
+  0x318     225   1064 (0-17055)
+  0x319     225   1064 (0-17056)
+  0x320     225   1064 (0-17065)
+  0x322     225   1064 (0-17072)
+  0x311     225   1064 (0-17055)
+  0x323     223   1073 (0-17086)
+  0x324     223   1073 (0-17086)
+  0x329     224   1069 (0-17095)
+--------------------------------------------------------------------------
+
+[240s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[242s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[244s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[246s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[248s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[250s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[252s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[254s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  3595 frames, 255 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     240   1060 (0-17055)
+  0x312     240   1060 (0-17055)
+  0x313     240   1060 (0-17054)
+  0x314     240   1060 (0-17049)
+  0x315     240   1060 (0-17039)
+  0x316     240   1060 (0-17029)
+  0x317     240   1060 (0-17019)
+  0x318     240   1060 (0-17055)
+  0x319     240   1060 (0-17056)
+  0x320     240   1060 (0-17065)
+  0x322     240   1060 (0-17072)
+  0x311     240   1060 (0-17055)
+  0x323     238   1069 (0-17086)
+  0x324     238   1069 (0-17086)
+  0x329     239   1064 (0-17095)
+--------------------------------------------------------------------------
+
+[256s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[258s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[260s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[262s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[264s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[266s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[268s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  3820 frames, 270 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     255   1056 (0-17055)
+  0x312     255   1057 (0-17055)
+  0x313     255   1057 (0-17054)
+  0x314     255   1057 (0-17049)
+  0x315     255   1056 (0-17039)
+  0x316     255   1056 (0-17029)
+  0x317     255   1056 (0-17019)
+  0x318     255   1056 (0-17055)
+  0x319     255   1056 (0-17056)
+  0x320     255   1056 (0-17065)
+  0x322     255   1056 (0-17072)
+  0x311     255   1057 (0-17055)
+  0x323     253   1065 (0-17086)
+  0x324     253   1065 (0-17086)
+  0x329     254   1060 (0-17095)
+--------------------------------------------------------------------------
+
+[270s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[272s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[274s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[276s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[278s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[280s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[282s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[284s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  4046 frames, 285 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     271   1053 (0-17055)
+  0x312     270   1053 (0-17055)
+  0x313     270   1053 (0-17054)
+  0x314     270   1053 (0-17049)
+  0x315     270   1053 (0-17039)
+  0x316     270   1053 (0-17029)
+  0x317     270   1053 (0-17019)
+  0x318     270   1053 (0-17055)
+  0x319     270   1053 (0-17056)
+  0x320     270   1053 (0-17065)
+  0x322     270   1053 (0-17072)
+  0x311     270   1053 (0-17055)
+  0x323     268   1061 (0-17086)
+  0x324     268   1061 (0-17086)
+  0x329     269   1057 (0-17095)
+--------------------------------------------------------------------------
+
+[286s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[288s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[290s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[292s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[294s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[296s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[298s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  4272 frames, 300 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     286   1050 (0-17055)
+  0x312     285   1050 (0-17055)
+  0x313     285   1050 (0-17054)
+  0x314     285   1050 (0-17049)
+  0x315     285   1050 (0-17039)
+  0x316     285   1050 (0-17029)
+  0x317     285   1050 (0-17019)
+  0x318     285   1050 (0-17055)
+  0x319     285   1050 (0-17056)
+  0x320     285   1050 (0-17065)
+  0x322     285   1050 (0-17072)
+  0x311     285   1051 (0-17055)
+  0x323     283   1058 (0-17086)
+  0x324     283   1058 (0-17086)
+  0x329     285   1054 (0-17095)
+--------------------------------------------------------------------------
+
+[300s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[302s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[304s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[306s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[308s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[310s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[312s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[314s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  4499 frames, 315 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     301   1047 (0-17055)
+  0x312     300   1048 (0-17055)
+  0x313     300   1048 (0-17054)
+  0x314     300   1048 (0-17049)
+  0x315     300   1048 (0-17039)
+  0x316     300   1048 (0-17029)
+  0x317     300   1048 (0-17019)
+  0x318     300   1048 (0-17055)
+  0x319     300   1048 (0-17056)
+  0x320     300   1048 (0-17065)
+  0x322     300   1048 (0-17072)
+  0x311     300   1048 (0-17055)
+  0x323     299   1054 (0-17086)
+  0x324     299   1054 (0-17086)
+  0x329     300   1051 (0-17095)
+--------------------------------------------------------------------------
+
+[316s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[318s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[320s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[322s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[324s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[326s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[328s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  4725 frames, 330 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     316   1045 (0-17055)
+  0x312     315   1046 (0-17055)
+  0x313     315   1045 (0-17054)
+  0x314     315   1045 (0-17049)
+  0x315     315   1045 (0-17039)
+  0x316     315   1045 (0-17029)
+  0x317     315   1045 (0-17019)
+  0x318     315   1045 (0-17055)
+  0x319     315   1045 (0-17056)
+  0x320     315   1045 (0-17065)
+  0x322     316   1045 (0-17072)
+  0x311     315   1046 (0-17055)
+  0x323     314   1052 (0-17086)
+  0x324     314   1052 (0-17086)
+  0x329     315   1048 (0-17095)
+--------------------------------------------------------------------------
+
+[330s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[332s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[334s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[336s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[338s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[340s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[342s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[344s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  4952 frames, 345 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     331   1043 (0-17055)
+  0x312     330   1043 (0-17055)
+  0x313     330   1043 (0-17054)
+  0x314     330   1043 (0-17049)
+  0x315     330   1043 (0-17039)
+  0x316     330   1043 (0-17029)
+  0x317     330   1043 (0-17019)
+  0x318     330   1043 (0-17055)
+  0x319     331   1043 (0-17056)
+  0x320     331   1043 (0-17065)
+  0x322     331   1043 (0-17072)
+  0x311     330   1043 (0-17055)
+  0x323     329   1049 (0-17086)
+  0x324     329   1049 (0-17086)
+  0x329     330   1046 (0-17095)
+--------------------------------------------------------------------------
+
+[346s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[348s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[350s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[352s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[354s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[356s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[358s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  5178 frames, 360 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     346   1041 (0-17055)
+  0x312     345   1041 (0-17055)
+  0x313     345   1041 (0-17054)
+  0x314     345   1041 (0-17049)
+  0x315     345   1041 (0-17039)
+  0x316     345   1041 (0-17029)
+  0x317     345   1041 (0-17019)
+  0x318     346   1041 (0-17055)
+  0x319     346   1041 (0-17056)
+  0x320     346   1041 (0-17065)
+  0x322     346   1041 (0-17072)
+  0x311     345   1041 (0-17055)
+  0x323     344   1047 (0-17086)
+  0x324     344   1047 (0-17086)
+  0x329     345   1044 (0-17095)
+--------------------------------------------------------------------------
+
+[360s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[362s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[364s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[366s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[368s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[370s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[372s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[374s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  5404 frames, 375 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     361   1039 (0-17055)
+  0x312     360   1040 (0-17055)
+  0x313     360   1040 (0-17054)
+  0x314     360   1040 (0-17049)
+  0x315     360   1040 (0-17039)
+  0x316     360   1040 (0-17029)
+  0x317     361   1039 (0-17019)
+  0x318     361   1039 (0-17055)
+  0x319     361   1039 (0-17056)
+  0x320     361   1039 (0-17065)
+  0x322     361   1039 (0-17072)
+  0x311     360   1040 (0-17055)
+  0x323     359   1045 (0-17086)
+  0x324     359   1045 (0-17086)
+  0x329     360   1042 (0-17095)
+--------------------------------------------------------------------------
+
+[376s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[378s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[380s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[382s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[384s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[386s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[388s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  5630 frames, 390 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     376   1038 (0-17055)
+  0x312     375   1038 (0-17055)
+  0x313     375   1038 (0-17054)
+  0x314     375   1038 (0-17049)
+  0x315     375   1038 (0-17039)
+  0x316     376   1038 (0-17029)
+  0x317     376   1038 (0-17019)
+  0x318     376   1038 (0-17055)
+  0x319     376   1038 (0-17056)
+  0x320     376   1038 (0-17065)
+  0x322     376   1038 (0-17072)
+  0x311     375   1038 (0-17055)
+  0x323     374   1043 (0-17086)
+  0x324     374   1043 (0-17086)
+  0x329     375   1040 (0-17095)
+--------------------------------------------------------------------------
+
+[390s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[392s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[394s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[396s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[398s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[400s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[402s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[404s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  5857 frames, 405 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     391   1036 (0-17055)
+  0x312     390   1036 (0-17055)
+  0x313     390   1036 (0-17054)
+  0x314     391   1036 (0-17049)
+  0x315     391   1036 (0-17039)
+  0x316     391   1036 (0-17029)
+  0x317     391   1036 (0-17019)
+  0x318     391   1036 (0-17055)
+  0x319     391   1036 (0-17056)
+  0x320     391   1036 (0-17065)
+  0x322     391   1036 (0-17072)
+  0x311     390   1037 (0-17055)
+  0x323     389   1041 (0-17086)
+  0x324     389   1041 (0-17086)
+  0x329     390   1039 (0-17095)
+--------------------------------------------------------------------------
+
+[406s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[408s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[410s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[412s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[414s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[416s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[418s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  6083 frames, 420 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     406   1035 (0-17055)
+  0x312     405   1035 (0-17055)
+  0x313     406   1035 (0-17054)
+  0x314     406   1035 (0-17049)
+  0x315     406   1035 (0-17039)
+  0x316     406   1035 (0-17029)
+  0x317     406   1035 (0-17019)
+  0x318     406   1035 (0-17055)
+  0x319     406   1035 (0-17056)
+  0x320     406   1035 (0-17065)
+  0x322     406   1035 (0-17072)
+  0x311     405   1035 (0-17055)
+  0x323     404   1040 (0-17086)
+  0x324     404   1040 (0-17086)
+  0x329     405   1037 (0-17095)
+--------------------------------------------------------------------------
+
+[420s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[422s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[424s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[426s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[428s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[430s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[432s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[434s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  6309 frames, 435 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     421   1033 (0-17055)
+  0x312     421   1034 (0-17055)
+  0x313     421   1034 (0-17054)
+  0x314     421   1034 (0-17049)
+  0x315     421   1034 (0-17039)
+  0x316     421   1034 (0-17029)
+  0x317     421   1034 (0-17019)
+  0x318     421   1034 (0-17055)
+  0x319     421   1034 (0-17056)
+  0x320     421   1034 (0-17065)
+  0x322     421   1033 (0-17072)
+  0x311     420   1034 (0-17055)
+  0x323     419   1038 (0-17086)
+  0x324     419   1038 (0-17086)
+  0x329     420   1036 (0-17095)
+--------------------------------------------------------------------------
+
+[436s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[438s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[440s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[442s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[444s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[446s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[448s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  6535 frames, 450 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     436   1032 (0-17055)
+  0x312     436   1032 (0-17055)
+  0x313     436   1032 (0-17054)
+  0x314     436   1032 (0-17049)
+  0x315     436   1032 (0-17039)
+  0x316     436   1032 (0-17029)
+  0x317     436   1032 (0-17019)
+  0x318     436   1032 (0-17055)
+  0x319     436   1032 (0-17056)
+  0x320     436   1032 (0-17065)
+  0x322     436   1032 (0-17072)
+  0x311     436   1033 (0-17055)
+  0x323     434   1037 (0-17086)
+  0x324     434   1037 (0-17086)
+  0x329     435   1035 (0-17095)
+--------------------------------------------------------------------------
+
+[450s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[452s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[454s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[456s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[458s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[460s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[462s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[464s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  6760 frames, 465 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     451   1031 (0-17055)
+  0x312     451   1031 (0-17055)
+  0x313     451   1031 (0-17054)
+  0x314     451   1031 (0-17049)
+  0x315     451   1031 (0-17039)
+  0x316     451   1031 (0-17029)
+  0x317     451   1031 (0-17019)
+  0x318     451   1031 (0-17055)
+  0x319     451   1031 (0-17056)
+  0x320     451   1031 (0-17065)
+  0x322     451   1031 (0-17072)
+  0x311     451   1031 (0-17055)
+  0x323     449   1036 (0-17086)
+  0x324     449   1036 (0-17086)
+  0x329     450   1033 (0-17095)
+--------------------------------------------------------------------------
+
+[466s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[468s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[470s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[472s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[474s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[476s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[478s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  6985 frames, 480 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     466   1030 (0-17055)
+  0x312     466   1030 (0-17055)
+  0x313     466   1030 (0-17054)
+  0x314     466   1030 (0-17049)
+  0x315     466   1030 (0-17039)
+  0x316     466   1030 (0-17029)
+  0x317     466   1030 (0-17019)
+  0x318     466   1030 (0-17055)
+  0x319     466   1030 (0-17056)
+  0x320     466   1030 (0-17065)
+  0x322     466   1030 (0-17072)
+  0x311     466   1030 (0-17055)
+  0x323     464   1035 (0-17086)
+  0x324     464   1035 (0-17086)
+  0x329     465   1032 (0-17095)
+--------------------------------------------------------------------------
+
+[480s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[482s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[484s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[486s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[488s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[490s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[492s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[494s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  7210 frames, 495 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     481   1029 (0-17055)
+  0x312     481   1029 (0-17055)
+  0x313     481   1029 (0-17054)
+  0x314     481   1029 (0-17049)
+  0x315     481   1029 (0-17039)
+  0x316     481   1029 (0-17029)
+  0x317     481   1029 (0-17019)
+  0x318     481   1029 (0-17055)
+  0x319     481   1029 (0-17056)
+  0x320     481   1029 (0-17065)
+  0x322     481   1029 (0-17072)
+  0x311     481   1029 (0-17055)
+  0x323     479   1033 (0-17086)
+  0x324     479   1033 (0-17086)
+  0x329     480   1031 (0-17095)
+--------------------------------------------------------------------------
+
+[496s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[498s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[500s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[502s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[504s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[506s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[508s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  7435 frames, 510 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     496   1028 (0-17055)
+  0x312     496   1028 (0-17055)
+  0x313     496   1028 (0-17054)
+  0x314     496   1028 (0-17049)
+  0x315     496   1028 (0-17039)
+  0x316     496   1028 (0-17029)
+  0x317     496   1028 (0-17019)
+  0x318     496   1028 (0-17055)
+  0x319     496   1028 (0-17056)
+  0x320     496   1028 (0-17065)
+  0x322     496   1028 (0-17072)
+  0x311     496   1028 (0-17055)
+  0x323     494   1032 (0-17086)
+  0x324     494   1032 (0-17086)
+  0x329     495   1030 (0-17095)
+--------------------------------------------------------------------------
+
+[510s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[512s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[514s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[516s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[518s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[520s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[522s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[524s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  7660 frames, 525 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     511   1027 (0-17055)
+  0x312     511   1028 (0-17055)
+  0x313     511   1028 (0-17054)
+  0x314     511   1027 (0-17049)
+  0x315     511   1027 (0-17039)
+  0x316     511   1027 (0-17029)
+  0x317     511   1027 (0-17019)
+  0x318     511   1027 (0-17055)
+  0x319     511   1027 (0-17056)
+  0x320     511   1027 (0-17065)
+  0x322     511   1027 (0-17072)
+  0x311     511   1028 (0-17055)
+  0x323     509   1031 (0-17086)
+  0x324     509   1031 (0-17086)
+  0x329     510   1029 (0-17095)
+--------------------------------------------------------------------------
+
+[526s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[528s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[530s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[532s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[534s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[536s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[538s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  7885 frames, 540 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     526   1026 (0-17055)
+  0x312     526   1027 (0-17055)
+  0x313     526   1027 (0-17054)
+  0x314     526   1027 (0-17049)
+  0x315     526   1027 (0-17039)
+  0x316     526   1027 (0-17029)
+  0x317     526   1027 (0-17019)
+  0x318     526   1027 (0-17055)
+  0x319     526   1027 (0-17056)
+  0x320     526   1027 (0-17065)
+  0x322     526   1027 (0-17072)
+  0x311     526   1027 (0-17055)
+  0x323     524   1030 (0-17086)
+  0x324     524   1030 (0-17086)
+  0x329     525   1028 (0-17095)
+--------------------------------------------------------------------------
+
+[540s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[542s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[544s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[546s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[548s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[550s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[552s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[554s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  8110 frames, 555 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     541   1026 (0-17055)
+  0x312     541   1026 (0-17055)
+  0x313     541   1026 (0-17054)
+  0x314     541   1026 (0-17049)
+  0x315     541   1026 (0-17039)
+  0x316     541   1026 (0-17029)
+  0x317     541   1026 (0-17019)
+  0x318     541   1026 (0-17055)
+  0x319     541   1026 (0-17056)
+  0x320     541   1026 (0-17065)
+  0x322     541   1026 (0-17072)
+  0x311     541   1026 (0-17055)
+  0x323     539   1030 (0-17086)
+  0x324     539   1030 (0-17086)
+  0x329     540   1028 (0-17095)
+--------------------------------------------------------------------------
+
+[556s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[558s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[560s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[562s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[564s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[566s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[568s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  8335 frames, 570 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     556   1025 (0-17055)
+  0x312     556   1025 (0-17055)
+  0x313     556   1025 (0-17054)
+  0x314     556   1025 (0-17049)
+  0x315     556   1025 (0-17039)
+  0x316     556   1025 (0-17029)
+  0x317     556   1025 (0-17019)
+  0x318     556   1025 (0-17055)
+  0x319     556   1025 (0-17056)
+  0x320     556   1025 (0-17065)
+  0x322     556   1025 (0-17072)
+  0x311     556   1025 (0-17055)
+  0x323     554   1029 (0-17086)
+  0x324     554   1029 (0-17086)
+  0x329     555   1027 (0-17095)
+--------------------------------------------------------------------------
+
+[570s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[572s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[574s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[576s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[578s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[580s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[582s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[584s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  8560 frames, 585 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     571   1024 (0-17055)
+  0x312     571   1024 (0-17055)
+  0x313     571   1024 (0-17054)
+  0x314     571   1024 (0-17049)
+  0x315     571   1024 (0-17039)
+  0x316     571   1024 (0-17029)
+  0x317     571   1024 (0-17019)
+  0x318     571   1024 (0-17055)
+  0x319     571   1024 (0-17056)
+  0x320     571   1024 (0-17065)
+  0x322     571   1024 (0-17072)
+  0x311     571   1025 (0-17055)
+  0x323     569   1028 (0-17086)
+  0x324     569   1028 (0-17086)
+  0x329     570   1026 (0-17095)
+--------------------------------------------------------------------------
+
+[586s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[588s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[590s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[592s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[594s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[596s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[598s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  8785 frames, 600 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     586   1024 (0-17055)
+  0x312     586   1024 (0-17055)
+  0x313     586   1024 (0-17054)
+  0x314     586   1024 (0-17049)
+  0x315     586   1024 (0-17039)
+  0x316     586   1024 (0-17029)
+  0x317     586   1024 (0-17019)
+  0x318     586   1024 (0-17055)
+  0x319     586   1024 (0-17056)
+  0x320     586   1024 (0-17065)
+  0x322     586   1024 (0-17072)
+  0x311     586   1024 (0-17055)
+  0x323     584   1027 (0-17086)
+  0x324     584   1027 (0-17086)
+  0x329     585   1025 (0-17095)
+--------------------------------------------------------------------------
+
+[600s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[602s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[604s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[606s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[608s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[610s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[612s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[614s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  9010 frames, 615 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     601   1023 (0-17055)
+  0x312     601   1023 (0-17055)
+  0x313     601   1023 (0-17054)
+  0x314     601   1023 (0-17049)
+  0x315     601   1023 (0-17039)
+  0x316     601   1023 (0-17029)
+  0x317     601   1023 (0-17019)
+  0x318     601   1023 (0-17055)
+  0x319     601   1023 (0-17056)
+  0x320     601   1023 (0-17065)
+  0x322     601   1023 (0-17072)
+  0x311     601   1023 (0-17055)
+  0x323     599   1026 (0-17086)
+  0x324     599   1026 (0-17086)
+  0x329     600   1025 (0-17095)
+--------------------------------------------------------------------------
+
+[616s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[618s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[620s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[622s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[624s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[626s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[628s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  9235 frames, 630 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     616   1022 (0-17055)
+  0x312     616   1023 (0-17055)
+  0x313     616   1023 (0-17054)
+  0x314     616   1023 (0-17049)
+  0x315     616   1023 (0-17039)
+  0x316     616   1023 (0-17029)
+  0x317     616   1023 (0-17019)
+  0x318     616   1022 (0-17055)
+  0x319     616   1022 (0-17056)
+  0x320     616   1022 (0-17065)
+  0x322     616   1022 (0-17072)
+  0x311     616   1023 (0-17055)
+  0x323     614   1026 (0-17086)
+  0x324     614   1026 (0-17086)
+  0x329     615   1024 (0-17095)
+--------------------------------------------------------------------------
+
+[630s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[632s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[634s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[636s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[638s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[640s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[642s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[644s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  9460 frames, 645 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     631   1022 (0-17055)
+  0x312     631   1022 (0-17055)
+  0x313     631   1022 (0-17054)
+  0x314     631   1022 (0-17049)
+  0x315     631   1022 (0-17039)
+  0x316     631   1022 (0-17029)
+  0x317     631   1022 (0-17019)
+  0x318     631   1022 (0-17055)
+  0x319     631   1022 (0-17056)
+  0x320     631   1022 (0-17065)
+  0x322     631   1022 (0-17072)
+  0x311     631   1022 (0-17055)
+  0x323     629   1025 (0-17086)
+  0x324     629   1025 (0-17086)
+  0x329     630   1023 (0-17095)
+--------------------------------------------------------------------------
+
+[646s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[648s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[650s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[652s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[654s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[656s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[658s] OK V=53.10V I=+0.0A T=22.5C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  9685 frames, 660 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     646   1021 (0-17055)
+  0x312     646   1021 (0-17055)
+  0x313     646   1021 (0-17054)
+  0x314     646   1021 (0-17049)
+  0x315     646   1021 (0-17039)
+  0x316     646   1021 (0-17029)
+  0x317     646   1021 (0-17019)
+  0x318     646   1021 (0-17055)
+  0x319     646   1021 (0-17056)
+  0x320     646   1021 (0-17065)
+  0x322     646   1021 (0-17072)
+  0x311     646   1022 (0-17055)
+  0x323     644   1025 (0-17086)
+  0x324     644   1025 (0-17086)
+  0x329     645   1023 (0-17095)
+--------------------------------------------------------------------------
+
+[660s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[662s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[664s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[666s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[668s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[670s] OK V=53.10V I=+0.3A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[672s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[674s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  9910 frames, 675 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     661   1021 (0-17055)
+  0x312     661   1021 (0-17055)
+  0x313     661   1021 (0-17054)
+  0x314     661   1021 (0-17049)
+  0x315     661   1021 (0-17039)
+  0x316     661   1021 (0-17029)
+  0x317     661   1021 (0-17019)
+  0x318     661   1021 (0-17055)
+  0x319     661   1021 (0-17056)
+  0x320     661   1021 (0-17065)
+  0x322     661   1021 (0-17072)
+  0x311     661   1021 (0-17055)
+  0x323     659   1024 (0-17086)
+  0x324     659   1024 (0-17086)
+  0x329     660   1022 (0-17095)
+--------------------------------------------------------------------------
+
+[676s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[678s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[680s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[682s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[684s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[686s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[688s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  10135 frames, 690 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     676   1020 (0-17055)
+  0x312     676   1020 (0-17055)
+  0x313     676   1020 (0-17054)
+  0x314     676   1020 (0-17049)
+  0x315     676   1020 (0-17039)
+  0x316     676   1020 (0-17029)
+  0x317     676   1020 (0-17019)
+  0x318     676   1020 (0-17055)
+  0x319     676   1020 (0-17056)
+  0x320     676   1020 (0-17065)
+  0x322     676   1020 (0-17072)
+  0x311     676   1020 (0-17055)
+  0x323     674   1023 (0-17086)
+  0x324     674   1023 (0-17086)
+  0x329     675   1022 (0-17095)
+--------------------------------------------------------------------------
+
+[690s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[692s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[694s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[696s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[698s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[700s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[702s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[704s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  10360 frames, 705 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     691   1020 (0-17055)
+  0x312     691   1020 (0-17055)
+  0x313     691   1020 (0-17054)
+  0x314     691   1020 (0-17049)
+  0x315     691   1020 (0-17039)
+  0x316     691   1020 (0-17029)
+  0x317     691   1020 (0-17019)
+  0x318     691   1020 (0-17055)
+  0x319     691   1020 (0-17056)
+  0x320     691   1020 (0-17065)
+  0x322     691   1020 (0-17072)
+  0x311     691   1020 (0-17055)
+  0x323     689   1023 (0-17086)
+  0x324     689   1023 (0-17086)
+  0x329     690   1021 (0-17095)
+--------------------------------------------------------------------------
+
+[706s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[708s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[710s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[712s] OK V=53.20V I=+0.3A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[714s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[716s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[718s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  10585 frames, 720 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     706   1019 (0-17055)
+  0x312     706   1020 (0-17055)
+  0x313     706   1020 (0-17054)
+  0x314     706   1020 (0-17049)
+  0x315     706   1019 (0-17039)
+  0x316     706   1019 (0-17029)
+  0x317     706   1019 (0-17019)
+  0x318     706   1019 (0-17055)
+  0x319     706   1019 (0-17056)
+  0x320     706   1019 (0-17065)
+  0x322     706   1019 (0-17072)
+  0x311     706   1020 (0-17055)
+  0x323     704   1022 (0-17086)
+  0x324     704   1022 (0-17086)
+  0x329     705   1021 (0-17095)
+--------------------------------------------------------------------------
+
+[720s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[722s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[724s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[726s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[728s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[730s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[732s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[734s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  10810 frames, 735 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     721   1019 (0-17055)
+  0x312     721   1019 (0-17055)
+  0x313     721   1019 (0-17054)
+  0x314     721   1019 (0-17049)
+  0x315     721   1019 (0-17039)
+  0x316     721   1019 (0-17029)
+  0x317     721   1019 (0-17019)
+  0x318     721   1019 (0-17055)
+  0x319     721   1019 (0-17056)
+  0x320     721   1019 (0-17065)
+  0x322     721   1019 (0-17072)
+  0x311     721   1019 (0-17055)
+  0x323     719   1022 (0-17086)
+  0x324     719   1022 (0-17086)
+  0x329     720   1020 (0-17095)
+--------------------------------------------------------------------------
+
+[736s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[738s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[740s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[742s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[744s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[746s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[748s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  11035 frames, 750 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     736   1019 (0-17055)
+  0x312     736   1019 (0-17055)
+  0x313     736   1019 (0-17054)
+  0x314     736   1019 (0-17049)
+  0x315     736   1019 (0-17039)
+  0x316     736   1019 (0-17029)
+  0x317     736   1019 (0-17019)
+  0x318     736   1019 (0-17055)
+  0x319     736   1019 (0-17056)
+  0x320     736   1019 (0-17065)
+  0x322     736   1019 (0-17072)
+  0x311     736   1019 (0-17055)
+  0x323     734   1021 (0-17086)
+  0x324     734   1021 (0-17086)
+  0x329     735   1020 (0-17095)
+--------------------------------------------------------------------------
+
+[750s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[752s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[754s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[756s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[758s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[760s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[762s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[764s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  11260 frames, 765 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     751   1018 (0-17055)
+  0x312     751   1018 (0-17055)
+  0x313     751   1018 (0-17054)
+  0x314     751   1018 (0-17049)
+  0x315     751   1018 (0-17039)
+  0x316     751   1018 (0-17029)
+  0x317     751   1018 (0-17019)
+  0x318     751   1018 (0-17055)
+  0x319     751   1018 (0-17056)
+  0x320     751   1018 (0-17065)
+  0x322     751   1018 (0-17072)
+  0x311     751   1018 (0-17055)
+  0x323     749   1021 (0-17086)
+  0x324     749   1021 (0-17086)
+  0x329     750   1020 (0-17095)
+--------------------------------------------------------------------------
+
+[766s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[768s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[770s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[772s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[774s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[776s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[778s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  11485 frames, 780 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     766   1018 (0-17055)
+  0x312     766   1018 (0-17055)
+  0x313     766   1018 (0-17054)
+  0x314     766   1018 (0-17049)
+  0x315     766   1018 (0-17039)
+  0x316     766   1018 (0-17029)
+  0x317     766   1018 (0-17019)
+  0x318     766   1018 (0-17055)
+  0x319     766   1018 (0-17056)
+  0x320     766   1018 (0-17065)
+  0x322     766   1018 (0-17072)
+  0x311     766   1018 (0-17055)
+  0x323     764   1020 (0-17086)
+  0x324     764   1020 (0-17086)
+  0x329     765   1019 (0-17095)
+--------------------------------------------------------------------------
+
+[780s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[782s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[784s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[786s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[788s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[790s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[792s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[794s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  11710 frames, 795 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     781   1017 (0-17055)
+  0x312     781   1018 (0-17055)
+  0x313     781   1018 (0-17054)
+  0x314     781   1018 (0-17049)
+  0x315     781   1017 (0-17039)
+  0x316     781   1017 (0-17029)
+  0x317     781   1017 (0-17019)
+  0x318     781   1017 (0-17055)
+  0x319     781   1017 (0-17056)
+  0x320     781   1017 (0-17065)
+  0x322     781   1017 (0-17072)
+  0x311     781   1018 (0-17055)
+  0x323     779   1020 (0-17086)
+  0x324     779   1020 (0-17086)
+  0x329     780   1019 (0-17095)
+--------------------------------------------------------------------------
+
+[796s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[798s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[800s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[802s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[804s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[806s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[808s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  11935 frames, 810 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     796   1017 (0-17055)
+  0x312     796   1017 (0-17055)
+  0x313     796   1017 (0-17054)
+  0x314     796   1017 (0-17049)
+  0x315     796   1017 (0-17039)
+  0x316     796   1017 (0-17029)
+  0x317     796   1017 (0-17019)
+  0x318     796   1017 (0-17055)
+  0x319     796   1017 (0-17056)
+  0x320     796   1017 (0-17065)
+  0x322     796   1017 (0-17072)
+  0x311     796   1017 (0-17055)
+  0x323     794   1020 (0-17086)
+  0x324     794   1020 (0-17086)
+  0x329     795   1018 (0-17095)
+--------------------------------------------------------------------------
+
+[810s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[812s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[814s] OK V=53.20V I=+0.3A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[816s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[818s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[820s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[822s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[824s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  12160 frames, 825 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     811   1017 (0-17055)
+  0x312     811   1017 (0-17055)
+  0x313     811   1017 (0-17054)
+  0x314     811   1017 (0-17049)
+  0x315     811   1017 (0-17039)
+  0x316     811   1017 (0-17029)
+  0x317     811   1017 (0-17019)
+  0x318     811   1017 (0-17055)
+  0x319     811   1017 (0-17056)
+  0x320     811   1017 (0-17065)
+  0x322     811   1017 (0-17072)
+  0x311     811   1017 (0-17055)
+  0x323     809   1019 (0-17086)
+  0x324     809   1019 (0-17086)
+  0x329     810   1018 (0-17095)
+--------------------------------------------------------------------------
+
+[826s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[828s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[830s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[832s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[834s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[836s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[838s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  12385 frames, 840 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     826   1016 (0-17055)
+  0x312     826   1017 (0-17055)
+  0x313     826   1016 (0-17054)
+  0x314     826   1016 (0-17049)
+  0x315     826   1016 (0-17039)
+  0x316     826   1016 (0-17029)
+  0x317     826   1016 (0-17019)
+  0x318     826   1016 (0-17055)
+  0x319     826   1016 (0-17056)
+  0x320     826   1016 (0-17065)
+  0x322     826   1016 (0-17072)
+  0x311     826   1017 (0-17055)
+  0x323     824   1019 (0-17086)
+  0x324     824   1019 (0-17086)
+  0x329     825   1018 (0-17095)
+--------------------------------------------------------------------------
+
+[840s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[842s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[844s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[846s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[848s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[850s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[852s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[854s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  12610 frames, 855 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     841   1016 (0-17055)
+  0x312     841   1016 (0-17055)
+  0x313     841   1016 (0-17054)
+  0x314     841   1016 (0-17049)
+  0x315     841   1016 (0-17039)
+  0x316     841   1016 (0-17029)
+  0x317     841   1016 (0-17019)
+  0x318     841   1016 (0-17055)
+  0x319     841   1016 (0-17056)
+  0x320     841   1016 (0-17065)
+  0x322     841   1016 (0-17072)
+  0x311     841   1016 (0-17055)
+  0x323     839   1018 (0-17086)
+  0x324     839   1018 (0-17086)
+  0x329     840   1017 (0-17095)
+--------------------------------------------------------------------------
+
+[856s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[858s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[860s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[862s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[864s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[866s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[868s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  12835 frames, 870 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     856   1016 (0-17055)
+  0x312     856   1016 (0-17055)
+  0x313     856   1016 (0-17054)
+  0x314     856   1016 (0-17049)
+  0x315     856   1016 (0-17039)
+  0x316     856   1016 (0-17029)
+  0x317     856   1016 (0-17019)
+  0x318     856   1016 (0-17055)
+  0x319     856   1016 (0-17056)
+  0x320     856   1016 (0-17065)
+  0x322     856   1016 (0-17072)
+  0x311     856   1016 (0-17055)
+  0x323     854   1018 (0-17086)
+  0x324     854   1018 (0-17086)
+  0x329     855   1017 (0-17095)
+--------------------------------------------------------------------------
+
+[870s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[872s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[874s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[876s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[878s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[880s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[882s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[884s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  13060 frames, 885 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     871   1015 (0-17055)
+  0x312     871   1016 (0-17055)
+  0x313     871   1016 (0-17054)
+  0x314     871   1016 (0-17049)
+  0x315     871   1016 (0-17039)
+  0x316     871   1016 (0-17029)
+  0x317     871   1016 (0-17019)
+  0x318     871   1016 (0-17055)
+  0x319     871   1016 (0-17056)
+  0x320     871   1015 (0-17065)
+  0x322     871   1015 (0-17072)
+  0x311     871   1016 (0-17055)
+  0x323     869   1018 (0-17086)
+  0x324     869   1018 (0-17086)
+  0x329     870   1017 (0-17095)
+--------------------------------------------------------------------------
+
+[886s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[888s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[890s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[892s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[894s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[896s] OK V=53.20V I=+0.3A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[898s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  13285 frames, 900 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     886   1015 (0-17055)
+  0x312     886   1015 (0-17055)
+  0x313     886   1015 (0-17054)
+  0x314     886   1015 (0-17049)
+  0x315     886   1015 (0-17039)
+  0x316     886   1015 (0-17029)
+  0x317     886   1015 (0-17019)
+  0x318     886   1015 (0-17055)
+  0x319     886   1015 (0-17056)
+  0x320     886   1015 (0-17065)
+  0x322     886   1015 (0-17072)
+  0x311     886   1015 (0-17055)
+  0x323     884   1017 (0-17086)
+  0x324     884   1017 (0-17086)
+  0x329     885   1016 (0-17095)
+--------------------------------------------------------------------------
+
+[900s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[902s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[904s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[906s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[908s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[910s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[912s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[914s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  13510 frames, 915 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     901   1015 (0-17055)
+  0x312     901   1015 (0-17055)
+  0x313     901   1015 (0-17054)
+  0x314     901   1015 (0-17049)
+  0x315     901   1015 (0-17039)
+  0x316     901   1015 (0-17029)
+  0x317     901   1015 (0-17019)
+  0x318     901   1015 (0-17055)
+  0x319     901   1015 (0-17056)
+  0x320     901   1015 (0-17065)
+  0x322     901   1015 (0-17072)
+  0x311     901   1015 (0-17055)
+  0x323     899   1017 (0-17086)
+  0x324     899   1017 (0-17086)
+  0x329     900   1016 (0-17095)
+--------------------------------------------------------------------------
+
+[916s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[918s] OK V=53.20V I=+0.3A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[920s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[922s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[924s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[926s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[928s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  13735 frames, 930 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     916   1015 (0-17055)
+  0x312     916   1015 (0-17055)
+  0x313     916   1015 (0-17054)
+  0x314     916   1015 (0-17049)
+  0x315     916   1015 (0-17039)
+  0x316     916   1015 (0-17029)
+  0x317     916   1015 (0-17019)
+  0x318     916   1015 (0-17055)
+  0x319     916   1015 (0-17056)
+  0x320     916   1015 (0-17065)
+  0x322     916   1015 (0-17072)
+  0x311     916   1015 (0-17055)
+  0x323     914   1017 (0-17086)
+  0x324     914   1017 (0-17086)
+  0x329     915   1016 (0-17095)
+--------------------------------------------------------------------------
+
+[930s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[932s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[934s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[936s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[938s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[940s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[942s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[944s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  13960 frames, 945 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     931   1014 (0-17055)
+  0x312     931   1014 (0-17055)
+  0x313     931   1014 (0-17054)
+  0x314     931   1014 (0-17049)
+  0x315     931   1014 (0-17039)
+  0x316     931   1014 (0-17029)
+  0x317     931   1014 (0-17019)
+  0x318     931   1014 (0-17055)
+  0x319     931   1014 (0-17056)
+  0x320     931   1014 (0-17065)
+  0x322     931   1014 (0-17072)
+  0x311     931   1015 (0-17055)
+  0x323     929   1017 (0-17086)
+  0x324     929   1017 (0-17086)
+  0x329     930   1015 (0-17095)
+--------------------------------------------------------------------------
+
+[946s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[948s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[950s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[952s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[954s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[956s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[958s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  14185 frames, 960 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     946   1014 (0-17055)
+  0x312     946   1014 (0-17055)
+  0x313     946   1014 (0-17054)
+  0x314     946   1014 (0-17049)
+  0x315     946   1014 (0-17039)
+  0x316     946   1014 (0-17029)
+  0x317     946   1014 (0-17019)
+  0x318     946   1014 (0-17055)
+  0x319     946   1014 (0-17056)
+  0x320     946   1014 (0-17065)
+  0x322     946   1014 (0-17072)
+  0x311     946   1014 (0-17055)
+  0x323     944   1016 (0-17086)
+  0x324     944   1016 (0-17086)
+  0x329     945   1015 (0-17095)
+--------------------------------------------------------------------------
+
+[960s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[962s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[964s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[966s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[968s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[970s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[972s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[974s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  14410 frames, 975 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     961   1014 (0-17055)
+  0x312     961   1014 (0-17055)
+  0x313     961   1014 (0-17054)
+  0x314     961   1014 (0-17049)
+  0x315     961   1014 (0-17039)
+  0x316     961   1014 (0-17029)
+  0x317     961   1014 (0-17019)
+  0x318     961   1014 (0-17055)
+  0x319     961   1014 (0-17056)
+  0x320     961   1014 (0-17065)
+  0x322     961   1014 (0-17072)
+  0x311     961   1014 (0-17055)
+  0x323     959   1016 (0-17086)
+  0x324     959   1016 (0-17086)
+  0x329     960   1015 (0-17095)
+--------------------------------------------------------------------------
+
+[976s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[978s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[980s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[982s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[984s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[986s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[988s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  14635 frames, 990 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     976   1014 (0-17055)
+  0x312     976   1014 (0-17055)
+  0x313     976   1014 (0-17054)
+  0x314     976   1014 (0-17049)
+  0x315     976   1014 (0-17039)
+  0x316     976   1014 (0-17029)
+  0x317     976   1014 (0-17019)
+  0x318     976   1014 (0-17055)
+  0x319     976   1014 (0-17056)
+  0x320     976   1014 (0-17065)
+  0x322     976   1014 (0-17072)
+  0x311     976   1014 (0-17055)
+  0x323     974   1016 (0-17086)
+  0x324     974   1016 (0-17086)
+  0x329     975   1015 (0-17095)
+--------------------------------------------------------------------------
+
+[990s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[992s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[994s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[996s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[998s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1000s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1002s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1004s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  14860 frames, 1005 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330     991   1013 (0-17055)
+  0x312     991   1014 (0-17055)
+  0x313     991   1014 (0-17054)
+  0x314     991   1014 (0-17049)
+  0x315     991   1014 (0-17039)
+  0x316     991   1013 (0-17029)
+  0x317     991   1013 (0-17019)
+  0x318     991   1013 (0-17055)
+  0x319     991   1013 (0-17056)
+  0x320     991   1013 (0-17065)
+  0x322     991   1013 (0-17072)
+  0x311     991   1014 (0-17055)
+  0x323     989   1015 (0-17086)
+  0x324     989   1015 (0-17086)
+  0x329     990   1014 (0-17095)
+--------------------------------------------------------------------------
+
+[1006s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1008s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1010s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1012s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1014s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1016s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1018s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  15085 frames, 1020 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1006   1013 (0-17055)
+  0x312    1006   1013 (0-17055)
+  0x313    1006   1013 (0-17054)
+  0x314    1006   1013 (0-17049)
+  0x315    1006   1013 (0-17039)
+  0x316    1006   1013 (0-17029)
+  0x317    1006   1013 (0-17019)
+  0x318    1006   1013 (0-17055)
+  0x319    1006   1013 (0-17056)
+  0x320    1006   1013 (0-17065)
+  0x322    1006   1013 (0-17072)
+  0x311    1006   1013 (0-17055)
+  0x323    1004   1015 (0-17086)
+  0x324    1004   1015 (0-17086)
+  0x329    1005   1014 (0-17095)
+--------------------------------------------------------------------------
+
+[1020s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1022s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1024s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1026s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1028s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1030s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1032s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1034s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  15310 frames, 1035 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1021   1013 (0-17055)
+  0x312    1021   1013 (0-17055)
+  0x313    1021   1013 (0-17054)
+  0x314    1021   1013 (0-17049)
+  0x315    1021   1013 (0-17039)
+  0x316    1021   1013 (0-17029)
+  0x317    1021   1013 (0-17019)
+  0x318    1021   1013 (0-17055)
+  0x319    1021   1013 (0-17056)
+  0x320    1021   1013 (0-17065)
+  0x322    1021   1013 (0-17072)
+  0x311    1021   1013 (0-17055)
+  0x323    1019   1015 (0-17086)
+  0x324    1019   1015 (0-17086)
+  0x329    1020   1014 (0-17095)
+--------------------------------------------------------------------------
+
+[1036s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1038s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1040s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1042s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1044s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1046s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1048s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  15535 frames, 1050 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1036   1013 (0-17055)
+  0x312    1036   1013 (0-17055)
+  0x313    1036   1013 (0-17054)
+  0x314    1036   1013 (0-17049)
+  0x315    1036   1013 (0-17039)
+  0x316    1036   1013 (0-17029)
+  0x317    1036   1013 (0-17019)
+  0x318    1036   1013 (0-17055)
+  0x319    1036   1013 (0-17056)
+  0x320    1036   1013 (0-17065)
+  0x322    1036   1013 (0-17072)
+  0x311    1036   1013 (0-17055)
+  0x323    1034   1015 (0-17086)
+  0x324    1034   1015 (0-17086)
+  0x329    1035   1014 (0-17095)
+--------------------------------------------------------------------------
+
+[1050s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1052s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1054s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1056s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1058s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1060s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1062s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1064s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  15760 frames, 1065 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1051   1013 (0-17055)
+  0x312    1051   1013 (0-17055)
+  0x313    1051   1013 (0-17054)
+  0x314    1051   1013 (0-17049)
+  0x315    1051   1013 (0-17039)
+  0x316    1051   1013 (0-17029)
+  0x317    1051   1013 (0-17019)
+  0x318    1051   1013 (0-17055)
+  0x319    1051   1013 (0-17056)
+  0x320    1051   1013 (0-17065)
+  0x322    1051   1013 (0-17072)
+  0x311    1051   1013 (0-17055)
+  0x323    1049   1015 (0-17086)
+  0x324    1049   1015 (0-17086)
+  0x329    1050   1014 (0-17095)
+--------------------------------------------------------------------------
+
+[1066s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1068s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1070s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1072s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1074s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1076s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1078s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  15985 frames, 1080 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1066   1012 (0-17055)
+  0x312    1066   1012 (0-17055)
+  0x313    1066   1012 (0-17054)
+  0x314    1066   1012 (0-17049)
+  0x315    1066   1012 (0-17039)
+  0x316    1066   1012 (0-17029)
+  0x317    1066   1012 (0-17019)
+  0x318    1066   1012 (0-17055)
+  0x319    1066   1012 (0-17056)
+  0x320    1066   1012 (0-17065)
+  0x322    1066   1012 (0-17072)
+  0x311    1066   1013 (0-17055)
+  0x323    1064   1014 (0-17086)
+  0x324    1064   1014 (0-17086)
+  0x329    1065   1013 (0-17095)
+--------------------------------------------------------------------------
+
+[1080s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1082s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1084s] OK V=53.20V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=0.0A DCL=0.0A | chg=0 dis=0 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1086s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1088s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1090s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1092s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1094s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  16226 frames, 1095 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1081   1012 (0-17055)
+  0x312    1081   1012 (0-17055)
+  0x313    1081   1012 (0-17054)
+  0x314    1081   1012 (0-17049)
+  0x315    1081   1012 (0-17039)
+  0x316    1081   1012 (0-17029)
+  0x317    1081   1012 (0-17019)
+  0x318    1081   1012 (0-17055)
+  0x319    1081   1012 (0-17056)
+  0x320    1081   1012 (0-17065)
+  0x322    1081   1012 (0-17072)
+  0x311    1081   1012 (0-17055)
+  0x323    1079   1014 (0-17086)
+  0x324    1079   1014 (0-17086)
+  0x329    1080   1013 (0-17095)
+  0x301      16    775 (1-5137)
+--------------------------------------------------------------------------
+
+[1096s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1098s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1100s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1102s] OK V=53.10V I=-0.3A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1104s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1106s] OK V=53.10V I=-1.3A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=25.6A DCL=25.6A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1108s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  16481 frames, 1110 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1096   1012 (0-17055)
+  0x312    1096   1012 (0-17055)
+  0x313    1096   1012 (0-17054)
+  0x314    1096   1012 (0-17049)
+  0x315    1096   1012 (0-17039)
+  0x316    1096   1012 (0-17029)
+  0x317    1096   1012 (0-17019)
+  0x318    1096   1012 (0-17055)
+  0x319    1096   1012 (0-17056)
+  0x320    1096   1012 (0-17065)
+  0x322    1096   1012 (0-17072)
+  0x311    1096   1012 (0-17055)
+  0x323    1094   1014 (0-17086)
+  0x324    1094   1014 (0-17086)
+  0x329    1095   1013 (0-17095)
+  0x301      46    591 (1-5137)
+--------------------------------------------------------------------------
+
+[1110s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1112s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1114s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1116s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1118s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1120s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1122s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1124s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  16736 frames, 1125 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1111   1012 (0-17055)
+  0x312    1111   1012 (0-17055)
+  0x313    1111   1012 (0-17054)
+  0x314    1111   1012 (0-17049)
+  0x315    1111   1012 (0-17039)
+  0x316    1111   1012 (0-17029)
+  0x317    1111   1012 (0-17019)
+  0x318    1111   1012 (0-17055)
+  0x319    1111   1012 (0-17056)
+  0x320    1111   1012 (0-17065)
+  0x322    1111   1012 (0-17072)
+  0x311    1111   1012 (0-17055)
+  0x323    1109   1014 (0-17086)
+  0x324    1109   1014 (0-17086)
+  0x329    1110   1013 (0-17095)
+  0x301      76    555 (1-5137)
+--------------------------------------------------------------------------
+
+[1126s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1128s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1130s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1132s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1134s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1136s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1138s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  16991 frames, 1140 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1126   1012 (0-17055)
+  0x312    1126   1012 (0-17055)
+  0x313    1126   1012 (0-17054)
+  0x314    1126   1012 (0-17049)
+  0x315    1126   1012 (0-17039)
+  0x316    1126   1012 (0-17029)
+  0x317    1126   1012 (0-17019)
+  0x318    1126   1012 (0-17055)
+  0x319    1126   1012 (0-17056)
+  0x320    1126   1012 (0-17065)
+  0x322    1126   1012 (0-17072)
+  0x311    1126   1012 (0-17055)
+  0x323    1124   1013 (0-17086)
+  0x324    1124   1013 (0-17086)
+  0x329    1125   1013 (0-17095)
+  0x301     106    539 (1-5137)
+--------------------------------------------------------------------------
+
+[1140s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1142s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1144s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1146s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1148s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1150s] OK V=53.10V I=+1.1A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1152s] OK V=53.10V I=+1.1A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1154s] OK V=53.10V I=+1.1A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  17246 frames, 1155 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1141   1011 (0-17055)
+  0x312    1141   1012 (0-17055)
+  0x313    1141   1012 (0-17054)
+  0x314    1141   1012 (0-17049)
+  0x315    1141   1012 (0-17039)
+  0x316    1141   1012 (0-17029)
+  0x317    1141   1012 (0-17019)
+  0x318    1141   1012 (0-17055)
+  0x319    1141   1012 (0-17056)
+  0x320    1141   1012 (0-17065)
+  0x322    1141   1012 (0-17072)
+  0x311    1141   1012 (0-17055)
+  0x323    1139   1013 (0-17086)
+  0x324    1139   1013 (0-17086)
+  0x329    1140   1012 (0-17095)
+  0x301     136    530 (1-5137)
+--------------------------------------------------------------------------
+
+[1156s] OK V=53.10V I=+1.1A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1158s] OK V=53.10V I=+1.1A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1160s] OK V=53.10V I=-0.1A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1162s] OK V=53.10V I=+0.0A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1164s] OK V=53.10V I=-1.4A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1166s] OK V=53.10V I=-2.7A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1168s] OK V=53.10V I=-3.5A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  17501 frames, 1170 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    1156   1011 (0-17055)
+  0x312    1156   1011 (0-17055)
+  0x313    1156   1011 (0-17054)
+  0x314    1156   1011 (0-17049)
+  0x315    1156   1011 (0-17039)
+  0x316    1156   1011 (0-17029)
+  0x317    1156   1011 (0-17019)
+  0x318    1156   1011 (0-17055)
+  0x319    1156   1011 (0-17056)
+  0x320    1156   1011 (0-17065)
+  0x322    1156   1011 (0-17072)
+  0x311    1156   1011 (0-17055)
+  0x323    1154   1013 (0-17086)
+  0x324    1154   1013 (0-17086)
+  0x329    1155   1012 (0-17095)
+  0x301     166    525 (1-5137)
+--------------------------------------------------------------------------
+
+[1170s] OK V=53.10V I=-4.1A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1172s] OK V=53.10V I=-4.6A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1174s] OK V=53.10V I=-4.9A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1176s] OK V=53.10V I=-5.4A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1178s] OK V=53.10V I=-5.6A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1180s] OK V=53.10V I=-6.1A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1182s] OK V=53.10V I=-6.5A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[1184s] OK V=53.10V I=-6.8A T=22.4C SOC=72% SOH=99% | CVL=56.8V CCL=208.4A DCL=208.4A | chg=1 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
