@@ -186,9 +186,15 @@ static inline PylonBurst buildPylon(const BatteryState &b, bool derate) {
     // ---- 0x351  limits ----------------------------------------------------
     // Both current fields are POSITIVE MAGNITUDES: Solis reads them into
     // unsigned Modbus registers, so a negative would appear as ~6400 A.
+    // The per-pack ceiling scales with the live pack count (from 0x312) -
+    // a fixed single-pack ceiling would wrongly halve a 2-pack system's real
+    // capability, and a fixed 2-pack ceiling would be unsafe for a single
+    // pack. pack_count is bounds-checked to 1-16 wherever it's set.
+    uint16_t ccl_ceiling = (uint16_t)(CCL_MAX_PER_PACK_dA * (uint16_t)b.pack_count);
+    uint16_t dcl_ceiling = (uint16_t)(DCL_MAX_PER_PACK_dA * (uint16_t)b.pack_count);
     uint16_t cvl = clampv<uint16_t>(b.cvl_dV, (uint16_t)CVL_MIN_dV, (uint16_t)CVL_MAX_dV);
-    uint16_t ccl = clampv<uint16_t>(b.ccl_dA, (uint16_t)0, (uint16_t)CCL_MAX_dA);
-    uint16_t dcl = clampv<uint16_t>(b.dcl_dA, (uint16_t)0, (uint16_t)DCL_MAX_dA);
+    uint16_t ccl = clampv<uint16_t>(b.ccl_dA, (uint16_t)0, ccl_ceiling);
+    uint16_t dcl = clampv<uint16_t>(b.dcl_dA, (uint16_t)0, dcl_ceiling);
     if (!b.have_311) { cvl = (uint16_t)CVL_MIN_dV; ccl = 0; dcl = 0; }
     if (!chg_en) ccl = 0;          // belt and braces alongside 0x35C
     if (!dis_en) dcl = 0;

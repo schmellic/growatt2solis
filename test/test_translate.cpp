@@ -155,8 +155,10 @@ int main() {
         uint8_t d313[8] = {0x27,0x0F, 0x00,0x00, 0x00,0xC8, 0x64, 0x64};
         decodeGrowatt(b, 0x313, 8, d313, 1000);
         PylonBurst p = buildPylon(b, false);
-        // CVL clamped to 57.6 V = 576 = 0x0240 -> 40 02 ; limits to 105.0 A = 1050 = 0x041A -> 1A 04
-        expectBytes("0x351 clamped", byId(p, 0x351), {0x40,0x02, 0x1A,0x04, 0x1A,0x04, 0x00,0x00});
+        // CVL clamped to 57.6 V = 576 = 0x0240 -> 40 02 ; limits to the
+        // single-pack ceiling (default pack_count=1, no 0x312 decoded here)
+        // of 104.2 A = 1042 = 0x0412 -> 12 04
+        expectBytes("0x351 clamped", byId(p, 0x351), {0x40,0x02, 0x12,0x04, 0x12,0x04, 0x00,0x00});
         // voltage clamped to 60.00 V = 6000 = 0x1770 -> 70 17
         expect("0x356 voltage clamped to 60.00 V",
                byId(p, 0x356).data[0] == 0x70 && byId(p, 0x356).data[1] == 0x17);
@@ -219,6 +221,39 @@ int main() {
         decodeGrowatt(b, 0x313, 8, d313, 1000);
         PylonBurst p = buildPylon(b, false);
         expect("DCL not zeroed by stale 0x319", byId(p, 0x351).data[4] != 0 || byId(p, 0x351).data[5] != 0);
+    }
+
+    // -------------------------------------------------------------------------
+    printf("\n[10] Charge/discharge ceiling scales with the real pack count\n");
+    printf("     (confirmed against the real GBLI6532 datasheet: 104.2A per\n");
+    printf("     pack. A fixed single-pack ceiling would wrongly halve a\n");
+    printf("     2-pack system's real capability)\n");
+    {
+        BatteryState b;
+        // 0x312: packs=2, exact real capture payload
+        uint8_t d312[8] = {0x00,0x00, 0x00,0x02, 0x02,0x00,0x00,0x00};
+        decodeGrowatt(b, 0x312, 8, d312, 1000);
+        expect("pack_count picked up from 0x312", b.pack_count == 2);
+
+        // 0x311: CCL/DCL = 208.4A (2-pack ceiling exactly), the actual
+        // payload seen in a real capture - must pass through unclamped,
+        // not get cut down to a single pack's 104.2A.
+        uint8_t d311[8] = {0x02,0x38, 0x08,0x24, 0x08,0x24, 0x01,0x61};
+        decodeGrowatt(b, 0x311, 8, d311, 1000);
+        uint8_t d313[8] = {0x14,0xC8, 0x00,0xC8, 0x00,0xEA, 0x3E, 0x64};
+        decodeGrowatt(b, 0x313, 8, d313, 1000);
+        PylonBurst p = buildPylon(b, false);
+        // 208.4A = 2084 = 0x0824 -> LE 24 08
+        expectBytes("2-pack: 208.4A passes through unclamped", byId(p, 0x351),
+                    {0x38,0x02, 0x24,0x08, 0x24,0x08, 0x00,0x00});
+
+        // Now push CCL/DCL absurdly high (300.0A) - must still clamp, just
+        // to the 2-pack ceiling (208.4A), not the old fixed single-pack one.
+        uint8_t d311_absurd[8] = {0x02,0x38, 0x0B,0xB8, 0x0B,0xB8, 0x01,0x61};
+        decodeGrowatt(b, 0x311, 8, d311_absurd, 1000);
+        PylonBurst p2 = buildPylon(b, false);
+        expectBytes("2-pack: 300A still clamps to 208.4A ceiling", byId(p2, 0x351),
+                    {0x38,0x02, 0x24,0x08, 0x24,0x08, 0x00,0x00});
     }
 
     printf("\n=== %s (%d failure%s) ===\n\n",

@@ -122,8 +122,15 @@
 // Solis accepts 40.0 - 60.0 V. GBLI 6532 datasheet range is 48.0 - 57.6 V.
 #define CVL_MAX_dV              576     // 57.6 V - never ask Solis for more
 #define CVL_MIN_dV              480     // 48.0 V - reject nonsense low values
-#define CCL_MAX_dA              1050    // 105.0 A ceiling on charge current
-#define DCL_MAX_dA              1050    // 105.0 A ceiling on discharge current
+
+// Per-pack ceiling, confirmed against the real GBLI6532 datasheet
+// (2026-08-31): 5kW / 104.2A max charge/discharge. Multiplied by the live
+// pack count from 0x312 (see translate.h) - a 2-pack system's real ceiling
+// (208.4A) is exactly what a real capture showed the BMS itself reporting
+// as CCL/DCL, so this isn't just a round number, it's what the hardware
+// actually does.
+#define CCL_MAX_PER_PACK_dA     1042    // 104.2 A per pack
+#define DCL_MAX_PER_PACK_dA     1042    // 104.2 A per pack
 
 // Plausibility window for the pack voltage reported in 0x356 (0.01 V units).
 #define PACK_V_MIN_cV           4000    // 40.00 V
