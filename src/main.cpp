@@ -186,9 +186,12 @@ static void sendGrowattKeepalive() {
     memset(&m, 0, sizeof(m));
     m.identifier = GW_KEEPALIVE;
     m.data_length_code = 8;
-    // Payload taken from the example in Growatt's protocol document. Its
-    // semantics are undocumented; the growattArkCAN gateway relays it unchanged.
-    static const uint8_t p[8] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88};
+    // Real payload captured from a genuine Growatt SPH6000, static across
+    // idle/discharge/charge/boot - see CLAUDE.md open question 3. This was
+    // WRONGLY the protocol doc's example placeholder (0x11..0x88) from the
+    // very first commit until 2026-09-03 - every prior gateway session in
+    // this project sent that placeholder, never this real value.
+    static const uint8_t p[8] = {0x0B, 0x16, 0x21, 0x2C, 0x37, 0x42, 0x4D, 0x58};
     memcpy(m.data, p, 8);
 #if VERBOSE_KEEPALIVE_TX
     esp_err_t r = twai_transmit(&m, pdMS_TO_TICKS(10));

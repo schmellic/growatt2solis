@@ -74,11 +74,14 @@ void IRAM_ATTR wakeISR() {
 }
 
 static void wakeMonitorSetup() {
-    // Pulled up defensively: the PC817 module drives this cleanly when
-    // connected (active-low, its own onboard pull-up), but a bare INPUT
-    // would float and chatter - firing this ISR continuously - whenever
-    // the module is disconnected or not yet wired up.
-    pinMode(WAKE_MONITOR_PIN, INPUT_PULLUP);
+    // Plain INPUT, not INPUT_PULLUP: the optocoupler's own onboard pull-up
+    // turned out far too weak to register the real signal (measured
+    // 2026-09-03 - a 1M ohm external pull-up was needed to get a usable
+    // swing). The ESP32's internal pull-up (~45k ohm) would sit in
+    // parallel with that external resistor and drag the effective value
+    // straight back down, undoing the fix - so this pin must rely
+    // entirely on the external 1M ohm resistor now, no internal pull.
+    pinMode(WAKE_MONITOR_PIN, INPUT);
     attachInterrupt(digitalPinToInterrupt(WAKE_MONITOR_PIN), wakeISR, CHANGE);
     Serial.printf("WAKE monitor armed on GPIO%d (active-low: LOW = WAKE+ energized)\n",
                   WAKE_MONITOR_PIN);

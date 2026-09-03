@@ -1,0 +1,752 @@
+
+======================================================================
+  0 frames, 15 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+!! 30 s with no frames. Check: CAN_H on pin 4 / CAN_L on pin 5
+   of the battery PCS port, the WAKE pair (pins 7/8), and that
+   you have NOT added a 120 ohm resistor on this stub.
+
+
+======================================================================
+  0 frames, 30 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 45 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 60 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 75 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 90 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 105 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 120 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 135 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 150 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 165 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 180 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 195 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 210 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 225 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 240 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 255 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 270 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 285 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 300 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 315 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 330 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 345 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 360 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 375 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 390 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 405 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 420 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 435 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 450 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 465 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 480 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 495 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 510 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 525 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+[534.048s] WAKE edge #0 -> HIGH (idle/absent)
+[534.049s] WAKE edge #1 -> HIGH (idle/absent)
+[534.050s] WAKE edge #2 -> HIGH (idle/absent)
+
+======================================================================
+  0 frames, 540 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 555 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 570 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+[574.044s] WAKE edge #3 -> HIGH (idle/absent)
+[574.402s] WAKE edge #4 -> HIGH (idle/absent)
+[575.299s] WAKE edge #5 -> HIGH (idle/absent)
+[575.300s] WAKE edge #6 -> HIGH (idle/absent)
+[575.632s] WAKE edge #7 -> HIGH (idle/absent)
+[576.166s] WAKE edge #8 -> HIGH (idle/absent)
+
+======================================================================
+  0 frames, 585 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 600 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 615 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 630 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 645 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 660 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 675 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 690 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 705 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 720 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 735 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 750 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+[752.539s] WAKE edge #9 -> HIGH (idle/absent)
+[752.539s] WAKE edge #10 -> LOW (energized)
+[752.539s] WAKE edge #11 -> LOW (energized)
+[752.539s] WAKE edge #12 -> LOW (energized)
+[752.539s] WAKE edge #13 -> LOW (energized)
+[752.539s] WAKE edge #14 -> LOW (energized)
+[752.559s] WAKE edge #15 -> LOW (energized)
+[752.559s] WAKE edge #16 -> LOW (energized)
+[752.559s] WAKE edge #17 -> LOW (energized)
+[752.559s] WAKE edge #18 -> LOW (energized)
+[752.559s] WAKE edge #19 -> LOW (energized)
+[752.559s] WAKE edge #20 -> LOW (energized)
+[752.559s] WAKE edge #21 -> LOW (energized)
+[752.559s] WAKE edge #22 -> LOW (energized)
+[752.559s] WAKE edge #23 -> LOW (energized)
+[752.559s] WAKE edge #24 -> LOW (energized)
+[752.559s] WAKE edge #25 -> LOW (energized)
+[752.559s] WAKE edge #26 -> LOW (energized)
+[752.559s] WAKE edge #27 -> LOW (energized)
+[752.559s] WAKE edge #28 -> LOW (energized)
+[752.559s] WAKE edge #29 -> LOW (energized)
+[752.559s] WAKE edge #30 -> LOW (energized)
+[752.559s] WAKE edge #31 -> LOW (energized)
+[752.560s] WAKE edge #32 -> LOW (energized)
+[752.560s] WAKE edge #33 -> LOW (energized)
+[752.560s] WAKE edge #34 -> LOW (energized)
+[752.560s] WAKE edge #35 -> LOW (energized)
+[752.560s] WAKE edge #36 -> LOW (energized)
+[752.560s] WAKE edge #37 -> LOW (energized)
+[752.560s] WAKE edge #38 -> LOW (energized)
+[752.560s] WAKE edge #39 -> LOW (energized)
+[752.560s] WAKE edge #40 -> LOW (energized)
+[752.560s] WAKE edge #41 -> LOW (energized)
+[752.560s] WAKE edge #42 -> LOW (energized)
+[752.560s] WAKE edge #43 -> LOW (energized)
+[752.560s] WAKE edge #44 -> LOW (energized)
+[752.560s] WAKE edge #45 -> LOW (energized)
+[752.560s] WAKE edge #46 -> LOW (energized)
+[752.560s] WAKE edge #47 -> LOW (energized)
+[752.560s] WAKE edge #48 -> LOW (energized)
+[752.560s] WAKE edge #49 -> LOW (energized)
+[752.560s] WAKE edge #50 -> HIGH (idle/absent)
+[752.560s] WAKE edge #51 -> LOW (energized)
+[752.560s] WAKE edge #52 -> LOW (energized)
+[752.560s] WAKE edge #53 -> LOW (energized)
+[752.560s] WAKE edge #54 -> LOW (energized)
+[752.560s] WAKE edge #55 -> LOW (energized)
+[752.560s] WAKE edge #56 -> LOW (energized)
+[752.560s] WAKE edge #57 -> LOW (energized)
+[752.560s] WAKE edge #58 -> LOW (energized)
+[752.560s] WAKE edge #59 -> LOW (energized)
+[752.560s] WAKE edge #60 -> LOW (energized)
+[752.560s] WAKE edge #61 -> LOW (energized)
+[752.560s] WAKE edge #62 -> LOW (energized)
+[752.560s] WAKE edge #63 -> LOW (energized)
+[752.560s] WAKE edge #64 -> LOW (energized)
+[752.560s] WAKE edge #65 -> LOW (energized)
+[752.560s] WAKE edge #66 -> LOW (energized)
+[752.560s] WAKE edge #67 -> LOW (energized)
+[752.560s] WAKE edge #68 -> LOW (energized)
+[752.560s] WAKE edge #69 -> LOW (energized)
+[752.560s] WAKE edge #70 -> LOW (energized)
+[752.560s] WAKE edge #71 -> LOW (energized)
+[752.560s] WAKE edge #72 -> LOW (energized)
+[752.560s] WAKE edge #73 -> LOW (energized)
+[752.560s] WAKE edge #74 -> LOW (energized)
+[752.560s] WAKE edge #75 -> LOW (energized)
+[752.560s] WAKE edge #76 -> LOW (energized)
+[752.561s] WAKE edge #77 -> HIGH (idle/absent)
+[752.561s] WAKE edge #78 -> HIGH (idle/absent)
+[752.561s] WAKE edge #79 -> LOW (energized)
+[752.561s] WAKE edge #80 -> LOW (energized)
+[752.561s] WAKE edge #81 -> HIGH (idle/absent)
+[752.561s] WAKE edge #82 -> LOW (energized)
+[752.561s] WAKE edge #83 -> LOW (energized)
+[752.561s] WAKE edge #84 -> LOW (energized)
+[752.561s] WAKE edge #85 -> LOW (energized)
+[752.562s] WAKE edge #86 -> LOW (energized)
+[752.562s] WAKE edge #87 -> HIGH (idle/absent)
+[752.562s] WAKE edge #88 -> HIGH (idle/absent)
+[752.562s] WAKE edge #89 -> LOW (energized)
+[752.562s] WAKE edge #90 -> HIGH (idle/absent)
+[752.562s] WAKE edge #91 -> HIGH (idle/absent)
+[752.562s] WAKE edge #92 -> HIGH (idle/absent)
+[752.562s] WAKE edge #93 -> LOW (energized)
+[752.562s] WAKE edge #94 -> HIGH (idle/absent)
+[752.562s] WAKE edge #95 -> HIGH (idle/absent)
+[752.562s] WAKE edge #96 -> LOW (energized)
+[752.562s] WAKE edge #97 -> LOW (energized)
+[752.562s] WAKE edge #98 -> LOW (energized)
+[752.562s] WAKE edge #99 -> LOW (energized)
+[752.562s] WAKE edge #100 -> LOW (energized)
+[752.562s] WAKE edge #101 -> LOW (energized)
+[752.562s] WAKE edge #102 -> LOW (energized)
+[752.562s] WAKE edge #103 -> LOW (energized)
+[752.562s] WAKE edge #104 -> LOW (energized)
+[752.562s] WAKE edge #105 -> LOW (energized)
+[752.562s] WAKE edge #106 -> LOW (energized)
+[752.562s] WAKE edge #107 -> LOW (energized)
+[752.562s] WAKE edge #108 -> LOW (energized)
+[752.562s] WAKE edge #109 -> HIGH (idle/absent)
+[752.562s] WAKE edge #110 -> HIGH (idle/absent)
+[752.562s] WAKE edge #111 -> LOW (energized)
+[752.562s] WAKE edge #112 -> LOW (energized)
+[752.562s] WAKE edge #113 -> HIGH (idle/absent)
+[752.562s] WAKE edge #114 -> HIGH (idle/absent)
+[752.562s] WAKE edge #115 -> LOW (energized)
+[752.562s] WAKE edge #116 -> LOW (energized)
+[752.562s] WAKE edge #117 -> LOW (energized)
+[752.563s] WAKE edge #118 -> LOW (energized)
+[752.563s] WAKE edge #119 -> LOW (energized)
+[752.563s] WAKE edge #120 -> LOW (energized)
+[752.563s] WAKE edge #121 -> HIGH (idle/absent)
+[752.563s] WAKE edge #122 -> HIGH (idle/absent)
+
+======================================================================
+  0 frames, 765 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+[774.865s] WAKE edge #123 -> HIGH (idle/absent)
+[776.917s] WAKE edge #124 -> HIGH (idle/absent)
+[776.930s] WAKE edge #125 -> HIGH (idle/absent)
+[776.932s] WAKE edge #126 -> HIGH (idle/absent)
+[777.275s] WAKE edge #127 -> HIGH (idle/absent)
+
+======================================================================
+  0 frames, 780 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 795 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 810 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 825 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 840 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+[849.366s] WAKE edge #0 -> HIGH (idle/absent)
+[849.367s] WAKE edge #1 -> HIGH (idle/absent)
+[849.367s] WAKE edge #2 -> HIGH (idle/absent)
+
+======================================================================
+  0 frames, 855 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 870 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 885 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 900 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 915 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 930 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 945 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 960 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 975 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 990 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1005 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1020 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1035 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1050 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1065 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1080 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1095 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1110 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1125 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1140 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+
+
+======================================================================
+  0 frames, 1155 s elapsed
+  ID     count   period(ms)  DLC  last payload             changing
+  ----------------------------------------------------------------------
+  NOTE: no 0x301 seen - are you tapping the inverter side too?
+======================================================================
+

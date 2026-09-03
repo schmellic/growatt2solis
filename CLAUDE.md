@@ -184,9 +184,16 @@ the fact that this was inferred/secondhand before) doesn't get lost.
    the "fail toward disconnection" this project wants), but worth knowing:
    don't expect to see this coming via `0x312`'s protection/warning flags,
    and avoid disconnecting the gateway mid-operation unless deliberate.
-8. **OPEN — the GBLI6532 latches `chg_en=0 dis_en=0` exactly 594 s (9m54s)
-   after every enable, independent of CAN traffic content, and does not
-   self-recover.** First seen 2026-08-31 during ordinary live operation (no
+8. **RESOLVED (2026-09-03) — root cause found: this gateway was sending
+   the wrong `0x301` payload from the very first commit.** See the full
+   resolution at the end of this item. The investigation trail below is
+   kept in full because it's what got there, and because most of it
+   remains genuinely true and useful (WAKE ruled out, TWAI transmit
+   reliability verified, the standalone-timer reframe) even though the
+   headline mystery had a much simpler explanation underneath it all.
+   Originally: the GBLI6532 latches `chg_en=0 dis_en=0` exactly 594 s
+   (9m54s) after every enable, independent of CAN traffic content, and
+   does not self-recover. First seen 2026-08-31 during ordinary live operation (no
    comms interruption at all - distinct from item 7 above). Reproduced four
    times total the same day; the clearest evidence is in
    (`captures/2026-08-31-gbli6532-t2can-laptop-power-10min.log`, raw serial
@@ -256,16 +263,36 @@ the fact that this was inferred/secondhand before) doesn't get lost.
 
    **2026-09-01 to 2026-09-03: several more theories checked and ruled
    out, then a real lead found.** In rough order:
-   - **WAKE pin, revisited with real instrumentation.** Built an
-     optocoupler-isolated (PC817) tap on WAKE+/WAKE-, feeding an
-     interrupt-driven edge logger on a spare GPIO (`sniffer.cpp`, DevKit
-     build only). Zero edges logged across 30+ minutes of healthy real-
-     SPH6000 operation, a full disable transition, and a full re-enable
-     transition - WAKE never pulses or changes level through any of it.
-     Caveat worth keeping honest: this was never validated with a
-     deliberate positive-control pulse, so it confirms "no signal
-     observed," not rigorously "the circuit is capable of observing a
-     signal." Treat as strong but not airtight until that check is done.
+   - **WAKE pin, revisited with real instrumentation - now conclusively
+     ruled out.** Built an optocoupler-isolated (PC817) tap on
+     WAKE+/WAKE-, feeding an interrupt-driven edge logger on a spare GPIO
+     (`sniffer.cpp`, DevKit build only). First pass logged zero edges
+     across 30+ minutes of healthy real-SPH6000 operation plus a full
+     disable/re-enable cycle, but a positive-control check (deliberately
+     applying a known 3.3V test pulse) revealed the circuit genuinely
+     couldn't detect anything - the module's own onboard pull-up was far
+     too strong for how weak this specific part's phototransistor
+     response turned out to be, and the LED was under-driven at 3.3V too.
+     Root-caused with real measurements, not guessing: swapping in an
+     external 1M ohm pull-up (replacing, not paralleling, the module's own
+     10k - two in parallel can only ever be *lower* than either alone, a
+     mistake caught and corrected mid-test) plus a brighter LED drive (5V
+     instead of 3.3V, ~19mA instead of ~10.5mA) took the response from an
+     unusable 0.3-0.4V droop to a clean 0.86V droop, comfortably past the
+     ESP32's ~0.825V guaranteed-LOW threshold. Re-ran the full positive-
+     control test with the corrected circuit and firmware (`INPUT`, not
+     `INPUT_PULLUP` - the internal ~45k pull-up would have undone the
+     external 1M the same way the module's own 10k did) and it now
+     reliably logs real edges. With a *validated* detector, re-ran the
+     real-system test end to end - 30+ minutes healthy, a full disable,
+     a full re-enable - and got zero edges again, this time meaning it.
+     Independently reconfirmed a third way: built an RJ45 cable with only
+     pins 4/5 (CANH/CANL) wired, WAKE genuinely absent rather than just
+     inert, and the real SPH6000 both sustained the battery for 41+
+     minutes *and* revived it from the locked state (see below) using
+     nothing but those two wires. Three independent lines of evidence,
+     three different angles, all agreeing: WAKE plays no role in any of
+     this. Closed for good.
    - **The real inverter's own `0x301` rate is dynamic, but not in a way
      that explains this.** With no battery on the bus at all, a real
      SPH6000's `0x301` rate jumps from its normal ~1 Hz to ~60-90 Hz -
@@ -318,7 +345,181 @@ the fact that this was inferred/secondhand before) doesn't get lost.
    correlates with the 594 s mystery, rather than staying silent through
    it the way `prot=`/`warn=`/everything else has. Root cause of what
    byte 4 *is* - and whether it's readable early enough to act on - still
-   open.
+   open. **Confirmed a third time, independently** (2026-09-03,
+   `captures/2026-09-03-gbli6532-t2can-clean-burst-test.log`, the
+   cleanest single-cycle test run all project): flips at t=564.246s, 1.1s
+   *before* the disable at t=565.357s. That makes it two leads and one
+   lag out of three - most likely just measurement noise around a signal
+   genuinely tied to the same underlying moment (both `0x311` and `0x323`
+   are on their own independent ~1 Hz cycles, not synchronized to each
+   other), rather than a reliably-early warning we could act on yet.
+
+   **`0x311`'s own timing can go bursty too - but it's a different
+   phenomenon, not a predictor of the 594 s disable.** While digging
+   through the byte-diff data, noticed `0x311` (and everything else the
+   battery broadcasts) can shift from a clean, metronomic exactly-1.000s
+   cadence to tight clusters of frames 11-23ms apart, separated by
+   ~0.8-1.3s gaps. Traced when this starts in
+   `captures/2026-09-03-gbli6532-sph6000-devkit-can-wake-combined-session.log`:
+   right around t=1771s, exactly when the SPH6000 was disconnected - not
+   near the eventual disable at t=2388s at all. Matches something noticed
+   right back at the start of this project too: the very first real
+   SPH6000 capture also opened with a burst, right when the sniffer tap
+   was first connected. The pattern that fits both: bursting correlates
+   with an *unconfirmed/unstable* connection state in general (freshly
+   connecting, or the counterpart having just vanished entirely) - not
+   specifically with approaching this gateway's own 594 s wall. Confirmed
+   directly: ran a fully clean gateway-only session
+   (`captures/2026-09-03-gbli6532-t2can-clean-burst-test.log`) where the
+   connection was already well-established, and `0x311` stayed perfectly
+   metronomic straight through its own disable at t=565.357s - no burst
+   at all. So this is a real, separate phenomenon, not a second predictor
+   of the mystery - worth knowing about, not worth chasing further as a
+   lead on its own.
+
+   **Major new finding: a real inverter can revive an already-locked
+   battery with nothing but a fresh CAN reconnection - no power cycle.**
+   Never directly tested before today. Sequence: battery locked via this
+   gateway's own 594 s wall (`chg_en=0 dis_en=0`, confirmed via `0x311`
+   and via `0x323` byte 4 reading `0x04`), then swapped the T-2Can out
+   for the real SPH6000 *without* touching the battery's power at all.
+   Confirmed disable at t=565.357s in the T-2Can session; confirmed
+   re-enable at t=760.195s after the SPH6000 was reconnected - 194.8s
+   between disable and re-enable. Done with the CAN-only cable (pins 4/5
+   only, WAKE genuinely absent), so this is also further, independent
+   confirmation that WAKE has nothing to do with any of this - it
+   doesn't even matter for *recovery* from the locked state, not just
+   for staying out of it in the first place. See
+   `captures/2026-09-03-gbli6532-t2can-clean-burst-test.log` for both
+   the disable and the SPH6000's revival, logged in the same continuous
+   capture.
+
+   **Correction from a repeat run: that 194.8 s figure was measurement
+   slop, not a real delay - the battery's relays click immediately, every
+   time, the instant the SPH6000 is actually physically reconnected.**
+   Re-ran the identical test for extra confidence
+   (`captures/2026-09-03-gbli6532-sph6000-revival-repeat.log`): battery
+   confirmed still locked at t=21.054s and t=44.504s, SPH6000 physically
+   reconnected at t≈44.5s, and `chg_en`/`dis_en` flipped back to 1 at
+   t=46.033s - about 1.5s later, which given how the reconnection
+   timestamp was itself only a rough spoken-aloud reference point (not a
+   precise event marker), is consistent with an immediate response.
+   Paul confirmed directly: every time the SPH6000 has been plugged back
+   in during this project's testing, the packs have come back to life
+   and the relays have clicked **immediately** - there is no inverter
+   self-test delay gating this, that theory (floated after the first
+   trial, to explain the apparent 194.8s gap) was wrong. The real
+   explanation for the first trial's 194.8s figure is almost certainly
+   mundane: it measures from the battery's own disable event to the
+   eventual re-enable, and that window includes however long the
+   physical act of swapping the T-2Can out for the SPH6000 actually
+   took, not any electrical or protocol delay. The corrected, sharper
+   finding: once a real inverter is actually physically present and
+   sending on the bus, the battery's response is immediate, not merely
+   "fast" - reinforcing how stark the contrast is with this gateway,
+   which does not revive the battery on reconnection at all.
+
+   **Reframe: the 594 s disable itself is not caused by this gateway at
+   all - it happens even with the battery connected to nothing.** Paul
+   confirmed directly (2026-09-03): the same enable-then-disable cycle,
+   on the same ~594 s timescale, happens with the battery powered on via
+   its POWER button and genuinely nothing plugged into its PCS/Link port
+   - no gateway, no inverter, no CAN device of any kind. Observed
+   directly off the battery's own display/LEDs during the setup mistake
+   captured (then deleted, per Paul's request) as
+   `2026-09-03-gbli6532-t2can-revival-test.log`'s precursor ("Nothing is
+   connected to the battery oops") - so this is a direct visual
+   observation, not a logged CAN capture. This is the single biggest
+   reframe of open question 8 to date: the ~594 s enable→disable cycle
+   is not something this gateway (or any CAN traffic) triggers - it's
+   the battery's own default/fallback behavior when powered on, full
+   stop. The real mystery was never "why does the gateway's replay cause
+   a disable" - it's "what does a real inverter do, continuously, that
+   *suppresses* this default timer for as long as it's connected,"
+   since a real SPH6000 session runs 14+ minutes with zero disables.
+   Whatever that mechanism is, it must be doing something active and
+   ongoing (not a one-off handshake), because the timer is evidently the
+   battery's default behavior in the total absence of any inverter at
+   all - and this gateway's byte-identical, correctly-timed `0x301`
+   replay isn't providing it.
+
+   **This gateway cannot do the same thing.** Directly tested the
+   analogous case: got the battery locked again via this gateway's own
+   0x301 replay (same mechanism), then - instead of swapping to the
+   SPH6000 - physically disconnected and reconnected the T-2Can itself,
+   mirroring exactly what worked for the real inverter. It did not
+   revive the battery; confirmed still `chg_en=0 dis_en=0` well past
+   the point where the SPH6000's equivalent reconnection had already
+   worked (`captures/2026-09-03-gbli6532-t2can-revival-test.log`).
+   **Caveat added on review, since resolved in part:** that same log
+   shows zero individually-timestamped `0x301` frames anywhere in its
+   visible ~975-1035s window - only a frozen stats-table row (count
+   stuck at 59089, a placeholder payload `11 22 33 44 55 66 77 88`
+   rather than the real `0B 16 21 2C 37 42 4D 58`) - meaning the
+   gateway's own keepalive transmission may have silently died before or
+   during this specific test.
+
+   **`twai_transmit()` reliability directly verified with
+   `VERBOSE_KEEPALIVE_TX`** (2026-09-03,
+   `captures/2026-09-03-gbli6532-t2can-keepalive-tx-verify.log`, fresh
+   reflash of `translator-t2can`). Two things confirmed: (1) with
+   nothing on the bus at all (battery not yet physically connected),
+   `twai_transmit()` genuinely does return `ESP_ERR_TIMEOUT` - 30 of the
+   first ~40 calls failed this way - which is textbook CAN behavior for
+   a lone transmitter with no one to ACK its frames, not a firmware bug.
+   (2) The instant the battery was physically connected (t=51s), every
+   subsequent call succeeded - **zero failures** from t=51s through the
+   natural disable at t=649s (598s later, consistent with the
+   established ~594-596s figure) and beyond. `bus_err` climbed once
+   early (to 190881, likely connector noise) then froze, `tx_err`
+   recovered to 0, `state=RUNNING` throughout - no bus-off, no silent
+   stall. So: `twai_transmit()` is not fundamentally broken, and its
+   reliability isn't what causes the natural 594s disable - that still
+   happens on schedule even with a perfectly clean, 100%-successful
+   keepalive. This does NOT yet clear the specific
+   `t2can-revival-test.log` result, though - that test still needs its
+   own clean rerun with this same debug build before its
+   gateway-can't-revive conclusion can be fully trusted, since a locked
+   (but still physically connected) battery's CAN transceiver should
+   still ACK at the bus level regardless of its BMS enable state, and
+   this new evidence doesn't explain why that log showed zero frames
+   despite that.
+
+   **Rerun completed on the verified-good build - same result, now
+   trustworthy.** Same session as above: let the battery lock naturally
+   (t=649s), then physically disconnected and reconnected the T-2Can
+   itself (Paul's own prediction beforehand: "I don't think it will
+   work as couldn't keep them alive" - correct). `0x311` byte7 stayed
+   `0x00` (`chg_en=0 dis_en=0`) after reconnection, `0x323` byte4 read
+   `0x04` (the known locked-state correlate), and the keepalive kept
+   returning clean `ESP_OK` with no bus errors throughout. So this is
+   now a clean, instrumented-and-verified negative result, not one
+   clouded by an unconfirmed transmit path: **this gateway genuinely
+   cannot revive an already-locked battery via reconnection, under
+   conditions where transmission is proven 100% reliable** - while the
+   real SPH6000 does it in ~1-2 seconds under the same physical
+   reconnection event. Whatever the real inverter does differently is
+   still not visible in `twai_transmit()` success/failure or in TWAI
+   bus-health counters - it must be something about the frame content,
+   sequence, or signal characteristics themselves.
+   This sharpens the whole mystery meaningfully: it isn't only about
+   *sustaining* trust over 594 s - this gateway apparently cannot even
+   perform whatever the real inverter does to *re-establish* it, despite
+   attempting the same kind of fresh-connection event. That points toward
+   whatever's different being present from the very first frames of a
+   connection, not something that only diverges after a long time.
+
+   **Checked directly whether anything discrete happens at the 594 s
+   mark inside a *successful* real-inverter session - it doesn't.**
+   Computed the exact timestamp 594 s after the real SPH6000 session's
+   own enable point (368.403s + 594s = 962.403s) in
+   `captures/2026-08-31-gbli6532-sph6000-t2can-sniffer-594s-test.log`
+   and checked both that exact instant and a 10s window around it:
+   `chg_en` stays 1, `0x323` byte 4 stays `0x00`, normal frame mix, normal
+   rates, nothing unusual at all. So whatever protects a real session
+   isn't a discrete trigger that fires at that point and gets handled -
+   it's something continuous, present from the start of the connection,
+   that hasn't shown up in any byte this project has ever looked at.
 
    Also worth noting: the exact 594 s figure hasn't repeated as cleanly in
    the more recent multi-connect/disconnect test sessions (one measured
@@ -330,14 +531,60 @@ the fact that this was inferred/secondhand before) doesn't get lost.
    conditions, and the shorter recent measurements as consistent with
    the same mechanism under messier conditions rather than a contradiction.
 
-   **Not blocking Phase 2 electrically** (still "fail toward disconnection,"
-   not toward uncontrolled current), but it is a real operational problem:
-   as it stands, unattended operation has a hard ~594 s ceiling before
-   requiring a manual POWER-button cycle. Next concrete steps: decode
-   `0x323` byte 4 properly into `sniffer.cpp` so future captures show it
-   without manual byte-diffing, and check whether it changes *before*
-   `chg_en` consistently enough to predict the disable rather than just
-   mark it after the fact.
+   **THE ACTUAL RESOLUTION (2026-09-03): `sendGrowattKeepalive()` in
+   `main.cpp` had been sending the wrong `0x301` payload since the very
+   first commit (`a90952f`, 2026-08-20).** It sent
+   `0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88` - the generic example value
+   from Growatt's protocol document - not the real payload captured off
+   a genuine SPH6000 (`0B 16 21 2C 37 42 4D 58`, see item 3 above). This
+   was a documentation/code mismatch that went unnoticed for the entire
+   project: item 3 states the hardcoded payload "matches what's already
+   hardcoded in `sendGrowattKeepalive()`" - a claim that was never
+   actually checked byte-for-byte against the source, it was asserted
+   and then trusted. Every single "gateway session" finding logged
+   throughout this whole investigation - the 594 s timer, the failed
+   revivals, the TWAI health checks, all of it - was generated while
+   this gateway was silently sending the wrong bytes. The full byte-diff
+   work earlier in this item that concluded "payload content doesn't
+   matter" was, in hindsight, only ever comparing the *wrong* payload
+   against itself before/after a transition - it never had the real
+   payload in the picture at all to compare against.
+
+   Found by finally comparing the two directly: while investigating
+   whether `twai_transmit()` itself was silently failing (it wasn't,
+   see the TWAI verification above), a check of the actual stats-table
+   row for `0x301` in `captures/2026-09-03-gbli6532-t2can-revival-test.log`
+   showed payload `11 22 33 44 55 66 77 88` - assumed at the time to be
+   stale/frozen leftover data. Cross-checking that value directly
+   against `main.cpp`'s source (not assumed, actually read) showed it
+   wasn't stale at all - it's the literal value the firmware has always
+   sent. `git log -S` confirmed it's been there since the first commit.
+
+   Fixed: `main.cpp`'s `p[8]` array corrected to the real captured
+   payload. Rebuilt, reflashed the T-2Can, battery power-cycled fresh
+   (`captures/2026-09-03-gbli6532-t2can-correctpayload-test.log`),
+   enabled normally at t=51s as always - but this time **stayed enabled
+   for 2793+ seconds (46+ minutes) with zero disables**, nearly 5x past
+   the old 594 s wall, `twai_transmit()` clean throughout (the only
+   `ESP_ERR_TIMEOUT`s were pre-connection, same as every other test).
+   Confirmed live with Paul watching the pack the whole time. This is
+   the root cause: **the battery was never being fooled by a subtle
+   protocol or timing difference - it was correctly, appropriately
+   distrusting a keepalive that was never the right bytes in the first
+   place.** Every other finding in this item (WAKE ruled out, TWAI
+   transmit reliability, the standalone-timer behavior, the `0x323`
+   byte 4 correlation) remains true and is kept above for the record,
+   but none of them were the actual cause - this was.
+
+   **Still worth doing as follow-up, not blocking:** run this corrected
+   build through a full multi-hour/overnight soak and a real
+   charge/discharge cycle to build further confidence beyond the 46-
+   minute idle-session test; decide whether the `0x323` byte 4
+   correlation (harmless, was tracking the old bug's symptom) is worth
+   keeping in `sniffer.cpp`'s decode or can be dropped now that the
+   real cause is known; update `SNIFFING.md`/`README.md` if either
+   references the old payload or the "hard 594 s ceiling" limitation,
+   which no longer applies.
 
 `SNIFFING.md` is the procedure for answering the original four questions
 from the existing GBLI ↔ SPH6000 link.
@@ -371,12 +618,17 @@ there. This is reassuring defense-in-depth: even if this gateway's own
 derate/silence logic somehow failed, the battery's own BMS independently
 protects itself the same way.
 
-**Known operational limitation, not yet root-caused (2026-08-31):** the
-GBLI6532 also latches disabled roughly 10-11 minutes after power-on even
-with a perfectly healthy, uninterrupted CAN link - see open question 8.
-Unlike the comms-loss case above, this doesn't self-recover; it needs a
-manual POWER-button cycle. Still fails toward disconnection, so not unsafe,
-but plan around it until it's understood.
+**RESOLVED (2026-09-03), previously an open operational limitation:** for
+most of this project (from the very first commit until 2026-09-03), this
+gateway's `0x301` keepalive sent the wrong payload - Growatt's protocol-doc
+example value, not the real payload a genuine inverter sends - which caused
+the battery to latch disabled ~594 s after every enable and never
+self-recover without a manual POWER-button cycle. See open question 8 for
+the full trail. Fixed by correcting the payload in `sendGrowattKeepalive()`;
+confirmed staying enabled 46+ minutes with the fix in place, nearly 5x past
+the old wall. Throughout, this was still "fail toward disconnection, not
+toward uncontrolled current" even while the bug was live - so it was never
+a safety issue, just an operational one, and it's now believed resolved.
 
 ## Future direction
 
