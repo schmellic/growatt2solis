@@ -46,6 +46,59 @@ static bool logDecode = true;
 
 static BatteryState batt;
 
+// =============================================================================
+//  WAKE pin monitor - DevKit diagnostic build only.
+//  GPIO16 - PCS-WAKE+ tapped through a PC817 optocoupler (active-low output:
+//  HIGH = WAKE+ absent/idle, LOW = WAKE+ energized). Added 2026-09-01 to test
+//  whether a real Growatt inverter pulses WAKE rather than holding it at a
+//  sustained level - a multimeter's steady-state reading can't catch a brief
+//  pulse, this can. See CLAUDE.md open question 8. Not part of this board's
+//  normal pin set - only meaningful with the optocoupler circuit wired up.
+// =============================================================================
+#if BOARD == BOARD_ESP32_DEVKIT
+#define WAKE_MONITOR_PIN 16
+#define WAKE_LOG_SIZE    128
+
+struct WakeEvent { uint32_t ms; uint8_t level; };
+static volatile WakeEvent wakeLog[WAKE_LOG_SIZE];
+static volatile uint16_t  wakeHead = 0;
+static uint16_t           wakePrinted = 0;
+static volatile uint32_t  wakeEdgeCount = 0;
+
+void IRAM_ATTR wakeISR() {
+    uint16_t h = wakeHead;
+    wakeLog[h].ms = millis();
+    wakeLog[h].level = (uint8_t)digitalRead(WAKE_MONITOR_PIN);
+    wakeHead = (uint16_t)((h + 1) % WAKE_LOG_SIZE);
+    wakeEdgeCount++;
+}
+
+static void wakeMonitorSetup() {
+    // Pulled up defensively: the PC817 module drives this cleanly when
+    // connected (active-low, its own onboard pull-up), but a bare INPUT
+    // would float and chatter - firing this ISR continuously - whenever
+    // the module is disconnected or not yet wired up.
+    pinMode(WAKE_MONITOR_PIN, INPUT_PULLUP);
+    attachInterrupt(digitalPinToInterrupt(WAKE_MONITOR_PIN), wakeISR, CHANGE);
+    Serial.printf("WAKE monitor armed on GPIO%d (active-low: LOW = WAKE+ energized)\n",
+                  WAKE_MONITOR_PIN);
+    Serial.printf("Idle level right now: %s\n",
+                  digitalRead(WAKE_MONITOR_PIN) ? "HIGH (absent)" : "LOW (energized)");
+}
+
+static void wakeMonitorPoll() {
+    while (wakePrinted != wakeHead) {
+        uint32_t ms    = wakeLog[wakePrinted].ms;
+        uint8_t  level = wakeLog[wakePrinted].level;
+        Serial.printf("[%lu.%03lus] WAKE edge #%lu -> %s\n",
+                      (unsigned long)(ms / 1000), (unsigned long)(ms % 1000),
+                      (unsigned long)wakePrinted,
+                      level ? "HIGH (idle/absent)" : "LOW (energized)");
+        wakePrinted = (uint16_t)((wakePrinted + 1) % WAKE_LOG_SIZE);
+    }
+}
+#endif
+
 // -----------------------------------------------------------------------------
 static IdStat *findOrAdd(uint32_t id) {
     for (int i = 0; i < MAX_IDS; i++)
@@ -164,6 +217,22 @@ static void printDecode(uint32_t id, uint8_t dlc, const uint8_t *d) {
     // yet confirmed - decoded here as best-effort guesses, clearly labelled,
     // so more captures can confirm or correct them. Not used anywhere in
     // translate.h or the Pylon output.
+    case 0x323: {
+        // Payload is 20 0E 10 00 XX 00 00 00 - only byte 4 has ever been
+        // seen to change. Confirmed 2026-09-03, independently in two
+        // separate sessions: byte 4 reads 0x04 tightly clustered around
+        // the mystery 594s disable (see CLAUDE.md open question 8) and
+        // 0x00 otherwise - the first CAN-visible signal found so far that
+        // actually correlates with that state, not yet understood, not
+        // yet consistent on whether it leads or follows chg_en.
+        if (dlc < 5) return;
+        snprintf(l, sizeof(l),
+            "        0x323  byte4=0x%02X  (GUESS: correlates with the 594s disable - see CLAUDE.md)",
+            (unsigned)d[4]);
+        Serial.println(l);
+        break;
+    }
+
     case 0x324: {
         // Looks like a paged ASCII string (serial/model number): byte0
         // cycles 0,1,2 across frames, the rest renders as printable ASCII
@@ -299,6 +368,11 @@ void setup() {
     Serial.println(F("Listening at 500 kbit/s. Waiting for frames..."));
     Serial.println(F("(silence for >30 s => check CAN_H/CAN_L, the WAKE pins, or the tap)"));
     Serial.println();
+
+#if BOARD == BOARD_ESP32_DEVKIT
+    wakeMonitorSetup();
+    Serial.println();
+#endif
 }
 
 void loop() {
@@ -307,6 +381,10 @@ void loop() {
     static bool warned = false;
 
     handleSerial();
+
+#if BOARD == BOARD_ESP32_DEVKIT
+    wakeMonitorPoll();
+#endif
 
     twai_message_t msg;
     while (twai_receive(&msg, pdMS_TO_TICKS(10)) == ESP_OK) {

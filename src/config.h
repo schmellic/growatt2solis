@@ -50,6 +50,10 @@
                                          // same format as sniffer.cpp - added to compare
                                          // real battery-side traffic rates against a real
                                          // Growatt inverter, see CLAUDE.md open question 8
+#define VERBOSE_KEEPALIVE_TX    true    // log twai_transmit()'s actual return value for the
+                                         // 0x301 keepalive, instead of discarding it - added
+                                         // 2026-09-03 while chasing open question 8, still
+                                         // actively in use
 
 // -----------------------------------------------------------------------------
 // 2. HARDWARE PINS

@@ -78,6 +78,39 @@ static void statsRecord(uint32_t id, uint32_t now) {
     statsTotalFrames++;
 }
 
+// -----------------------------------------------------------------------------
+//  TWAI bus-health stats: error counters and controller state, not visible at
+//  the decoded-frame level at all. Added after frame content, timing and rate
+//  were all checked and ruled out as differences from a real Growatt inverter
+//  - see CLAUDE.md open question 8. If this gateway's transceiver is doing
+//  something subtly different electrically, this is where it would show up.
+// -----------------------------------------------------------------------------
+static const char *twaiStateName(twai_state_t s) {
+    switch (s) {
+    case TWAI_STATE_STOPPED:    return "STOPPED";
+    case TWAI_STATE_RUNNING:    return "RUNNING";
+    case TWAI_STATE_BUS_OFF:    return "BUS_OFF";
+    case TWAI_STATE_RECOVERING: return "RECOVERING";
+    default:                    return "?";
+    }
+}
+
+static void twaiHealthPrint() {
+    twai_status_info_t s;
+    if (twai_get_status_info(&s) != ESP_OK) {
+        Serial.println(F("  [twai_get_status_info failed]"));
+        return;
+    }
+    Serial.printf(
+        "  TWAI: state=%s  tx_err=%lu rx_err=%lu  tx_failed=%lu  "
+        "rx_missed=%lu rx_overrun=%lu  arb_lost=%lu  bus_err=%lu\n",
+        twaiStateName(s.state),
+        (unsigned long)s.tx_error_counter, (unsigned long)s.rx_error_counter,
+        (unsigned long)s.tx_failed_count,
+        (unsigned long)s.rx_missed_count, (unsigned long)s.rx_overrun_count,
+        (unsigned long)s.arb_lost_count, (unsigned long)s.bus_error_count);
+}
+
 static void statsPrint() {
     Serial.println();
     Serial.println(F("---- battery-bus rate stats (VERBOSE_STATS) ----------------------------"));
@@ -157,7 +190,12 @@ static void sendGrowattKeepalive() {
     // semantics are undocumented; the growattArkCAN gateway relays it unchanged.
     static const uint8_t p[8] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88};
     memcpy(m.data, p, 8);
+#if VERBOSE_KEEPALIVE_TX
+    esp_err_t r = twai_transmit(&m, pdMS_TO_TICKS(10));
+    Serial.printf("[keepalive] twai_transmit() -> %s\n", esp_err_to_name(r));
+#else
     twai_transmit(&m, pdMS_TO_TICKS(10));
+#endif
 #endif
 }
 
@@ -302,6 +340,7 @@ void loop() {
     if (now - lastStats >= STATS_INTERVAL_MS) {
         lastStats = now;
         statsPrint();
+        twaiHealthPrint();
     }
 #endif
 }

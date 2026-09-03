@@ -254,18 +254,90 @@ the fact that this was inferred/secondhand before) doesn't get lost.
    itself so it can be compared directly against a sniffer capture without
    needing a second device on the bus.
 
-   **Not yet found: the actual trigger.** Root cause remains unknown -
-   `prot=`/`warn=` never light up, the spec doesn't document a mechanism,
-   and the two most obvious differences between this gateway and a real
-   inverter (payload content, aggregate frame rate under load) have both
-   been checked and don't explain it. Worth trying next, still untested:
-   matching the real inverter's `0x301` timing more closely (not a fixed
-   1000 ms metronome - the real one has visible jitter, 0-3936 ms gaps) in
-   case irregular timing itself matters rather than raw frequency.
+   **2026-09-01 to 2026-09-03: several more theories checked and ruled
+   out, then a real lead found.** In rough order:
+   - **WAKE pin, revisited with real instrumentation.** Built an
+     optocoupler-isolated (PC817) tap on WAKE+/WAKE-, feeding an
+     interrupt-driven edge logger on a spare GPIO (`sniffer.cpp`, DevKit
+     build only). Zero edges logged across 30+ minutes of healthy real-
+     SPH6000 operation, a full disable transition, and a full re-enable
+     transition - WAKE never pulses or changes level through any of it.
+     Caveat worth keeping honest: this was never validated with a
+     deliberate positive-control pulse, so it confirms "no signal
+     observed," not rigorously "the circuit is capable of observing a
+     signal." Treat as strong but not airtight until that check is done.
+   - **The real inverter's own `0x301` rate is dynamic, but not in a way
+     that explains this.** With no battery on the bus at all, a real
+     SPH6000's `0x301` rate jumps from its normal ~1 Hz to ~60-90 Hz -
+     confirmed directly, sustained, not a burst artifact. But this only
+     happens at connection/reconnection; re-checked the full 14m51s clean
+     capture end-to-end and the rate never bursts again once steady - so
+     it's a "still looking for a battery" behavior, not a periodic
+     re-confirmation the battery could be keying its trust off. Doesn't
+     explain the 594 s wall, since in our own failures the battery is
+     responding normally to this gateway right up until it isn't.
+   - **Extended (29-bit) CAN IDs, from a different project's Growatt
+     decoder.** `ai-republic/bms-to-inverter`'s Growatt module polls each
+     field individually via extended-ID requests (e.g. `0x1311`) rather
+     than a single broadcast keepalive. Checked directly against the real
+     14m51s capture: every frame ID in it is a standard 3-hex-digit ID,
+     nothing extended ever appears. Not what a real GBLI6532/SPH6000 pair
+     actually does - ruled out.
+   - **Full byte-by-byte diff, every ID, not just the ones already
+     decoded.** Compared raw payloads immediately before/after both a
+     disable and a re-enable transition, across every ID including the
+     ones long marked "never varies" (`0x322`, `0x323`) and the
+     best-effort GUESS ones (`0x329`, `0x330`, `0x314`, `0x319`). This is
+     where the real lead turned up - see below. Everything else stayed
+     either completely static or showed only ordinary continuous noise
+     (cell-voltage drift, capacity-accounting jitter) present equally on
+     both sides of the transition, not gated by it.
+
+   **Real lead found: `0x323` byte 4 tracks the disabled state.**
+   `0x323`'s full payload is `20 0E 10 00 XX 00 00 00`; byte 4 (`XX`) had
+   been `00` in every capture so far and was assumed static. It isn't -
+   confirmed independently in two separate sessions/topologies:
+   - `captures/2026-09-03-gbli6532-sph6000-devkit-can-wake-combined-session.log`:
+     disable at t=2388.243s, byte 4 flips `00→04` at t=2389.027s (0.8s
+     later), flips back `04→00` at t=2499.197s, re-enable at t≈2501.27s
+     (2s later).
+   - `captures/2026-09-03-gbli6532-devkit-t2can-swap-test.log`: byte 4
+     flips to `04` at t=502.053s, disable at t=507.5s (5.4s later this
+     time - the flip led rather than followed).
+
+   Tightly clustered around the transition in both cases (single-digit
+   seconds either side), not scattered through the hundreds of seconds of
+   otherwise-normal operation in between - this rules out coincidence, but
+   the inconsistent before/after ordering between the two instances means
+   it's not yet clear whether byte 4 is a cause, a symptom, or something
+   else changing at roughly the same moment. Nothing in the official spec
+   documents `0x323` at all (it's one of the five IDs outside Growatt's
+   published spec, alongside `0x322`, `0x324`, `0x329`, `0x330`). Byte 4
+   going `0x04` (bit 2 set, on the simplest reading) is the first
+   CAN-visible signal this project has found all project that actually
+   correlates with the 594 s mystery, rather than staying silent through
+   it the way `prot=`/`warn=`/everything else has. Root cause of what
+   byte 4 *is* - and whether it's readable early enough to act on - still
+   open.
+
+   Also worth noting: the exact 594 s figure hasn't repeated as cleanly in
+   the more recent multi-connect/disconnect test sessions (one measured
+   ~146 s, another ~487-507 s depending on which reference point you
+   start from) - but those sessions involved several connect/disconnect
+   cycles in quick succession with real timing ambiguity around each one,
+   unlike the three clean single-cycle tests that gave 594-596 s three
+   times independently. Treat 594 s as the trustworthy number from clean
+   conditions, and the shorter recent measurements as consistent with
+   the same mechanism under messier conditions rather than a contradiction.
+
    **Not blocking Phase 2 electrically** (still "fail toward disconnection,"
    not toward uncontrolled current), but it is a real operational problem:
    as it stands, unattended operation has a hard ~594 s ceiling before
-   requiring a manual POWER-button cycle.
+   requiring a manual POWER-button cycle. Next concrete steps: decode
+   `0x323` byte 4 properly into `sniffer.cpp` so future captures show it
+   without manual byte-diffing, and check whether it changes *before*
+   `chg_en` consistently enough to predict the disable rather than just
+   mark it after the fact.
 
 `SNIFFING.md` is the procedure for answering the original four questions
 from the existing GBLI ↔ SPH6000 link.
