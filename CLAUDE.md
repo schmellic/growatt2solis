@@ -607,6 +607,18 @@ Also relevant: the Solis appears to partly ignore the CAN charge-voltage limit
 and use its own float setting. `0x351` CVL is not the only over-charge
 protection, and shouldn't be treated as such.
 
+**Battery temperature doesn't appear anywhere in the Solis's own UI on
+`PYLON_LV`** (2026-09-03, first live run) - there's no field for it at all,
+not a blank/zero value. Checked our own encoding against the real Pylon
+CANBUS Protocol V1.2 spec PDF directly (not from memory): `0x356` bytes 4-5,
+0.1°C, 16-bit signed little-endian, is exactly what `translate.h` sends
+(matches the ~25°C values seen throughout every capture), and there's no
+separate min/max-temperature frame (e.g. `0x373`) defined in this spec that
+Solis could be expecting instead - `0x356` is the only temperature field
+Pylon's protocol has. So this looks like a Solis UI limitation for this
+battery profile, not a translation bug - nothing to fix here unless new
+evidence turns up.
+
 **Confirmed real-world (2026-08-31, first live run):** the GBLI6532 itself
 also fails toward disconnection independently of anything this gateway does.
 Physically disconnecting the T-2Can mid-discharge (both CAN links dropped at
