@@ -13257,3 +13257,54 @@ BAT RX 0x311 [8] 02 38 00 00 08 24 01 21
 [keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
 [2987s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
 [keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[2989s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[2991s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[2993s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[2995s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[2997s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[2999s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+
+---- battery-bus rate stats (VERBOSE_STATS) ----------------------------
+  41922 frames, 3000 s elapsed
+  ID     count   period(ms)  (min-max gap)
+  0x330    2795    998 (4-1000)
+  0x312    2795    998 (4-1000)
+  0x313    2795    998 (4-1000)
+  0x314    2795    998 (4-1000)
+  0x315    2795    998 (3-1000)
+  0x316    2795    998 (4-1000)
+  0x317    2795    998 (4-1000)
+  0x318    2795    998 (4-1000)
+  0x319    2795    998 (3-1000)
+  0x320    2795    998 (4-1000)
+  0x322    2795    998 (4-1000)
+  0x311    2795    998 (4-1000)
+  0x323    2794    998 (5-1000)
+  0x324    2794    998 (4-1000)
+  0x329    2794    998 (4-1000)
+--------------------------------------------------------------------------
+
+  TWAI: state=RUNNING  tx_err=128 rx_err=0  tx_failed=0  rx_missed=0 rx_overrun=0  arb_lost=0  bus_err=808522
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[3001s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[3003s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[3005s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[keepalive] twai_transmit() -> ESP_ERR_TIMEOUT
+[3007s] SILENT OK V=53.40V I=+0.0A T=25.2C SOC=100% SOH=99% | CVL=56.8V CCL=0.0A DCL=208.4A | chg=0 dis=1 fc1=0 fc2=0 | prot=0000 warn=0000 | packs=2 | inv0x305=no
