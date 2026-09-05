@@ -82,14 +82,16 @@ on working while you watch.
 
 Now you need **two** independent CAN channels.
 
-**Possible new requirement, not yet confirmed:** a forum user pairing a
-GBLI6532 with a non-Growatt inverter reports needing to actively drive the
-PCS WAKE+ pin (pin 8, +5 V relative to WAKE−/pin 7) to wake the pack and
-close its relays at all — see `SNIFFING.md`'s WAKE-pin section and the link
-in `CLAUDE.md`'s Protocol references. If tomorrow's sniffing session confirms
-this on the real SPH6000 link, Phase 2 will likely need a small addition (a
-5 V source and a resistor to that pin) beyond what's listed below. Nothing
-added to the list yet since the exact figures aren't confirmed.
+**Resolved: WAKE is not needed.** An earlier forum report suggested actively
+driving the PCS WAKE+ pin might be required to wake the pack with a
+non-Growatt inverter. This project checked that exhaustively and ruled it
+out three independent ways: a validated optocoupler edge-monitor logging
+zero WAKE activity through a full disable/re-enable cycle, a direct
+multimeter reading of ~0 V against a genuine Growatt inverter, and a
+CAN-only cable (WAKE pins physically absent, only CANH/CANL wired) that
+both sustained the battery indefinitely and revived it from a locked state
+using nothing else. No WAKE-related hardware is needed - two plain CANH/CANL
+pairs are enough. See `CLAUDE.md`'s open questions for the full trail.
 
 ### Recommended: Autosport Labs ESP32-CAN-X2 — ~$55 / ~£45
 
@@ -155,7 +157,7 @@ extra £25 on the CAN-X2 and skip all of that.
 
 | Option | ~£ | Notes |
 |---|---|---|
-| [LilyGo T-2Can](https://github.com/Xinyuan-LilyGO/T-2Can) (non-FD, `T-2Can_V1.0`) | ~£27 | ESP32-S3. **Supported** — `BOARD_LILYGO_T2CAN` / `translator-t2can` env. Corrects an earlier note here: per LilyGo's own pin config and example firmware, it's actually **one TWAI channel + one MCP2515** (same architecture as the CAN-X2, different pins), not two MCP2515s — so no TWAI porting was needed, just pin numbers and a reset-pin pulse the CAN-X2 doesn't need. Its TWAI pins happen to match the CAN-X2's, so the existing `sniffer` env works for phase-1 sniffing on it too. Isolation confirmed against a real board (see below); a few wiring details still need confirming. |
+| [LilyGo T-2Can](https://github.com/Xinyuan-LilyGO/T-2Can) (non-FD, `T-2Can_V1.0`) | ~£27 | ESP32-S3. **Supported** — `BOARD_LILYGO_T2CAN` / `translator-t2can` env. Corrects an earlier note here: per LilyGo's own pin config and example firmware, it's actually **one TWAI channel + one MCP2515** (same architecture as the CAN-X2, different pins), not two MCP2515s — so no TWAI porting was needed, just pin numbers and a reset-pin pulse the CAN-X2 doesn't need. Its TWAI pins happen to match the CAN-X2's, so the existing `sniffer` env works for phase-1 sniffing on it too. **This is the board the project actually runs live on** - isolation and every pin assignment confirmed against a real board (see below), and proven further by days of real operation against a genuine GBLI6532 and Solis. |
 | Stark CMR / BECom | £70+ | DIN-rail, isolated, purpose-built for battery↔inverter gateways. Overkill unless you're going the Battery-Emulator route. |
 
 Galvanic isolation is worth having when one bus reaches a 48 V battery and the
@@ -202,12 +204,13 @@ ground fault costing you an ESP32 and costing you an inverter.
   `config.h` already had (`TWAI_TX_PIN = GPIO_NUM_7`, `TWAI_RX_PIN =
   GPIO_NUM_6`) - the confusing net-name mismatch above made this look like a
   possible swap, but it wasn't one.
-- **Which screw terminal block is which — CONFIRMED.** The MCP2515's
-  `TXCAN`/`RXCAN` pins sit on nets `TXA_CAN`/`RXA_CAN` in the schematic, so
-  the MCP2515 drives **CAN-A**; the ESP32's direct TWAI connection is
-  **CAN-B**. This project wires CAN-B to the **battery** and CAN-A to the
-  **inverter** - matching the existing convention - but which physical screw
-  terminal block is labelled A vs B on the silkscreen still needs a look.
+- **Which screw terminal block is which — CONFIRMED, including on the
+  physical silkscreen.** The MCP2515's `TXCAN`/`RXCAN` pins sit on nets
+  `TXA_CAN`/`RXA_CAN` in the schematic, so the MCP2515 drives **CAN-A**; the
+  ESP32's direct TWAI connection is **CAN-B**. This project wires CAN-B to
+  the **battery** and CAN-A to the **inverter** - matching the existing
+  convention - and this is exactly how the real board has been wired for
+  its entire live run, so the silkscreen labelling is correct as assumed.
 - **MCP2515 oscillator — CONFIRMED 16 MHz** from the schematic (crystal X1,
   marked "16MHZ±10ppm") and independently from the physical crystal's own
   marking ("YC16.0") - not the 8 MHz this project assumed before. `config.h`
@@ -216,10 +219,10 @@ ground fault costing you an ESP32 and costing you an inverter.
   on the board, matching what this project targets (the `T-2Can-Fd` variant
   uses an MCP2518 and a different library instead - not supported here).
 
-No caveats left unconfirmed against the real board as of 2026-08-31 - the
-one remaining physical-wiring detail (which silkscreen-labelled terminal
-block is CAN-A vs CAN-B) is a five-minute check when you're actually wiring
-it up, not a design question.
+No caveats left unconfirmed against the real board as of 2026-08-31. Since
+then this exact board has run live against a real GBLI6532 and Solis for
+days at a time with correct current flow in both directions, which is
+about as strong a confirmation of every pin assignment above as exists.
 
 ---
 

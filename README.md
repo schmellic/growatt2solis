@@ -78,7 +78,7 @@ Short version:
 |---|---|---|
 | **Autosport Labs ESP32-CAN-X2** (~£45) | `BOARD_ESP32_CAN_X2` *(default)* | ESP32-S3. CAN1 = built-in TWAI, CAN2 = MCP2515 @ 16 MHz — exactly this firmware's architecture, nothing to port. Breakable 120 Ω jumpers. Not isolated. |
 | **ESP32 DevKit + SN65HVD230 + MCP2515** (~£20) | `BOARD_ESP32_DEVKIT` — use the `translator-devkit`/`sniffer-devkit` PlatformIO envs, no `config.h` edit needed | Budget. **The common blue MCP2515 module is 5 V and the ESP32 is not 5 V tolerant** — see `PARTS.md` before wiring it. |
-| **LilyGo T-2Can** (non-FD, ~£27) | `BOARD_LILYGO_T2CAN` — use the `translator-t2can` env, no `config.h` edit needed | ESP32-S3, same TWAI+MCP2515 architecture as the CAN-X2 (just different pins). **Confirmed isolated** — each channel has its own Mornsun TD501MCAN (power + signal isolation, 2500 VDC). A few pin/wiring details still need confirming against the real board — see `PARTS.md`. |
+| **LilyGo T-2Can** (non-FD, ~£27) | `BOARD_LILYGO_T2CAN` — use the `translator-t2can` env, no `config.h` edit needed | ESP32-S3, same TWAI+MCP2515 architecture as the CAN-X2 (just different pins). **Confirmed isolated** — each channel has its own Mornsun TD501MCAN (power + signal isolation, 2500 VDC). Every pin assignment confirmed against a real board, and this is the board this project has actually run live on for days at a time — see `PARTS.md` for the full confirmation trail. |
 
 Pin assignments for all supported boards live in the `BOARD` block at the top of
 `config.h`.
@@ -130,11 +130,14 @@ pin-compatible — you're just cutting each one and landing it on the ESP32.
 
 ### Two things that catch people out
 
-1. **The WAKE pair (PCS pins 7/8).** A real Growatt inverter drives this, and the
-   GBLI may refuse to come out of sleep and start transmitting CAN without it.
-   If you see nothing on the battery bus in sniff mode, this is the first suspect.
-   Its electrical behaviour is undocumented — check continuity/voltage on a
-   working Growatt setup if you can, or try a link between 7 and 8.
+1. **The WAKE pair (PCS pins 7/8) — not actually needed, don't wire it.**
+   Earlier revisions of this doc suspected the GBLI needed WAKE driven to
+   come out of sleep. Since ruled out three independent ways (validated
+   optocoupler monitoring, direct multimeter reading, and a CAN-only cable
+   that sustained *and* revived a real pack with WAKE physically absent —
+   see `CLAUDE.md`'s open questions) — plain CANH/CANL is all you need. If
+   you see nothing on the battery bus, check wiring/termination/TX-RX swap
+   first, not WAKE.
 2. **The master-select plug.** The GBLI uses plugs on the Link-In/Link-Out ports
    to elect the master pack. A standalone battery still needs the correct plug
    fitted or it may never enumerate.
