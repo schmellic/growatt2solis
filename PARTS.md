@@ -134,7 +134,7 @@ pass `BOARD = BOARD_ESP32_DEVKIT` at compile time.
 | SN65HVD230 module (from phase 1) | 1 | — |
 | MCP2515 + TJA1050 CAN module | 1 | 3–5 |
 
-**There is a real gotcha here.** The ubiquitous blue MCP2515 module is a **5 V**
+**There is a real risk here.** The ubiquitous blue MCP2515 module is a **5 V**
 board. Its `SO` (MISO) line idles at 5 V, and the ESP32's GPIOs are **not 5 V
 tolerant**. Wiring it up naively works for a while and then damages the ESP32.
 

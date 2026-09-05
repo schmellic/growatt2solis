@@ -71,7 +71,7 @@ the other end there is nothing to select. Hence this gateway.
 
 You need **two independent CAN buses**. Do not join them — that is the whole point.
 
-Full shopping list, with prices and the gotchas, is in **[`PARTS.md`](PARTS.md)**.
+Full shopping list, with prices and the pitfalls, is in **[`PARTS.md`](PARTS.md)**.
 Short version:
 
 | Board | `BOARD` in `config.h` | Notes |
