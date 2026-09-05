@@ -19,8 +19,10 @@ understands.
 > finding from this live run: the battery protectively disables itself
 > (independent of this gateway) if it loses CAN comms, and recovers cleanly.
 >
-> **No licence yet** — all rights reserved for now. Ask before reusing; I'll
-> settle on something permissive once it's proven working.
+> **Licence: GPLv3.** See [`LICENSE`](LICENSE). You're free to use, modify and
+> redistribute this, including commercially — but if you distribute the
+> firmware (or a device running it), you must make the corresponding source
+> of what you shipped, including your own changes, available under GPLv3 too.
 
 > **Safety.** This sits in the control path of a 48 V, ~100 A battery. A bug here
 > can mean the inverter charges past the BMS's limits. The battery's own

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Copyright (C) 2026 Paul <schmellic@gmail.com>
 // =============================================================================
 //  sniffer.cpp  -  LISTEN-ONLY CAN sniffer for the Growatt battery bus
 //  -------------------------------------------------------------------------

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Copyright (C) 2026 Paul <schmellic@gmail.com>
 // =============================================================================
 //  translate.h  -  pure protocol logic, no hardware dependencies.
 //  Growatt LV BMS CAN (big-endian) -> Pylontech LV CAN (little-endian)

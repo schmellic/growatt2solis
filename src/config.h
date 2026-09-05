@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Copyright (C) 2026 Paul <schmellic@gmail.com>
 // =============================================================================
 //  config.h  -  Growatt GBLI 6532  ->  Solis S6-EH1P8K-L-PLUS  CAN translator
 //  Everything you are likely to want to change lives in this file.
