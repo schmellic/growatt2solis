@@ -10,8 +10,18 @@ An ESP32 CAN gateway. It sits between a **Growatt GBLI 6532** 48 V battery and a
 low-voltage BMS CAN protocol, and re-emits it as the Pylontech LV CAN protocol
 the Solis understands.
 
-Owner: Paul. Location UK. The batteries are currently connected to a Growatt
-SPH6000, which is being replaced by the Solis.
+Owner: Paul. Location UK. The Growatt SPH6000 has been fully removed from the
+system — the batteries now run against the Solis exclusively.
+
+**Status (2026-09-08): project complete, live in production for days.**
+Live hardware no longer runs this repo's own `translator`/`translator-t2can`
+firmware — it runs the upstream `dalathegreat/Battery-Emulator` build instead
+(see "Future direction" below, now DONE). This repo now serves as the origin
+of the reverse-engineering work and decode logic, and as the historical
+record of how it was found — not as the thing actually flashed to the T-2Can
+today. It's still the right place to look for the protocol reasoning trail
+(open questions below) and is kept buildable/tested, but new fixes to the
+live behavior now land in Battery-Emulator upstream first.
 
 ## Why it's needed
 
@@ -642,18 +652,35 @@ the old wall. Throughout, this was still "fail toward disconnection, not
 toward uncontrolled current" even while the bug was live - so it was never
 a safety issue, just an operational one, and it's now believed resolved.
 
-## Future direction
+## Future direction — DONE (2026-09-05)
 
-The better long-term home for this is a `GROWATT-LV-BATTERY` decoder contributed
-to `dalathegreat/Battery-Emulator`, whose `PYLON-LV-CAN` inverter side is already
-mature and field-proven. `translate.h` is essentially the decoder that would need
-porting. Doing so inherits its webserver, MQTT/Home Assistant integration, OTA and
-event log.
+This was completed: a `GROWATT-LV-BATTERY` decoder was ported from `translate.h`
+and contributed to `dalathegreat/Battery-Emulator`
+([PR #2913](https://github.com/dalathegreat/Battery-Emulator/pull/2913), merged),
+using its already-mature, field-proven `PYLON-LV-CAN` inverter output. Three real
+bugs found via live testing against the actual Solis were fixed in the same PR:
+missing `max_charge_power_W`/`max_discharge_power_W`, missing real capacity (now
+decoded from `0x314`), and a wrong hardcoded manufacturer name (`"BatEmuLV"` →
+`"PYLON   "`, required for Solis's strict `PYLON_LV` validation).
 
-One thing to know if you go there: Battery-Emulator's `PYLON-LV-CAN.cpp` `0x359`
-over-current logic appears to have a sign bug — it treats positive current as
-discharge, contradicting its own datalayer convention. This project drives those
-bits from the BMS's protection flags instead.
+The sign bug mentioned below was real, found live (a false "charge over current"
+alarm the instant `max_charge_current_dA` hits 0, i.e. any battery at 100% SOC
+while discharging) — fixed and merged separately, upstream, for every
+`PYLON-LV-CAN` user, not just this pairing
+([issue #2919](https://github.com/dalathegreat/Battery-Emulator/issues/2919),
+[PR #2920](https://github.com/dalathegreat/Battery-Emulator/pull/2920)).
+
+The live system now runs `dalathegreat/Battery-Emulator`'s `upstream/main`
+directly (`lilygo_2CAN_330` env) — confirmed byte-for-byte identical to what was
+tested live, verified via the dashboard, event log, and raw CAN traffic. This
+repo's own `translator`/`translator-t2can` firmware is no longer what's flashed
+to the live hardware, though it remains buildable and tested.
+
+Original note, now historical: Battery-Emulator's `PYLON-LV-CAN.cpp` `0x359`
+over-current logic had a sign bug — it treated positive current as discharge,
+contradicting its own datalayer convention. This project's own `translate.h`
+never had this bug, since it drives those bits from the BMS's protection flags
+instead rather than deriving them from current sign.
 
 ## Protocol references
 
